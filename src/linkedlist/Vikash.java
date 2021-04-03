@@ -1,8 +1,8 @@
-package linkedlist;
+package linklist;
 import java.util.*;
 
 
-public class Vikash {
+public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
@@ -19,8 +19,10 @@ public class Vikash {
 			System.out.println("5. Delete last node");
 			System.out.println("6. Delete node at position");
 			System.out.println("7. Update node at position");
-			System.out.println("8. View List");
-			System.out.println("9. Exit");
+			System.out.println("8. Reverse link list");
+			System.out.println("9. View List");
+			System.out.println("10. Exit");
+			
 			System.out.println("Enter Choice");
 			int choice=sc.nextInt();
 			switch(choice) {
@@ -65,11 +67,16 @@ public class Vikash {
 			list.updateData(valu,posi);
 			break;
 			
-			case 8: list.viewList();
+			case 8:list.reverseList();
 			break;
 			
-			case 9: flag=false;
+			case 9: list.viewList();
 			break;
+			
+			case 10: flag=false;
+			break;
+			
+			
 			
 			default: System.out.println("invalid choice");
 			
@@ -81,27 +88,45 @@ public class Vikash {
 	}
 
 }
-class Node{
-	private int data; private Node next;
-	public Node() {
-		data=0;next=null;
-	}
-	public void setData(int d) {
-		data=d;
-	}
-	public void setNext(Node n) {
-		next=n;
-	}
-	public int getData() {return data;}
-	public Node getNext() {return next;}
-}
+
 
 class Linkedlist{
+	
+	class Node{
+		private int data; private Node next;
+		public Node() {
+			data=0;next=null;
+		}
+		public void setData(int d) {
+			data=d;
+		}
+		public void setNext(Node n) {
+			next=n;
+		}
+		public int getData() {return data;}
+		public Node getNext() {return next;}
+	}
+	
 	private Node start;
 	private int size;
 	
 	public Linkedlist() {
 		start=null;size=0;
+	}
+	//reversing link list
+	public void reverseList() {
+		Node curr=start;
+		Node previous=null;
+		Node nex=null;
+		while(curr!=null) {
+			nex=curr.getNext();
+			curr.setNext(previous);
+			previous=curr;
+			curr=nex;
+		}
+		start=previous;
+			
+		
 	}
 	public boolean isEmpty() {
 		if(start==null) 
@@ -120,8 +145,13 @@ class Linkedlist{
 		Node t=start;
 		for(int i=1;i<=size;i++)
 		{
+			if(i==size) {
+				System.out.print(t.getData()+ "|___|"+"--> null");
+			}
+			else {
 			System.out.print(t.getData()+ "|___|"+"-->");
 			t=t.getNext();
+			}
 		}
 	}
 	public void insertAtFirst(int val) {
@@ -219,4 +249,7 @@ class Linkedlist{
 			size--;
 		}
 	}
+	
+	
+	
 }
