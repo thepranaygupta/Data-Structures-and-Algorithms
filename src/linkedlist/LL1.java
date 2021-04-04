@@ -58,7 +58,7 @@ class LinkedList {
 		n = new Node();
 		n.setData(val);
 		n.setNext(start);
-		start=n;
+		start = n;
 		size++;
 	}
 
@@ -140,6 +140,32 @@ class LinkedList {
 		}
 	}
 
+	public void updateAtPos(int val, int pos) {
+		if (isEmpty() || pos < 1 || pos > size) {
+			System.out.println("Updation not possible");
+			return;
+		}
+		Node t;
+		t = start;
+		for (int i = 1; i < pos; i++) {
+			t = t.getNext();
+		}
+		t.setData(val);
+	}
+
+	public void reverseList() {
+		Node curr = start;
+		Node previous = null;
+		Node nex = null;
+		while (curr != null) {
+			nex = curr.getNext();
+			curr.setNext(previous);
+			previous = curr;
+			curr = nex;
+		}
+		start = previous;
+	}
+
 	public void viewList() {
 		Node rn;
 		if (isEmpty())
@@ -160,15 +186,16 @@ public class LL1 {
 		LinkedList list = new LinkedList();
 		boolean flag = true;
 		while (flag) {
-			System.out.println();
 			System.out.println("\n1. Add item to the list at start");
 			System.out.println("2. Add item to the list at last");
 			System.out.println("3. Add item to the list at position");
 			System.out.println("4. Delete First Item from the List");
 			System.out.println("5. Delete Last Item from the List");
 			System.out.println("6. Delete Item at Given Position from the List");
-			System.out.println("7. View List");
-			System.out.println("8. Exit");
+			System.out.println("7. Update Item at Given Position");
+			System.out.println("8. Reverse Linked List");
+			System.out.println("9. View List");
+			System.out.println("10. Exit");
 			System.out.println("Enter Choice");
 			int choice = Integer.parseInt(br.readLine());
 			int pos, val;
@@ -208,10 +235,22 @@ public class LL1 {
 				break;
 
 			case 7:
-				list.viewList();
+				System.out.println("Enter position");
+				pos = Integer.parseInt(br.readLine());
+				System.out.println("Enter value");
+				val = Integer.parseInt(br.readLine());
+				list.updateAtPos(val, pos);
 				break;
 
 			case 8:
+				list.reverseList();
+				break;
+
+			case 9:
+				list.viewList();
+				break;
+
+			case 10:
 				flag = false;
 				break;
 
@@ -219,7 +258,5 @@ public class LL1 {
 				System.out.println("invalid choice");
 			}
 		}
-
 	}
-
 }
