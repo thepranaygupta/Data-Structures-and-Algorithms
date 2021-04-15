@@ -1,9 +1,6 @@
 package linklist;
 import java.util.*;
 
-
-
-
 public class DoublyLL {
 
 	public static void main(String[] args) {
