@@ -1,4 +1,4 @@
-**Problem Link:** [Next Greater Element I #496](https://leetcode.com/problems/baseball-game/)
+**Problem Link:** [Next Greater Element I #496](https://leetcode.com/problems/next-greater-element-i)
 
 **Solution Link 1:** [Next Greater Element I #496 Solution(Self)](https://github.com/thepranaygupta/Data-Structures-and-Algorithms/blob/main/2.%20Stack/LeetCode%20Qs/05.%20Next%20Greater%20Element%20I%20%23496/Solution_self.java)
 
