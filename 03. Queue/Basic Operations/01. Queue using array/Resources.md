@@ -27,6 +27,6 @@ Queue is a linear data structure which operates in a **First IN First OUT or Las
 
 <h3><img src="./pseudocode.png"/></h3>
 
-### **Step 3:** [See my code here in java](https://github.com/thepranaygupta/Data-Structures-and-Algorithms/blob/main/03.%20Queue/Basic%20Operations/01.%20Queue%20using%20array/Queue_Array.java)
+### **Step 3:** [See my code here in java](./Queue_Array.java)
 
 <h1 align="Center">Thank You</h1>
