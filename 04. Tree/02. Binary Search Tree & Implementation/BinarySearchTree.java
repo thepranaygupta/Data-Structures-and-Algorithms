@@ -12,27 +12,39 @@ public class BinarySearchTree {
 		while (flag) {
 			System.out.println();
 			System.out.println("1  - Insert a Node(Iterative Approach)");
-			System.out.println("2  - Search a Node");
-			System.out.println("3  - Delete a Node");
+			System.out.println("2. - Insert a Node(Recursive Approach)");
+			System.out.println("3  - Insert a Node(Level Order Insertion");
 			System.out.println("4  - Print 2D");
-			System.out.println("5  - Exit");
+//			System.out.println("3  - Delete a Node");
+//			System.out.println("5  - Exit");
 		}
 		int ch = sc.nextInt();
 		switch (ch) {
 		case 1:
 			System.out.print("Enter Value to Insert: ");
 			val = sc.nextInt();
+			bt.insertIterative(val);
 			break;
 		case 2:
-			System.out.print("Enter Value to Search: ");
+			System.out.print("Enter Value to Insert: ");
 			val = sc.nextInt();
-//			System.out.println(bt.Search(val));
+			bt.root = bt.insertRecursive(bt.root, val);
 			break;
 		case 3:
-			System.out.print("Enter Value to Delete: ");
+			System.out.println("Enter Value to Insert: ");
 			val = sc.nextInt();
-//			bt.root=bt.delete(bt.root,val);
+			bt.insertLevelOrder(bt.root, val);
 			break;
+//		case 2:
+//			System.out.print("Enter Value to Search: ");
+//			val = sc.nextInt();
+////			System.out.println(bt.Search(val));
+//			break;
+//		case 3:
+//			System.out.print("Enter Value to Delete: ");
+//			val = sc.nextInt();
+////			bt.root=bt.delete(bt.root,val);
+//			break;
 		}
 	}
 }
@@ -61,7 +73,7 @@ class BST {
 	}
 
 // START	1  - Insert a Node(Iterative Approach)
-	public void insertNodeIA(int val) {
+	public void insertIterative(int val) {
 		Node n = new Node(val);
 
 		if (isTreeEmpty()) {
@@ -101,6 +113,57 @@ class BST {
 			}
 		}
 	}
-	// END	1  - Insert a Node(Iterative Approach)
-	
+// END 1 - Insert a Node(Iterative Approach)
+
+// START	2  - Insert a Node(Recursive Approach)
+	public Node insertRecursive(Node root, int val) {
+		if (root == null) {
+			return new Node(val);
+		}
+		// if the value is less than the root node then recur for the left subtree
+		if (val < root.data) {
+			root.left = insertRecursive(root.left, val);
+		}
+
+		// else recur for the right subtree
+		else {
+			root.right = insertRecursive(root.right, val);
+		}
+		return root;
+	}
+// END 2 - Insert a Node(Recursive Approach)
+
+// START 3 - Insert a Node(Level Order Insertion)
+	public void insertLevelOrder(Node rt, int val) {
+		Node nn = new Node(val);
+		if (rt == null) {
+			rt = nn;
+			System.out.println("Inserted at the Root");
+			root = rt;
+			return;
+		}
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(rt);
+
+		while (!q.isEmpty()) {
+			Node n = q.element();
+			q.remove();
+
+			if (n.left == null) {
+				n.left = nn;
+				System.out.println("Inserted at the Left of BT");
+				root = rt;
+				return;
+			} else if (n.right == null) {
+				n.right = nn;
+				System.out.println("Inserted at the Right of BT");
+				root = rt;
+				return;
+			} else {
+				q.add(n.left);
+				q.add(n.right);
+			}
+		}
+	}
+// END 3 - Insert a Node(Level Order Insertion)
 }
