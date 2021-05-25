@@ -35,6 +35,9 @@ public class BinarySearchTree {
 			val = sc.nextInt();
 			bt.insertLevelOrder(bt.root, val);
 			break;
+		case 4:
+			bt.print2D(bt.root, 5);
+			break;
 //		case 2:
 //			System.out.print("Enter Value to Search: ");
 //			val = sc.nextInt();
@@ -166,4 +169,18 @@ class BST {
 		}
 	}
 // END 3 - Insert a Node(Level Order Insertion)
+
+// START 4 - Print 2D
+	public void print2D(Node r, int space) {
+
+		if (r == null) // base case
+			return;
+		print2D(r.right, space + 5);
+		System.out.println();
+		for (int i = 0; i < space; i++)
+			System.out.print(" ");
+		System.out.println(r.data);
+		print2D(r.left, space + 5);
+	}
+// END 4 - Print 2D
 }
