@@ -2,7 +2,9 @@ package treeDS;
 
 import java.util.*;
 
-public class BinarySearchTree {
+public class BinaryTree {
+
+	public static final int GLOBALSPACE = 5;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -13,31 +15,34 @@ public class BinarySearchTree {
 			System.out.println();
 			System.out.println("1  - Insert a Node(Iterative Approach)");
 			System.out.println("2. - Insert a Node(Recursive Approach)");
-			System.out.println("3  - Insert a Node(Level Order Insertion");
+			System.out.println("3  - Insert a Node(Level Order Insertion)");
 			System.out.println("4  - Print 2D");
 //			System.out.println("3  - Delete a Node");
-//			System.out.println("5  - Exit");
-		}
-		int ch = sc.nextInt();
-		switch (ch) {
-		case 1:
-			System.out.print("Enter Value to Insert: ");
-			val = sc.nextInt();
-			bt.insertIterative(val);
-			break;
-		case 2:
-			System.out.print("Enter Value to Insert: ");
-			val = sc.nextInt();
-			bt.root = bt.insertRecursive(bt.root, val);
-			break;
-		case 3:
-			System.out.println("Enter Value to Insert: ");
-			val = sc.nextInt();
-			bt.insertLevelOrder(bt.root, val);
-			break;
-		case 4:
-			bt.print2D(bt.root, 5);
-			break;
+			System.out.println("0  - Exit");
+
+			int ch = sc.nextInt();
+			switch (ch) {
+			case 0:
+				flag=false;
+				break;
+			case 1:
+				System.out.print("Enter Value to Insert: ");
+				val = sc.nextInt();
+				bt.insertIterative(val);
+				break;
+			case 2:
+				System.out.print("Enter Value to Insert: ");
+				val = sc.nextInt();
+				bt.root = bt.insertRecursive(bt.root, val);
+				break;
+			case 3:
+				System.out.println("Enter Value to Insert: ");
+				val = sc.nextInt();
+				bt.insertLevelOrder(bt.root, val);
+				break;
+			case 4:
+				bt.print2D(bt.root, GLOBALSPACE);
+				break;
 //		case 2:
 //			System.out.print("Enter Value to Search: ");
 //			val = sc.nextInt();
@@ -48,6 +53,7 @@ public class BinarySearchTree {
 //			val = sc.nextInt();
 ////			bt.root=bt.delete(bt.root,val);
 //			break;
+			}
 		}
 	}
 }
@@ -154,12 +160,12 @@ class BST {
 
 			if (n.left == null) {
 				n.left = nn;
-				System.out.println("Inserted at the Left of BT");
+				System.out.println("Value inserted at the left.");
 				root = rt;
 				return;
 			} else if (n.right == null) {
 				n.right = nn;
-				System.out.println("Inserted at the Right of BT");
+				System.out.println("Value inserted at the right.");
 				root = rt;
 				return;
 			} else {
@@ -175,12 +181,15 @@ class BST {
 
 		if (r == null) // base case
 			return;
-		print2D(r.right, space + 5);
+
+		print2D(r.right, space + BinaryTree.GLOBALSPACE);
 		System.out.println();
-		for (int i = 0; i < space; i++)
+		for (int i = BinaryTree.GLOBALSPACE; i < space; i++)
 			System.out.print(" ");
 		System.out.println(r.data);
-		print2D(r.left, space + 5);
+		print2D(r.left, space + BinaryTree.GLOBALSPACE);
 	}
 // END 4 - Print 2D
+	
+// START 5 - 
 }
