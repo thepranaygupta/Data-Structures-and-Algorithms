@@ -97,7 +97,8 @@ class BST{
 
 # **1. --| Insertion in BST(itterative approach).**
 
-![](https://i.ibb.co/Z8j9KS4/Insertion-Pseudocode.png)
+<img width="490" alt="image" src="https://user-images.githubusercontent.com/64855541/119659006-63231400-be4b-11eb-8d40-fc7bd30670b0.png">
+
 
 ```java
 // Main function calling
