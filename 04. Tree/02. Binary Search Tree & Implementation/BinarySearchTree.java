@@ -17,13 +17,14 @@ public class BinaryTree {
 			System.out.println("2. - Insert a Node(Recursive Approach)");
 			System.out.println("3  - Insert a Node(Level Order Insertion)");
 			System.out.println("4  - Print 2D");
+			System.out.println("5  - Height of Tree");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
 			int ch = sc.nextInt();
 			switch (ch) {
 			case 0:
-				flag=false;
+				flag = false;
 				break;
 			case 1:
 				System.out.print("Enter Value to Insert: ");
@@ -42,6 +43,9 @@ public class BinaryTree {
 				break;
 			case 4:
 				bt.print2D(bt.root, GLOBALSPACE);
+				break;
+			case 5:
+				System.out.println("Height of the Tree is = " + bt.height(bt.root));
 				break;
 //		case 2:
 //			System.out.print("Enter Value to Search: ");
@@ -191,5 +195,16 @@ class BST {
 	}
 // END 4 - Print 2D
 	
-// START 5 - 
+// START 5 - Height of Tree
+	public int height(Node r)
+	{
+		if(r==null) return -1;
+		else {
+			int lheight=height(r.left);
+			int rheight=height(r.right);
+			
+			return Math.max(lheight, rheight)+1;
+		}
+	}
+// END 5 - Height of Tree
 }
