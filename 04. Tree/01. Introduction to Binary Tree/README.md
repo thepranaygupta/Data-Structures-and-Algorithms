@@ -31,7 +31,7 @@ A binary tree is a tree data structure in which each node has **at most two chil
 1. **Strict/Proper BT -** Binary tree where each node has 2 or 0 children.
 2. **Complete BT -** Binary tree where all levels except the last are completely filled orelse if any levels are partially filled then all nodes in that level should be as left as possible.
    ![](https://i.ibb.co/bd3fyYk/BT-DS-1.png)
-3. **Perfect BT -** Binary tree where each node has 2 childrens, **except leaf nodes.**
+3. **Perfect BT -** Binary tree where each node has 2 children, **except leaf nodes.**
 4. **Balance BT -** Binary tree where the difference between the height of left subtree and right subtree for every node is not more than k(usually k=1).
    **Travesal in balanced BT is more efficient than unbalanced BT.**
    ![](https://i.ibb.co/nPNZn9W/BT-DS-2.png)
