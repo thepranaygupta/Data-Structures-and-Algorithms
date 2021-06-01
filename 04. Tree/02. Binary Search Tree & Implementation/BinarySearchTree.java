@@ -19,6 +19,7 @@ public class BinaryTree {
 			System.out.println("4  - Print 2D");
 			System.out.println("5  - Height of Tree");
 			System.out.println("6  - Sum of all Nodes in the Tree");
+			System.out.println("7  - Total Number of Nodes in the Tree");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -50,6 +51,10 @@ public class BinaryTree {
 				break;
 			case 6:
 				System.out.println("Sum of all the Nodes in the Tree is = " + bt.sumOfNodes(bt.root));
+				break;
+			case 7:
+				System.out.println("Total Number of Nodes in the Tree is = " + bt.countNodes(bt.root));
+				break;
 //		case 2:
 //			System.out.print("Enter Value to Search: ");
 //			val = sc.nextInt();
@@ -222,4 +227,15 @@ class BST {
 	}
 // END 6 - Sum of all Nodes in the Tree
 
+// START 7 - Total Number of Nodes in the Tree
+	public int countNodes(Node r) {
+		if (r == null) {
+			return 0;
+		}
+		int leftCount = countNodes(r.left); // count the total nodes in left subtree
+		int rightCount = countNodes(r.right); // count the total nodes in right subtree
+		return leftCount + rightCount + 1;
+	}
+// END 7 - Total Number of Nodes in the Tree
+	
 }
