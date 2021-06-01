@@ -18,6 +18,7 @@ public class BinaryTree {
 			System.out.println("3  - Insert a Node(Level Order Insertion)");
 			System.out.println("4  - Print 2D");
 			System.out.println("5  - Height of Tree");
+			System.out.println("6  - Sum of all Nodes in the Tree");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -47,6 +48,8 @@ public class BinaryTree {
 			case 5:
 				System.out.println("Height of the Tree is = " + bt.height(bt.root));
 				break;
+			case 6:
+				System.out.println("Sum of all the Nodes in the Tree is = " + bt.sumOfNodes(bt.root));
 //		case 2:
 //			System.out.print("Enter Value to Search: ");
 //			val = sc.nextInt();
@@ -80,7 +83,7 @@ class BST {
 	public BST() {
 		root = null;
 	}
-
+	
 	public boolean isTreeEmpty() {
 		return root == null;
 	}
@@ -207,4 +210,17 @@ class BST {
 		}
 	}
 // END 5 - Height of Tree
+	
+// START 6 - Sum of all Nodes in the Tree
+	public int sumOfNodes(Node r)
+	{
+		if(r==null) {
+			return 0;
+		}
+		int lsum=sumOfNodes(r.left); // to calc the sum of left subtree
+		int rsum=sumOfNodes(r.right); // to calc the sum of right subtree
+		return lsum+rsum+r.data;
+	}
+// END 6 - Sum of all Nodes in the Tree
+
 }
