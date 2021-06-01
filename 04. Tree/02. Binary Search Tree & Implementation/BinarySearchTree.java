@@ -83,7 +83,7 @@ class BST {
 	public BST() {
 		root = null;
 	}
-	
+
 	public boolean isTreeEmpty() {
 		return root == null;
 	}
@@ -197,29 +197,28 @@ class BST {
 		print2D(r.left, space + BinaryTree.GLOBALSPACE);
 	}
 // END 4 - Print 2D
-	
+
 // START 5 - Height of Tree
-	public int height(Node r)
-	{
-		if(r==null) return -1;
+	public int height(Node r) {
+		if (r == null)
+			return -1;
 		else {
-			int lheight=height(r.left);
-			int rheight=height(r.right);
-			
-			return Math.max(lheight, rheight)+1;
+			int lheight = height(r.left);
+			int rheight = height(r.right);
+
+			return Math.max(lheight, rheight) + 1;
 		}
 	}
 // END 5 - Height of Tree
-	
+
 // START 6 - Sum of all Nodes in the Tree
-	public int sumOfNodes(Node r)
-	{
-		if(r==null) {
+	public int sumOfNodes(Node r) {
+		if (r == null) {
 			return 0;
 		}
-		int lsum=sumOfNodes(r.left); // to calc the sum of left subtree
-		int rsum=sumOfNodes(r.right); // to calc the sum of right subtree
-		return lsum+rsum+r.data;
+		int lsum = sumOfNodes(r.left); // to calc the sum of left subtree
+		int rsum = sumOfNodes(r.right); // to calc the sum of right subtree
+		return lsum + rsum + r.data;
 	}
 // END 6 - Sum of all Nodes in the Tree
 
