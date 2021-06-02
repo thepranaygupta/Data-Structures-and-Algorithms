@@ -20,6 +20,7 @@ public class BinaryTree {
 			System.out.println("5  - Height of Tree");
 			System.out.println("6  - Sum of all Nodes in the Tree");
 			System.out.println("7  - Total Number of Nodes in the Tree");
+			System.out.println("8  - Maximum Value in the Binary Tree");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -54,6 +55,9 @@ public class BinaryTree {
 				break;
 			case 7:
 				System.out.println("Total Number of Nodes in the Tree is = " + bt.countNodes(bt.root));
+				break;
+			case 8:
+				System.out.println("The Maximum Value of the Binary Tree is = " + bt.maxValue(bt.root));
 				break;
 //		case 2:
 //			System.out.print("Enter Value to Search: ");
@@ -237,5 +241,15 @@ class BST {
 		return leftCount + rightCount + 1;
 	}
 // END 7 - Total Number of Nodes in the Tree
-	
+
+// START 8 - Maximum Value in the Binary Tree
+	public int maxValue(Node r) {
+		if (r == null)
+			return Integer.MIN_VALUE;
+		int lmax = maxValue(r.left); // find the Maximum Value in the left subtree
+		int rmax = maxValue(r.right); // find the Maximum Value in the right subtree
+		return Math.max(r.data, Math.max(lmax, rmax));
+	}
+// END 8 - Maximum Value in the Binary Tree
+
 }
