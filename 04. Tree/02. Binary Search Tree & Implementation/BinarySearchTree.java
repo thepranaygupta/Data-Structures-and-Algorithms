@@ -23,6 +23,7 @@ public class BinaryTree {
 			System.out.println("8  - Maximum Value in the Binary Tree");
 			System.out.println("9  - Print Level Order/Breadth First Search (using queue)");
 			System.out.println("10 - Print Level Order/Breadth First Search (using Recursion)");
+			System.out.println("11 - Print a Certain Level of the Tree");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -68,6 +69,12 @@ public class BinaryTree {
 			case 10:
 				System.out.println("The Binary Tree in Level Order/Breadth First Search (using Recursion) is = ");
 				bt.printLevelOrderRecursion(bt.root);
+				break;
+			case 11:
+				System.out.print("Enter the Level to print Level Order: ");
+				int l = sc.nextInt();
+				System.out.println("The Nodes in Level-" + l + " in Level Order are:");
+				bt.printGivenLevel(bt.root, l);
 				break;
 
 //				case 2:
@@ -286,5 +293,18 @@ class BST {
 			printGivenLevel(r, i);
 	}
 // END 10 - Print Level Order/Breadth First Search (using Recursion)
+
+// START 11 - Print Given Level of the Tree
+	public void printGivenLevel(Node r, int level) {
+		if (r == null)
+			return;
+		else if (level == 0)
+			System.out.print(r.data + " ");
+		else { // level > 0
+			printGivenLevel(r.left, level - 1);
+			printGivenLevel(r.right, level - 1);
+		}
+	}
+// END 11 - Print Given Level of the Tree
 
 }
