@@ -296,7 +296,7 @@ class BST {
 
 // START 11 - Print Given Level of the Tree
 	public void printGivenLevel(Node r, int level) {
-		if (r == null)
+		if (r == null) // base case
 			return;
 		else if (level == 0)
 			System.out.print(r.data + " ");
