@@ -22,6 +22,7 @@ public class BinaryTree {
 			System.out.println("7  - Total Number of Nodes in the Tree");
 			System.out.println("8  - Maximum Value in the Binary Tree");
 			System.out.println("9  - Print Level Order/Breadth First Search (using queue)");
+			System.out.println("10 - Print Level Order/Breadth First Search (using Recursion)");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -62,17 +63,22 @@ public class BinaryTree {
 				break;
 			case 9:
 				System.out.println("The Binary Tree in Level Order/Breadth First Search (using queue) is = ");
-				bt.printLevelOrder(bt.root);
+				bt.printLevelOrderQueue(bt.root);
 				break;
-//		case 2:
+			case 10:
+				System.out.println("The Binary Tree in Level Order/Breadth First Search (using Recursion) is = ");
+				bt.printLevelOrderRecursion(bt.root);
+				break;
+
+//				case 2:
 //			System.out.print("Enter Value to Search: ");
 //			val = sc.nextInt();
-////			System.out.println(bt.Search(val));
+//				System.out.println(bt.Search(val));
 //			break;
 //		case 3:
 //			System.out.print("Enter Value to Delete: ");
 //			val = sc.nextInt();
-////			bt.root=bt.delete(bt.root,val);
+//				bt.root=bt.delete(bt.root,val);
 //			break;
 			}
 		}
@@ -258,7 +264,7 @@ class BST {
 // END 8 - Maximum Value in the Binary Tree
 
 // START 9 - Print Level Order/Breadth First Search (using queue)
-	public void printLevelOrder(Node r) {
+	public void printLevelOrderQueue(Node r) {
 		Node temp = null;
 		Queue<Node> queue = new LinkedList<Node>();
 		queue.add(r);
@@ -272,4 +278,13 @@ class BST {
 		}
 	}
 // END 9 - Print Level Order/Breadth First Search (using queue)
+
+// START 10 - Print Level Order/Breadth First Search (using Recursion)
+	public void printLevelOrderRecursion(Node r) {
+		int h = height(r);
+		for (int i = 0; i <= h; i++)
+			printGivenLevel(r, i);
+	}
+// END 10 - Print Level Order/Breadth First Search (using Recursion)
+
 }
