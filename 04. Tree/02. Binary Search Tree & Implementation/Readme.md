@@ -8,30 +8,23 @@
 
 <hr>
 
-# **Implementations**
+# Prerequisites:
+- ## **[Recursion by Apna College](https://youtube.com/playlist?list=PLGeDISzAH2BQyQbj__5hjwd_6T3b9k-sm)**
 
-### **1. --| Insertion in BST(itterative approach).**
+# **Implementations:**
 
-### **2. --| Insertion in BST(recurrsive approach).**
-
-### **3. --| Insertion in BT(level order insertion).**
-
-### **4. --| Print 2D.**
-
-### **5. --| Height of tree.**
-
-### **6. --| Sum of BT.**
-
-### **7. --| Total no. of nodes in BT.**
-
-### **8. --| Maximum value in BT.**
-
-### **9. --| Print level order(BFS).**
-
-### **10. -| Sum at level K.**
-
-### **11. -| Print Inorder Traversal.**
-
+1. ### Insert a Node(Iterative Approach)
+2. ### Insert a Node(Recursive Approach)
+3. ### Insert a Node(Level Order Insertion)
+4. ### Print 2D
+5. ### Height of tree
+6. ### Sum of all Nodes in the Tree
+7. ### Total Number of Nodes in the Tree
+8. ### Maximum Value in the Binary Tree
+9. ### Print Level Order/Breadth First Search (using queue)
+10. ### Print Level Order/Breadth First Search (using Recursion)
+11. ### Print Given Level of the Tree
+<!-- 
 ### **12. -| Print Preorder Traversal.**
 
 ### **13. -| Print Postorder Traversal.**
@@ -56,368 +49,389 @@
 
 ### **23.-| Construct BST from Preorder**
 
-### **24.-| Construct BST from Postorder**
+### **24.-| Construct BST from Postorder** -->
 
 <hr>
 
-## **0. --| Class defination containing all above Functions().**
+## **0  - Class Definition containing all above Functions**
 
 ```java
-class BST{
-
-	class Node{
+class BST {
+	class Node {
 		int data;
 		Node left;
 		Node right;
+
 		public Node(int val) {
-			data=val;
-			left=right=null;
+			data = val;
+			left = null;
+			right = null;
 		}
 	}
 
 	Node root;
-	public BST() {
-		root=null;
-	}
-	public boolean isTreeEmpty() {
-		return root==null;
-	}
-	// and above functions like insertion, deletion, printing, traversing and manymore.... all function defination will come below as you understand each functions operations.
-	/*
-	.
-	.
-	.
-	.
-	*/
 
+	public BST() {
+		root = null;
+	}
+
+	public boolean isTreeEmpty() {
+		return root == null;
+	}
+	// all above functions like insertion, deletion, printing, traversing will be here
 }
 ```
 
 <hr>
 
-# **1. --| Insertion in BST(itterative approach).**
-
-<img width="490" alt="image" src="https://user-images.githubusercontent.com/64855541/119659006-63231400-be4b-11eb-8d40-fc7bd30670b0.png">
-
+## **1  - Insert a Node(Iterative Approach)**
+## **[Video Reference](https://youtu.be/6U4K-7fu_4A)**
+![](https://user-images.githubusercontent.com/64855541/119659006-63231400-be4b-11eb-8d40-fc7bd30670b0.png)
 
 ```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 case 1:
-				System.out.println("Enter value");
-				val=sc.nextInt();
-				bt.insertNodeITTE(val);
-break;
-
-	//1.--| Insertion in BST(itterative approach) STARTS
-		public void insertNodeITTE(int val) {
-			Node n=new Node(val);
-
-			if(isTreeEmpty())
-			{
-				root=n;
-				System.out.println("Value inserted as root node");
-			}
-			else {
-				Node temp=root;
-				while(temp!=null) {
-					if(val==temp.data) {
-						System.out.println("Value already exist");
-						return;
-					}
-					//for left insertion i.e., when val<currNode
-					else if(val<temp.data && temp.left==null) {
-						temp.left=n;
-						System.out.println("Value inserted to left");
-						break;
-					}
-					else if(val<temp.data) {
-						temp=temp.left;
-					}
-					//for right insertion i.e., when val>currNode
-					else if(val>temp.data && temp.right==null) {
-						temp.right=n;
-						System.out.println("Value inserted to right");
-						break;
-					}
-					else//(val>temp.data)
-					{
-						temp=temp.right;
-					}
-
-				}
-			}
-		}
-	//1.--| Insertion in BST(itterative approach) ENDS
-```
-
-<hr>
-
-# **2. --| Insertion in BST(recurrsive approach).**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-case 2:
-	System.out.println("Enter value");
-	val=sc.nextInt();
-	bt.root=bt.insertNodeRECURR(bt.root, val);
-break;
-
-//2.--| Insertion in BST(recurrsive approach) STARTS
-  	     public Node insertNodeRECURR(Node root, int key) {
-
-    		// if the root is null, create a new node and return it
-            if (root == null)
-            	return new Node(key);
+	System.out.print("Enter Value Insert: ");
+	val = sc.nextInt();
+	bt.insertIterative(val);
+	break;
 
 
-            // if the given key is less than the root node,
-            // recur for the left subtree
-            else if (key < root.data)
-            	root.left = insertNodeRECURR(root.left, key);
+// START	1  - Insert a Node(Iterative Approach)
+public void insertIterative(int val) {
+	Node n = new Node(val);
 
+	if (isTreeEmpty()) {
+		root = n;
+		System.out.println("Value Inserted as the Root Node.");
+	}
 
-            // otherwise, recur for the right subtree
-            else if(key > root.data)
-                root.right = insertNodeRECURR(root.right, key);
-
-            else // key== root.data
-            	System.out.println("Dublicate value not allowed");
-
-            return root;
-    	}
-//2.--| Insertion in BST(recurrsive approach) ENDS
-```
-
-<hr>
-
-# **3. --| Insertion in BT(level order insertion).**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-case 3:
-	System.out.println("Enter value");
-	val=sc.nextInt();
-	bt.insert(bt.root, val);
-break;
-
-//3.--| Insertion in BT(level order insertion) STARTS
-		public void insert(Node rt,int val) {
-			Node nn=new Node(val);
-			if(rt==null) {
-				rt=nn;
-				System.out.println("inserted at root");
-				root=rt;
+	else {
+		Node temp = root;
+		while (temp != null) {
+			// check if the value already exists at the current node
+			if (val == temp.data) {
+				System.out.println("Value Already Exists!");
 				return;
 			}
-			Queue<Node> q=new LinkedList<Node>();
-			q.add(rt);
-
-			while(!q.isEmpty()) {
-				Node n=q.element();
-				q.remove();
-
-				if(n.left==null) {
-					n.left=nn;
-					System.out.println("inserted left of BT");
-					root=rt;
-					return;
-				}
-				else if(n.right==null) {
-					n.right=nn;
-					System.out.println("inserted right of BT");
-					root=rt;
-					return;
-				}
-				else {
-					q.add(n.left);
-					q.add(n.right);
-				}
+			// to insert in the left position
+			else if (val < temp.data && temp.left == null) {
+				temp.left = n;
+				System.out.println("Value inserted at the left.");
+				break;
+			}
+			// to traverse to the left node
+			else if (val < temp.data) {
+				temp = temp.left;
+			}
+			// to insert in the right position
+			else if (val > temp.data && temp.right == null) {
+				temp.right = n;
+				System.out.println("Value inserted at the right.");
+				break;
+			}
+			// to traverse to the right node
+			else {
+				temp = temp.right;
 			}
 
 		}
-	//3.--| Insertion in BT(level order insertion) ENDS
+	}
+}
+// END 1 - Insert a Node(Iterative Approach)
 ```
 
+<hr>
+
+## **2 - Insert a Node(Recursive Approach)**
+## **[Video Reference](https://youtu.be/x6t1lKzjGhY)**
+
+![](https://i.ibb.co/vcbxQjB/bst-insert-recursive.png)
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+case 2:
+	System.out.print("Enter Value to Insert: ");
+	val = sc.nextInt();
+	bt.root = bt.insertRecursive(bt.root, val);
+	break;
+
+// START	2  - Insert a Node(Recursive Approach)
+	public Node insertRecursive(Node root, int val) {
+		if (root == null) {
+			return new Node(val);
+		}
+		// if the value is less than the root node then recur for the left subtree
+		if (val < root.data) {
+			root.left = insertRecursive(root.left, val);
+		}
+
+		// else recur for the right subtree
+		else {
+			root.right = insertRecursive(root.right, val);
+		}
+		return root;
+	}
+// END 2 - Insert a Node(Recursive Approach)
+```
+
+<hr>
+
+## **3 - Insert a Node(Level Order Insertion)**
 ## **[Video Reference](https://youtu.be/kjmBjhalENI)**
 
-<hr>
-
-# **4. --| Print 2D.**
-
 ```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
-case 4:
-		bt.print2D(bt.root, 5);
-break;
+case 3:
+	System.out.println("Enter Value to Insert: ");
+	val = sc.nextInt();
+	bt.insertLevelOrder(bt.root, val);
+	break;
 
 
-	//4.--| Print 2D STARTS
-		public void print2D(Node r,int space) {
-
-			if (r ==null) // Base case  1
-			   return;
-			print2D(r.right,space+5);
-			System.out.println();
-
-			for(int i=0;i<space;i++)
-				System.out.print(" ");
-
-			System.out.println(r.data);
-			print2D(r.left,space+5);
+// START 3 - Insert a Node(Level Order Insertion)
+	public void insertLevelOrder(Node rt, int val) {
+		Node nn = new Node(val);
+		if (rt == null) {
+			rt = nn;
+			System.out.println("Inserted at the Root");
+			root = rt;
+			return;
 		}
-	//4.--| Print 2D ENDS
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(rt);
+
+		while (!q.isEmpty()) {
+			Node n = q.element();
+			q.remove();
+
+			if (n.left == null) {
+				n.left = nn;
+				System.out.println("Value inserted at the left.");
+				root = rt;
+				return;
+			} else if (n.right == null) {
+				n.right = nn;
+				System.out.println("Value inserted at the right.");
+				root = rt;
+				return;
+			} else {
+				q.add(n.left);
+				q.add(n.right);
+			}
+		}
+	}
+// END 3 - Insert a Node(Level Order Insertion)
 ```
 
+<hr>
+
+## **4 - Print 2D**
 ## **[Video Reference](https://youtu.be/xhkSiIeTKQo)**
 
-<hr>
-
-# **5. --| Height of tree. + 18.-| isBalanced().**
-
-# **6. --| Sum of BT.**
-
-# **7. --| Total no. of nodes in BT.**
-
-# **8. --| Maximum value in BT.**
-
 ```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
-			case 5: System.out.println(bt.Height(bt.root));
-			break;
-			case 6: System.out.println(bt.sumOfBT(bt.root));
-			break;
-			case 7:System.out.println(bt.countNodes(bt.root));
-			break;
-			case 8: System.out.println(bt.maxNoBT(bt.root));
-			break;
+case 4:
+	bt.print2D(bt.root, GLOBALSPACE);
+	break;
 
+// START 4 - Print 2D
+	public void print2D(Node r, int space) {
 
+		if (r == null) // base case
+			return;
 
-//5.--| Height of tree / 18.-| isBalanced() STARTS
-		static boolean isBal=true;//only to find balanced BT, ignore.
-		public static int Height(Node r) {
-			if(r==null) return -1;
-			else {
-				int lh=Height(r.left);
-				int rh=Height(r.right);
-
-				// ignore THIS, while thinking about height of BT
-				if(Math.abs(lh-rh)>1)
-					isBal=false;
-				// }
-				return Math.max(lh, rh)+1;
-			}
-		}
-	//5.--| Height of tree / 18.-| isBalanced()  ENDS
-
-
-	//6.--| Sum of BT STARTS
-		public int sumOfBT(Node r) {
-			if(r==null) {
-				return 0;
-			}
-			int lsum=sumOfBT(r.left);
-			int rsum=sumOfBT(r.right);
-			return lsum+rsum+r.data;
-
-		}
-	//6.--| Sum of BT ENDS
-
-
-	//7.--| No. of nodes in BT STARTS
-		public int countNodes(Node r) {
-			if(r==null) {
-				return 0;
-			}
-			int lc=countNodes(r.left);
-			int rc=countNodes(r.right);
-			return lc+rc+1;
-		}
-	//7.--| No. of nodes in BT ENDS
-
-
-	//8.--| Maximum value in BT STARTS
-		public int maxNoBT(Node r) {
-			if(r==null) return Integer.MIN_VALUE;
-			int lmax=maxNoBT(r.left);
-			int rmax=maxNoBT(r.right);
-			return Math.max(r.data, Math.max(lmax, rmax));
-		}
-	//8.--| Maximum value in BT ENDS
+		print2D(r.right, space + BinaryTree.GLOBALSPACE);
+		System.out.println();
+		for (int i = BinaryTree.GLOBALSPACE; i < space; i++)
+			System.out.print(" ");
+		System.out.println(r.data);
+		print2D(r.left, space + BinaryTree.GLOBALSPACE);
+	}
+// END 4 - Print 2D
 ```
 
-## **[Video Reference](https://youtu.be/Y7fg3QS6u6w)**
 
 <hr>
 
-# **9. --| Print level order(BFS).**
-
-# **10. -| Sum at level K.**
-
+## **5 - Height of Tree**
+## **[Video Reference](https://www.youtube.com/watch?v=M-ovXwd6_0I)**
 ```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
-			case 9: bt.printLevelOrderBFS(bt.root);
-			break;
+case 4:
+	bt.print2D(bt.root, GLOBALSPACE);
+	break;
 
-			case 10: System.out.println("Enter level");
-			val=sc.nextInt();
-			bt.s=0;
-			System.out.println(bt.sumAtGivenLevel(bt.root, val));
-			break;
+// START 5 - Height of Tree
+	public int height(Node r) {
+		if (r == null)
+			return -1;
+		else {
+			int lheight = height(r.left);
+			int rheight = height(r.right);
 
-	//9.--| Print level order(BFS) STARTS
-		void printLevelOrderBFS(Node r) {
-		    int h = Height(r);
-		    for (int i = 0; i <= h; i++)
-		      printGivenLevel(r, i);
-		  }
-
-		private void printGivenLevel(Node r, int level) {
-			if (r == null)
-			      return;
-			else if (level == 0)
-			      System.out.print(r.data+" ");
-			    else // level > 0
-			    {
-			      printGivenLevel(r.left, level - 1);
-			      printGivenLevel(r.right, level - 1);
-			    }
+			return Math.max(lheight, rheight) + 1;
 		}
-	//9.--| Print level order(BFS) ENDS
+	}
+// END 5 - Height of Tree
+```
+<hr>
 
+## **6 - Sum of all Nodes in the Tree**
+## **[Video Reference](https://www.youtube.com/watch?v=Uze4GgUj3Fs)**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
-	//10.-| Sum at level K STARTS
-		int s=0;
-		public int sumAtGivenLevel(Node r,int level) {
+case 6:
+	System.out.println("Sum of all the Nodes in the Tree is = " + bt.sumOfNodes(bt.root));
+	break;
 
-			if (r == null)
-			      return s;
-			else if (level == 0)
-			   s=s+r.data;
-			else // level > 0
-			{
-				sumAtGivenLevel(r.left, level - 1);
-				sumAtGivenLevel(r.right, level - 1);
-			}
-			return s;
+// START 6 - Sum of all Nodes in the Tree
+	public int sumOfNodes(Node r) {
+		if (r == null) {
+			return 0;
 		}
-	//10.-| Sum at level K ENDS
+		int lsum = sumOfNodes(r.left); // to calc the sum of left subtree
+		int rsum = sumOfNodes(r.right); // to calc the sum of right subtree
+		return lsum + rsum + r.data;
+	}
+// END 6 - Sum of all Nodes in the Tree
 ```
 
+<hr>
+
+## **7 - Total Number of Nodes in the Tree**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 7:
+	System.out.println("Total Number of Nodes in the Tree is = " + bt.countNodes(bt.root));
+	break;
+
+// START 7 - Total Number of Nodes in the Tree
+	public int countNodes(Node r) {
+		if (r == null) {
+			return 0;
+		}
+		int leftCount = countNodes(r.left); // count the total nodes in left subtree
+		int rightCount = countNodes(r.right); // count the total nodes in right subtree
+		return leftCount + rightCount + 1;
+	}
+// END 7 - Total Number of Nodes in the Tree
+```
+<hr>
+
+## **8 - Maximum Value in the Binary Tree**
+## **[Video Reference](https://www.youtube.com/watch?v=SImAcxdgorU)**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 8:
+	System.out.println("The Maximum Value of the Binary Tree is = " + bt.maxValue(bt.root));
+	break;
+
+// START 8 - Maximum Value in the Binary Tree
+	public int maxValue(Node r) {
+		if (r == null)
+			return Integer.MIN_VALUE;
+		int lmax = maxValue(r.left); // find the Maximum Value in the left subtree
+		int rmax = maxValue(r.right); // find the Maximum Value in the right subtree
+		return Math.max(r.data, Math.max(lmax, rmax));
+	}
+// END 8 - Maximum Value in the Binary Tree
+```
+
+<!-- ## **[Video Reference](https://youtu.be/Y7fg3QS6u6w)** -->
+
+<hr>
+
+## **9 - Print Level Order/Breadth First Search (using queue)**
+## **[Video Reference](https://youtu.be/vQIiUWofWw8)**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 9:
+	System.out.println("The Binary Tree in Level Order/Breadth First Search (using Queue) is = ");
+	bt.printLevelOrderQueue(bt.root);
+	break;
+
+// START 9 - Print Level Order/Breadth First Search (using queue)
+	public void printLevelOrderQueue(Node r) {
+		Node temp = null;
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.add(r);
+		while (queue.size() > 0) {
+			temp = queue.poll(); // store the value of current node in 'temp' and dequeue it
+			System.out.print(temp.data + " "); // print the current node value
+			if (temp.left != null)
+				queue.add(temp.left); // enqueue the left child
+			if (temp.right != null)
+				queue.add(temp.right); // enqueue the right child
+		}
+	}
+// END 9 - Print Level Order/Breadth First Search (using queue)
+```
+<hr>
+
+## **10 - Print Level Order/Breadth First Search (using Recursion)**
 ## **[Video Reference](https://youtu.be/EEm_d8WbXjs)**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
+case 10:
+	System.out.println("The Binary Tree in Level Order/Breadth First Search (using Recursion) is = ");
+	bt.printLevelOrderRecursion(bt.root);
+	break;
+
+// START 10 - Print Level Order/Breadth First Search (using Recursion)
+	public void printLevelOrderRecursion(Node r) {
+		int h = height(r);
+		for (int i = 0; i <= h; i++)
+			printGivenLevel(r, i);
+	}
+// END 10 - Print Level Order/Breadth First Search (using Recursion)
+```
 <hr>
 
-# **11. -| Print Inorder Traversal.**
+## **11 - Print Given Level of the Tree**
+## **[Video Reference](https://youtu.be/EEm_d8WbXjs)**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 11:
+	System.out.print("Enter the Level to print Level Order: ");
+	int l = sc.nextInt();
+	System.out.println("The Nodes in Level-" + l + " in Level Order are:");
+	bt.printGivenLevel(bt.root, l);
+	break;
+
+// START 11 - Print Given Level of the Tree
+	public void printGivenLevel(Node r, int level) {
+		if (r == null) // base case
+			return;
+		else if (level == 0)
+			System.out.print(r.data + " ");
+		else { // level > 0
+			printGivenLevel(r.left, level - 1);
+			printGivenLevel(r.right, level - 1);
+		}
+	}
+// END 11 - Print Given Level of the Tree
+```
+<hr>
 
 # **12. -| Print Preorder Traversal.**
 
