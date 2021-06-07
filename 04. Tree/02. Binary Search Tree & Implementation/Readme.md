@@ -11,6 +11,8 @@
 # Prerequisites:
 - ## **[Recursion by Apna College](https://youtube.com/playlist?list=PLGeDISzAH2BQyQbj__5hjwd_6T3b9k-sm)**
 
+<br>
+
 # **Implementations:**
 
 1. ### Insert a Node(Iterative Approach)
@@ -430,6 +432,38 @@ case 11:
 		}
 	}
 // END 11 - Print Given Level of the Tree
+```
+<hr>
+
+## **12 - Sum of values at level K**
+## **[Video Reference](https://www.youtube.com/watch?v=jkxZySeOPgk)**
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 12:
+	System.out.print("Enter Level(K): ");
+	val = sc.nextInt();
+	bt.sum = 0;
+	System.out.println("Sum of values at level K is = " + bt.sumAtK(bt.root, val));
+	break;
+
+// START 12 - Sum of values at level K
+	int sum = 0;
+
+	public int sumAtK(Node r, int K) {
+		if (r == null)
+			return sum;
+		else if (K == 0) // if K is at root level (0)
+			sum = sum + r.data;
+		else
+		{
+			sumAtK(r.left, K - 1);
+			sumAtK(r.right, K - 1);
+		}
+		return sum;
+	}
+// END 12 - Sum of values at level K
 ```
 <hr>
 
