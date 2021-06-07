@@ -21,9 +21,10 @@ public class BinaryTree {
 			System.out.println("6  - Sum of all Nodes in the Tree");
 			System.out.println("7  - Total Number of Nodes in the Tree");
 			System.out.println("8  - Maximum Value in the Binary Tree");
-			System.out.println("9  - Print Level Order/Breadth First Search (using queue)");
+			System.out.println("9  - Print Level Order/Breadth First Search (using Queue)");
 			System.out.println("10 - Print Level Order/Breadth First Search (using Recursion)");
 			System.out.println("11 - Print a Certain Level of the Tree");
+			System.out.println("12 - Sum of values at level K");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -63,7 +64,7 @@ public class BinaryTree {
 				System.out.println("The Maximum Value of the Binary Tree is = " + bt.maxValue(bt.root));
 				break;
 			case 9:
-				System.out.println("The Binary Tree in Level Order/Breadth First Search (using queue) is = ");
+				System.out.println("The Binary Tree in Level Order/Breadth First Search (using Queue) is = ");
 				bt.printLevelOrderQueue(bt.root);
 				break;
 			case 10:
@@ -75,6 +76,12 @@ public class BinaryTree {
 				int l = sc.nextInt();
 				System.out.println("The Nodes in Level-" + l + " in Level Order are:");
 				bt.printGivenLevel(bt.root, l);
+				break;
+			case 12:
+				System.out.print("Enter Level(K): ");
+				val = sc.nextInt();
+				bt.sum = 0;
+				System.out.println("Sum of values at level K is = " + bt.sumAtK(bt.root, val));
 				break;
 
 //				case 2:
@@ -307,4 +314,20 @@ class BST {
 	}
 // END 11 - Print Given Level of the Tree
 
+// START 12 - Sum of values at level K
+	int sum = 0;
+
+	public int sumAtK(Node r, int K) {
+		if (r == null)
+			return sum;
+		else if (K == 0) // if K is at root level (0)
+			sum = sum + r.data;
+		else
+		{
+			sumAtK(r.left, K - 1);
+			sumAtK(r.right, K - 1);
+		}
+		return sum;
+	}
+// END 12 - Sum of values at level K
 }
