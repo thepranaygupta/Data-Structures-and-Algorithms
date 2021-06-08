@@ -577,32 +577,34 @@ case 15:
 
 <hr>
 
-# **14. -| All paths from root to leaf nodes.**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-
-case 14: bt.rootToleaf(bt.root);
-break;
-
-	//14.-| All paths from root to leaf nodes STARTS
-		//print path from root to leafnodes just modifying Inorder and using stacks.
-		static Stack<Integer> st=new Stack();
-		public static void rootToleaf(Node r) {
-			if(r==null)return;
-
-			st.push(r.data);
-			rootToleaf(r.left);
-			if(r.left==null && r.right==null)
-				System.out.println(st);
-			rootToleaf(r.right);
-			st.pop();
-		}
-	//14.-| All paths from root to leaf nodes ENDS
-```
+## **16 - Print all Paths from Root to Leaf Nodes**
 
 ## **[Video Reference](https://youtu.be/zIkDfgFAg60)**
+
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 16:
+	System.out.println("All Paths from Root to Leaf Nodes are = ");
+	bt.rootToLeaf(bt.root);
+	break;
+
+// START 16 - Print all Paths from Root to Leaf Nodes
+	static Stack<Integer> st = new Stack<Integer>();
+	// print from root to leaf node by In-Order Traversal
+	public static void rootToLeaf(Node r) {
+		if (r == null)
+			return;
+		st.push(r.data);
+		rootToLeaf(r.left);
+		if (r.left == null && r.right == null) // if the encountered node is a leaf node
+			System.out.println(st);
+		rootToLeaf(r.right);
+		st.pop();
+	}
+// END 16 - Print all Paths from Root to Leaf Nodes
+```
 
 <hr>
 
@@ -987,7 +989,5 @@ break;
 
 <hr>
 <h1 align="center"><b><a href="./BinarySearchTree.java">SEE MY FULL IMPLEMENTED CODE HERE.</a></b></h1>
-<br>
-<br>
 
 <h1 align="center"><b>THANK YOU</b></h1>
