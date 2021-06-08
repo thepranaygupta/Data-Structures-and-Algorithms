@@ -28,6 +28,7 @@ public class BinaryTree {
 			System.out.println("13 - Print Pre-order Traversal");
 			System.out.println("14 - Print In-order Traversal");
 			System.out.println("15 - Print Post-order Traversal");
+			System.out.println("16 - Print all Paths from Root to Leaf Nodes");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -87,16 +88,20 @@ public class BinaryTree {
 				System.out.println("Sum of values at level K is = " + bt.sumAtK(bt.root, val));
 				break;
 			case 13:
-				System.out.println("The Tree Nodes in Pre-Order Fashion:");
+				System.out.println("The Tree Nodes in Pre-Order Fashion = ");
 				bt.printPreOrder(bt.root);
 				break;
 			case 14:
-				System.out.println("The Tree Nodes in In-Order Fashion:");
+				System.out.println("The Tree Nodes in In-Order Fashion = ");
 				bt.printInOrder(bt.root);
 				break;
 			case 15:
-				System.out.println("The Tree Nodes in Post-Order Fashion:");
+				System.out.println("The Tree Nodes in Post-Order Fashion = ");
 				bt.printPostOrder(bt.root);
+				break;
+			case 16:
+				System.out.println("All Paths from Root to Leaf Nodes are = ");
+				bt.rootToLeaf(bt.root);
 				break;
 //				case 2:
 //			System.out.print("Enter Value to Search: ");
@@ -345,7 +350,7 @@ class BST {
 // END 12 - Sum of values at level K
 
 // START 13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)
-	public void printPreOrder(Node r) { // N L R
+	public static void printPreOrder(Node r) { // N L R
 		if (r == null)
 			return;
 		System.out.print(r.data + " ");
@@ -355,7 +360,7 @@ class BST {
 // END 13 - Print Pre-Order Traversal
 
 // START 14 - Print In-Order Traversal (LEFT, NODE, RIGHT)
-	public void printInOrder(Node r) { // L N R
+	public static void printInOrder(Node r) { // L N R
 		if (r == null)
 			return;
 		printInOrder(r.left);
@@ -365,7 +370,7 @@ class BST {
 // END 14 - Print In-Order Traversal
 
 // START 15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)
-	public void printPostOrder(Node r) { // L R N
+	public static void printPostOrder(Node r) { // L R N
 		if (r == null)
 			return;
 		printPostOrder(r.left);
@@ -373,4 +378,19 @@ class BST {
 		System.out.print(r.data + " ");
 	}
 // END 15 - Print Post-Order Traversal
+
+// START 16 - Print all Paths from Root to Leaf Nodes
+	static Stack<Integer> st = new Stack<Integer>();
+	// print from root to leaf node by In-Order Traversal
+	public static void rootToLeaf(Node r) {
+		if (r == null)
+			return;
+		st.push(r.data);
+		rootToLeaf(r.left);
+		if (r.left == null && r.right == null) // if the encountered node is a leaf node
+			System.out.println(st);
+		rootToLeaf(r.right);
+		st.pop();
+	}
+// END 16 - Print all Paths from Root to Leaf Nodes
 }
