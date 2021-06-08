@@ -9,9 +9,8 @@
 <hr>
 
 # Prerequisites:
-- ## **[Recursion by Apna College](https://youtube.com/playlist?list=PLGeDISzAH2BQyQbj__5hjwd_6T3b9k-sm)**
 
-<br>
+- ## **[Recursion by Apna College](https://youtube.com/playlist?list=PLGeDISzAH2BQyQbj__5hjwd_6T3b9k-sm)**
 
 # **Implementations:**
 
@@ -26,7 +25,8 @@
 9. ### Print Level Order/Breadth First Search (using queue)
 10. ### Print Level Order/Breadth First Search (using Recursion)
 11. ### Print Given Level of the Tree
-<!-- 
+<!--
+
 ### **12. -| Print Preorder Traversal.**
 
 ### **13. -| Print Postorder Traversal.**
@@ -55,7 +55,7 @@
 
 <hr>
 
-## **0  - Class Definition containing all above Functions**
+## **0 - Class Definition containing all above Functions**
 
 ```java
 class BST {
@@ -86,8 +86,10 @@ class BST {
 
 <hr>
 
-## **1  - Insert a Node(Iterative Approach)**
+## **1 - Insert a Node(Iterative Approach)**
+
 ## **[Video Reference](https://youtu.be/6U4K-7fu_4A)**
+
 ![](https://user-images.githubusercontent.com/64855541/119659006-63231400-be4b-11eb-8d40-fc7bd30670b0.png)
 
 ```java
@@ -147,9 +149,11 @@ public void insertIterative(int val) {
 <hr>
 
 ## **2 - Insert a Node(Recursive Approach)**
+
 ## **[Video Reference](https://youtu.be/x6t1lKzjGhY)**
 
 ![](https://i.ibb.co/vcbxQjB/bst-insert-recursive.png)
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -181,6 +185,7 @@ case 2:
 <hr>
 
 ## **3 - Insert a Node(Level Order Insertion)**
+
 ## **[Video Reference](https://youtu.be/kjmBjhalENI)**
 
 ```java
@@ -232,6 +237,7 @@ case 3:
 <hr>
 
 ## **4 - Print 2D**
+
 ## **[Video Reference](https://youtu.be/xhkSiIeTKQo)**
 
 ```java
@@ -258,11 +264,12 @@ case 4:
 // END 4 - Print 2D
 ```
 
-
 <hr>
 
 ## **5 - Height of Tree**
+
 ## **[Video Reference](https://www.youtube.com/watch?v=M-ovXwd6_0I)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -284,10 +291,13 @@ case 4:
 	}
 // END 5 - Height of Tree
 ```
+
 <hr>
 
 ## **6 - Sum of all Nodes in the Tree**
+
 ## **[Video Reference](https://www.youtube.com/watch?v=Uze4GgUj3Fs)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -311,6 +321,7 @@ case 6:
 <hr>
 
 ## **7 - Total Number of Nodes in the Tree**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -330,10 +341,13 @@ case 7:
 	}
 // END 7 - Total Number of Nodes in the Tree
 ```
+
 <hr>
 
 ## **8 - Maximum Value in the Binary Tree**
+
 ## **[Video Reference](https://www.youtube.com/watch?v=SImAcxdgorU)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -358,7 +372,9 @@ case 8:
 <hr>
 
 ## **9 - Print Level Order/Breadth First Search (using queue)**
+
 ## **[Video Reference](https://youtu.be/vQIiUWofWw8)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -384,10 +400,13 @@ case 9:
 	}
 // END 9 - Print Level Order/Breadth First Search (using queue)
 ```
+
 <hr>
 
 ## **10 - Print Level Order/Breadth First Search (using Recursion)**
+
 ## **[Video Reference](https://youtu.be/EEm_d8WbXjs)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -405,10 +424,13 @@ case 10:
 	}
 // END 10 - Print Level Order/Breadth First Search (using Recursion)
 ```
+
 <hr>
 
 ## **11 - Print Given Level of the Tree**
+
 ## **[Video Reference](https://youtu.be/EEm_d8WbXjs)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -433,10 +455,13 @@ case 11:
 	}
 // END 11 - Print Given Level of the Tree
 ```
+
 <hr>
 
 ## **12 - Sum of values at level K**
+
 ## **[Video Reference](https://www.youtube.com/watch?v=jkxZySeOPgk)**
+
 ```java
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
@@ -465,54 +490,90 @@ case 12:
 	}
 // END 12 - Sum of values at level K
 ```
+
 <hr>
 
-# **12. -| Print Preorder Traversal.**
+## **13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)**
 
-# **13. -| Print Postorder Traversal.**
+## **[Video Reference](https://youtu.be/Pj5w6qnCXes)**
+
+![Pre-Order Traversal Pseudocode](https://i.ibb.co/Dz3mVrv/preorder.png)
 
 ```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
-			case 11:bt.printInorder(bt.root);
-			break;
-			case 12:bt.printPreorder(bt.root);
-			break;
-			case 13:bt.printPostorder(bt.root);
-			break;
+case 13:
+	System.out.println("The Tree Nodes in Pre-Order Fashion:");
+	bt.printPreOrder(bt.root);
+	break;
 
-	//11.-| Print Inorder Traversal STARTS
-		public void printInorder(Node r) {// L N R
-			if(r==null) return;
-			printInorder(r.left);
-			System.out.print(r.data+" ");
-			printInorder(r.right);
-		}
-	//11.-| Print Inorder Traversal ENDS
-
-
-	//12.-| Print Preorder Traversal STARTS
-		public void printPreorder(Node r) { // N L R
-			if(r==null) return;
-			System.out.print(r.data+" ");
-			printPreorder(r.left);
-			printPreorder(r.right);
-		}
-	//12.-| Print Preorder Traversal ENDS
-
-
-	//13.-| Print Postorder Traversal STARTS
-		public void printPostorder(Node r) { // L R N
-			if(r==null) return;
-			printPostorder(r.left);
-			printPostorder(r.right);
-			System.out.print(r.data+" ");
-		}
-	//13.-| Print Postorder Traversal ENDS
+// START 13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)
+	public void printPreOrder(Node r) { // N L R
+		if (r == null)
+			return;
+		System.out.print(r.data + " ");
+		printPreOrder(r.left);
+		printPreOrder(r.right);
+	}
+// END 13 - Print Pre-Order Traversal
 ```
 
-## **[Video Reference](https://youtu.be/2xb_mw0_-bM)**
+<hr>
+
+## **14 - Print In-Order Traversal (LEFT, NODE, RIGHT)**
+
+## **[Video Reference](https://www.youtube.com/watch?v=KIVdqquGehY)**
+
+![In-Order Traversal Pseudocode](https://i.ibb.co/nDmK5q2/inorder.png)
+
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 14:
+	System.out.println("The Tree Nodes in In-Order Fashion:");
+	bt.printInOrder(bt.root);
+	break;
+
+// START 14 - Print In-Order Traversal (LEFT, NODE, RIGHT)
+	public void printInOrder(Node r) { // L N R
+		if (r == null)
+			return;
+		printInOrder(r.left);
+		System.out.print(r.data + " ");
+		printInOrder(r.right);
+	}
+// END 14 - Print In-Order Traversal
+```
+
+<hr>
+
+## **15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)**
+
+## **[Video Reference](https://www.youtube.com/watch?v=fC3s5Pj2KuE)**
+
+![Post-Order Traversal Pseudocode](https://i.ibb.co/841kbrF/postorder.png)
+
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 15:
+	System.out.println("The Tree Nodes in Post-Order Fashion:");
+	bt.printPostOrder(bt.root);
+	break;
+
+// START 15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)
+	public void printPostOrder(Node r) { // L R N
+		if (r == null)
+			return;
+		printPostOrder(r.left);
+		printPostOrder(r.right);
+		System.out.print(r.data + " ");
+	}
+// END 15 - Print Post-Order Traversal
+```
 
 <hr>
 
