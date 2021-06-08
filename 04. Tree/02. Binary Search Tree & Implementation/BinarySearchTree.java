@@ -25,6 +25,9 @@ public class BinaryTree {
 			System.out.println("10 - Print Level Order/Breadth First Search (using Recursion)");
 			System.out.println("11 - Print a Certain Level of the Tree");
 			System.out.println("12 - Sum of values at level K");
+			System.out.println("13 - Print Pre-order Traversal");
+			System.out.println("14 - Print In-order Traversal");
+			System.out.println("15 - Print Post-order Traversal");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -83,7 +86,18 @@ public class BinaryTree {
 				bt.sum = 0;
 				System.out.println("Sum of values at level K is = " + bt.sumAtK(bt.root, val));
 				break;
-
+			case 13:
+				System.out.println("The Tree Nodes in Pre-Order Fashion:");
+				bt.printPreOrder(bt.root);
+				break;
+			case 14:
+				System.out.println("The Tree Nodes in In-Order Fashion:");
+				bt.printInOrder(bt.root);
+				break;
+			case 15:
+				System.out.println("The Tree Nodes in Post-Order Fashion:");
+				bt.printPostOrder(bt.root);
+				break;
 //				case 2:
 //			System.out.print("Enter Value to Search: ");
 //			val = sc.nextInt();
@@ -322,12 +336,41 @@ class BST {
 			return sum;
 		else if (K == 0) // if K is at root level (0)
 			sum = sum + r.data;
-		else
-		{
+		else {
 			sumAtK(r.left, K - 1);
 			sumAtK(r.right, K - 1);
 		}
 		return sum;
 	}
 // END 12 - Sum of values at level K
+
+// START 13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)
+	public void printPreOrder(Node r) { // N L R
+		if (r == null)
+			return;
+		System.out.print(r.data + " ");
+		printPreOrder(r.left);
+		printPreOrder(r.right);
+	}
+// END 13 - Print Pre-Order Traversal
+
+// START 14 - Print In-Order Traversal (LEFT, NODE, RIGHT)
+	public void printInOrder(Node r) { // L N R
+		if (r == null)
+			return;
+		printInOrder(r.left);
+		System.out.print(r.data + " ");
+		printInOrder(r.right);
+	}
+// END 14 - Print In-Order Traversal
+
+// START 15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)
+	public void printPostOrder(Node r) { // L R N
+		if (r == null)
+			return;
+		printPostOrder(r.left);
+		printPostOrder(r.right);
+		System.out.print(r.data + " ");
+	}
+// END 15 - Print Post-Order Traversal
 }
