@@ -608,35 +608,82 @@ case 16:
 
 <hr>
 
-# **15. -| Search in BST.**
+## **17 - Search in Binary Search Tree (Iterative Approach)**
+
+## **[Video Reference](https://youtu.be/adBuxEjVwYk)**
+
+![](https://i.ibb.co/h7FdKrf/searchiterative.png)
 
 ```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
 
-case 15:System.out.println("Enter value to search");
-			val=sc.nextInt();
-			System.out.println(bt.Search(val));
-break;
+case 17:
+	System.out.print("Enter the Value to Search: ");
+	val = sc.nextInt();
+	if (bt.iterativeSearch(val))
+		System.out.println("Value Found");
+	else
+		System.out.println("Value Not Found");
+//	System.out.println(bt.iterativeSearch(val));
+	break;
 
-	//15.-| Search in BST STARTS
-		public boolean Search(int val) {
-			boolean flag=false;
-			if(root==null)
-			{
-				System.out.println("Binary Tree is empty");
-			}
-			else {
-				Node temp=root;
-				while(temp!=null) {
-					if(val==temp.data) { flag= true; break;}
-					else if(val<temp.data) temp=temp.left;
-					else if(val>temp.data) temp=temp.right;
-				}
-			}
-			return flag;
+// 	START 17 - Search in Binary Search Tree(Iterative Approach)
+	public boolean iterativeSearch(int val) {
+		boolean flag = false;
+		if (root == null) {
+			System.out.println("Binary Search Tree is Empty");
 		}
-	//15.-| Search in BST ENDS
+
+		else {
+			Node temp = root;
+			while (temp != null) {
+				if (val == temp.data) { // if the node is found
+					flag = true;
+					break;
+				} else if (val < temp.data) // traverse to the left-subtree
+					temp = temp.left;
+				else if (val > temp.data) // traverse to the right-subtree
+					temp = temp.right;
+			}
+		}
+		return flag;
+	}
+// 	END 17 - Search in Binary Search Tree(Iterative Approach)
+```
+
+<hr>
+
+## **18 - Search in Binary Search Tree (Recursive Approach)**
+
+## **[Video Reference](https://youtu.be/kU9Lv3e_kxs)**
+
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 18:
+	System.out.print("Enter the Value to Search: ");
+	val = sc.nextInt();
+	if (bt.recursiveSearch(bt.root, val) == null)
+		System.out.println("Value Not Found");
+	else
+		System.out.println("Value Found");
+//	System.out.println(bt.iterativeSearch(val));
+	break;
+
+// 	START 18 - Search in Binary Search Tree(Recursive Approach)
+	public Node recursiveSearch(Node r, int val) {
+		if (r == null) // if the current node is null or the value is not present in the BST
+			return null;
+
+		if (r.data == val) // if the value is found
+			return r;
+		if (r.data > val) // when data>val then traverse to the left-subtree
+			return recursiveSearch(r.left, val);
+		return recursiveSearch(r.right, val); //when data<val then traverse to the right-subtree
+	}
+// 	END 18 - Search in Binary Search Tree(Recursive Approach)
 ```
 
 <hr>
