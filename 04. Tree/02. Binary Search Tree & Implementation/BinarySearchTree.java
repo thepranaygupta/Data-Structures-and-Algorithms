@@ -10,8 +10,8 @@ public class BinaryTree {
 		Scanner sc = new Scanner(System.in);
 		BST bt = new BST();
 		boolean flag = true;
-		int val = 0;
 		while (flag) {
+			int val = 0;
 			System.out.println();
 			System.out.println("1  - Insert a Node(Iterative Approach)");
 			System.out.println("2. - Insert a Node(Recursive Approach)");
@@ -29,6 +29,8 @@ public class BinaryTree {
 			System.out.println("14 - Print In-order Traversal");
 			System.out.println("15 - Print Post-order Traversal");
 			System.out.println("16 - Print all Paths from Root to Leaf Nodes");
+			System.out.println("17 - Search in Binary Search Tree(Iterative Approach)");
+			System.out.println("18 - Search in Binary Search Tree(Recursive Approach)");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -103,16 +105,24 @@ public class BinaryTree {
 				System.out.println("All Paths from Root to Leaf Nodes are = ");
 				bt.rootToLeaf(bt.root);
 				break;
-//				case 2:
-//			System.out.print("Enter Value to Search: ");
-//			val = sc.nextInt();
-//				System.out.println(bt.Search(val));
-//			break;
-//		case 3:
-//			System.out.print("Enter Value to Delete: ");
-//			val = sc.nextInt();
-//				bt.root=bt.delete(bt.root,val);
-//			break;
+			case 17:
+				System.out.print("Enter the Value to Search: ");
+				val = sc.nextInt();
+				if (bt.iterativeSearch(val))
+					System.out.println("Value Found");
+				else
+					System.out.println("Value Not Found");
+//				System.out.println(bt.iterativeSearch(val));
+				break;
+			case 18:
+				System.out.print("Enter the Value to Search: ");
+				val = sc.nextInt();
+				if (bt.recursiveSearch(bt.root, val) == null)
+					System.out.println("Value Not Found");
+				else
+					System.out.println("Value Found");
+//				System.out.println(bt.iterativeSearch(val));
+				break;
 			}
 		}
 	}
@@ -350,7 +360,7 @@ class BST {
 // END 12 - Sum of values at level K
 
 // START 13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)
-	public static void printPreOrder(Node r) { // N L R
+	public void printPreOrder(Node r) { // N L R
 		if (r == null)
 			return;
 		System.out.print(r.data + " ");
@@ -360,7 +370,7 @@ class BST {
 // END 13 - Print Pre-Order Traversal
 
 // START 14 - Print In-Order Traversal (LEFT, NODE, RIGHT)
-	public static void printInOrder(Node r) { // L N R
+	public void printInOrder(Node r) { // L N R
 		if (r == null)
 			return;
 		printInOrder(r.left);
@@ -370,7 +380,7 @@ class BST {
 // END 14 - Print In-Order Traversal
 
 // START 15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)
-	public static void printPostOrder(Node r) { // L R N
+	public void printPostOrder(Node r) { // L R N
 		if (r == null)
 			return;
 		printPostOrder(r.left);
@@ -381,6 +391,7 @@ class BST {
 
 // START 16 - Print all Paths from Root to Leaf Nodes
 	static Stack<Integer> st = new Stack<Integer>();
+
 	// print from root to leaf node by In-Order Traversal
 	public static void rootToLeaf(Node r) {
 		if (r == null)
@@ -393,4 +404,40 @@ class BST {
 		st.pop();
 	}
 // END 16 - Print all Paths from Root to Leaf Nodes
+
+// 	START 17 - Search in Binary Search Tree(Iterative Approach)
+	public boolean iterativeSearch(int val) {
+		boolean flag = false;
+		if (root == null) {
+			System.out.println("Binary Search Tree is Empty");
+		}
+
+		else {
+			Node temp = root;
+			while (temp != null) {
+				if (val == temp.data) { // if the node is found
+					flag = true;
+					break;
+				} else if (val < temp.data) // traverse to the left-subtree
+					temp = temp.left;
+				else if (val > temp.data) // traverse to the right-subtree
+					temp = temp.right;
+			}
+		}
+		return flag;
+	}
+// 	END 17 - Search in Binary Search Tree(Iterative Approach)
+
+// 	START 18 - Search in Binary Search Tree(Iterative Approach)
+	public Node recursiveSearch(Node r, int val) {
+		if (r == null) // if the current node is null or the value is not present in the BST
+			return null;
+
+		if (r.data == val) // if the value is found
+			return r;
+		if (r.data > val) // when data>val then traverse to the left-subtree
+			return recursiveSearch(r.left, val);
+		return recursiveSearch(r.right, val); //when data<val then traverse to the right-subtree
+	}
+// 	END 18 - Search in Binary Search Tree(Iterative Approach)
 }
