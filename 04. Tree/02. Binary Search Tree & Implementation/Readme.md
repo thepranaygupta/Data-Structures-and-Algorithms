@@ -14,48 +14,28 @@
 
 # **Implementations:**
 
-1. ### Insert a Node(Iterative Approach)
-2. ### Insert a Node(Recursive Approach)
-3. ### Insert a Node(Level Order Insertion)
-4. ### Print 2D
-5. ### Height of tree
-6. ### Sum of all Nodes in the Tree
-7. ### Total Number of Nodes in the Tree
-8. ### Maximum Value in the Binary Tree
-9. ### Print Level Order/Breadth First Search (using queue)
-10. ### Print Level Order/Breadth First Search (using Recursion)
-11. ### Print Given Level of the Tree
-<!--
-
-### **12. -| Print Preorder Traversal.**
-
-### **13. -| Print Postorder Traversal.**
-
-### **14. -| All paths from root to leaf nodes.**
-
-### **15. -| Search in BST.**
-
-### **16. -| Diameter of BT(nibbi approach).**
-
-### **17. -| Diameter of BT(legend approach).**
-
-### **18. -| isBalanced().**
-
-### **19. -| Delete node in BST.**
-
-### **20. -| Construct BT from Preorder and Inorder.**
-
-### **21. -| Construct BT from Postorder and Inorder.**
-
-### **22.-| Construct BST from Inorder**
-
-### **23.-| Construct BST from Preorder**
-
-### **24.-| Construct BST from Postorder** -->
+1. ### Insert a Node(Iterative Approach) [⤵](#1---insert-a-nodeiterative-approach)
+2. ### Insert a Node(Recursive Approach) [⤵](#2---insert-a-noderecursive-approach)
+3. ### Insert a Node(Level Order Insertion) [⤵](#3---insert-a-nodelevel-order-insertion)
+4. ### Print 2D [⤵](#4---print-2d)
+5. ### Height of tree [⤵](#5---height-of-tree)
+6. ### Sum of all Nodes in the Tree [⤵](#6---sum-of-all-nodes-in-the-tree)
+7. ### Total Number of Nodes in the Tree [⤵](#7---total-number-of-nodes-in-the-tree)
+8. ### Maximum Value in the Binary Tree [⤵](#8---maximum-value-in-the-binary-tree)
+9. ### Print Level Order/Breadth First Search (using queue) [⤵](#9---print-level-orderbreadth-first-search-using-queue)
+10. ### Print Level Order/Breadth First Search (using Recursion) [⤵](#10---print-level-orderbreadth-first-search-using-recursion)
+11. ### Print Given Level of the Tree [⤵](#11---print-given-level-of-the-tree)
+12. ### Sum of values at level K [⤵](#12---sum-of-values-at-level-k)
+13. ### Print Pre-Order Traversal (NODE, LEFT, RIGHT) [⤵](#13---print-pre-order-traversal-node-left-right)
+14. ### Print In-Order Traversal (LEFT, NODE, RIGHT) [⤵](#14---print-in-order-traversal-left-node-right)
+15. ### Print Post-Order Traversal (LEFT, RIGHT, NODE) [⤵](#15---print-post-order-traversal-left-right-node)
+16. ### Print all Paths from Root to Leaf Nodes [⤵](#16---print-all-paths-from-root-to-leaf-nodes)
+17. ### Search in Binary Search Tree (Iterative Approach) [⤵](#17---search-in-binary-search-tree-iterative-approach)
+18. ### Search in Binary Search Tree (Recursive Approach) [⤵](#18---search-in-binary-search-tree-recursive-approach)
 
 <hr>
 
-## **0 - Class Definition containing all above Functions**
+## **0 - Class Definition containing all above Functions** [⤴](#Implementations:)
 
 ```java
 class BST {
@@ -86,7 +66,7 @@ class BST {
 
 <hr>
 
-## **1 - Insert a Node(Iterative Approach)**
+## **1 - Insert a Node(Iterative Approach)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/6U4K-7fu_4A)**
 
@@ -148,7 +128,7 @@ public void insertIterative(int val) {
 
 <hr>
 
-## **2 - Insert a Node(Recursive Approach)**
+## **2 - Insert a Node(Recursive Approach)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/x6t1lKzjGhY)**
 
@@ -184,7 +164,7 @@ case 2:
 
 <hr>
 
-## **3 - Insert a Node(Level Order Insertion)**
+## **3 - Insert a Node(Level Order Insertion)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/kjmBjhalENI)**
 
@@ -236,7 +216,7 @@ case 3:
 
 <hr>
 
-## **4 - Print 2D**
+## **4 - Print 2D** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/xhkSiIeTKQo)**
 
@@ -266,7 +246,7 @@ case 4:
 
 <hr>
 
-## **5 - Height of Tree**
+## **5 - Height of Tree** [⤴](#Implementations:)
 
 ## **[Video Reference](https://www.youtube.com/watch?v=M-ovXwd6_0I)**
 
@@ -294,7 +274,7 @@ case 4:
 
 <hr>
 
-## **6 - Sum of all Nodes in the Tree**
+## **6 - Sum of all Nodes in the Tree** [⤴](#Implementations:)
 
 ## **[Video Reference](https://www.youtube.com/watch?v=Uze4GgUj3Fs)**
 
@@ -320,7 +300,7 @@ case 6:
 
 <hr>
 
-## **7 - Total Number of Nodes in the Tree**
+## **7 - Total Number of Nodes in the Tree** [⤴](#Implementations:)
 
 ```java
 // function calling in main method
@@ -344,7 +324,7 @@ case 7:
 
 <hr>
 
-## **8 - Maximum Value in the Binary Tree**
+## **8 - Maximum Value in the Binary Tree** [⤴](#Implementations:)
 
 ## **[Video Reference](https://www.youtube.com/watch?v=SImAcxdgorU)**
 
@@ -371,7 +351,7 @@ case 8:
 
 <hr>
 
-## **9 - Print Level Order/Breadth First Search (using queue)**
+## **9 - Print Level Order/Breadth First Search (using queue)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/vQIiUWofWw8)**
 
@@ -403,7 +383,7 @@ case 9:
 
 <hr>
 
-## **10 - Print Level Order/Breadth First Search (using Recursion)**
+## **10 - Print Level Order/Breadth First Search (using Recursion)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/EEm_d8WbXjs)**
 
@@ -427,7 +407,7 @@ case 10:
 
 <hr>
 
-## **11 - Print Given Level of the Tree**
+## **11 - Print Given Level of the Tree** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/EEm_d8WbXjs)**
 
@@ -458,7 +438,7 @@ case 11:
 
 <hr>
 
-## **12 - Sum of values at level K**
+## **12 - Sum of values at level K** [⤴](#Implementations:)
 
 ## **[Video Reference](https://www.youtube.com/watch?v=jkxZySeOPgk)**
 
@@ -493,7 +473,7 @@ case 12:
 
 <hr>
 
-## **13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)**
+## **13 - Print Pre-Order Traversal (NODE, LEFT, RIGHT)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/Pj5w6qnCXes)**
 
@@ -521,7 +501,7 @@ case 13:
 
 <hr>
 
-## **14 - Print In-Order Traversal (LEFT, NODE, RIGHT)**
+## **14 - Print In-Order Traversal (LEFT, NODE, RIGHT)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://www.youtube.com/watch?v=KIVdqquGehY)**
 
@@ -549,7 +529,7 @@ case 14:
 
 <hr>
 
-## **15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)**
+## **15 - Print Post-Order Traversal (LEFT, RIGHT, NODE)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://www.youtube.com/watch?v=fC3s5Pj2KuE)**
 
@@ -577,7 +557,7 @@ case 15:
 
 <hr>
 
-## **16 - Print all Paths from Root to Leaf Nodes**
+## **16 - Print all Paths from Root to Leaf Nodes** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/zIkDfgFAg60)**
 
@@ -608,7 +588,7 @@ case 16:
 
 <hr>
 
-## **17 - Search in Binary Search Tree (Iterative Approach)**
+## **17 - Search in Binary Search Tree (Iterative Approach)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/adBuxEjVwYk)**
 
@@ -654,7 +634,7 @@ case 17:
 
 <hr>
 
-## **18 - Search in Binary Search Tree (Recursive Approach)**
+## **18 - Search in Binary Search Tree (Recursive Approach)** [⤴](#Implementations:)
 
 ## **[Video Reference](https://youtu.be/kU9Lv3e_kxs)**
 
