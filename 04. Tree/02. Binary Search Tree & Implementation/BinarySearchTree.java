@@ -428,7 +428,7 @@ class BST {
 	}
 // 	END 17 - Search in Binary Search Tree(Iterative Approach)
 
-// 	START 18 - Search in Binary Search Tree(Iterative Approach)
+// 	START 18 - Search in Binary Search Tree(Recursive Approach)
 	public Node recursiveSearch(Node r, int val) {
 		if (r == null) // if the current node is null or the value is not present in the BST
 			return null;
@@ -439,5 +439,5 @@ class BST {
 			return recursiveSearch(r.left, val);
 		return recursiveSearch(r.right, val); //when data<val then traverse to the right-subtree
 	}
-// 	END 18 - Search in Binary Search Tree(Iterative Approach)
+// 	END 18 - Search in Binary Search Tree(Recursive Approach)
 }
