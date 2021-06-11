@@ -34,6 +34,7 @@ public class BinaryTree {
 			System.out.println("18 - Search in Binary Search Tree(Recursive Approach)");
 			System.out.println("19 - Diameter of Binary Tree (O(n^2) Approach)");
 			System.out.println("20 - Diameter of Binary Tree (O(n) Approach)");
+			System.out.println("21 - Delete a Node");
 //			System.out.println("3  - Delete a Node");
 			System.out.println("0  - Exit");
 
@@ -133,6 +134,11 @@ public class BinaryTree {
 				DiaPair d = new DiaPair();
 				d = bt.diameter(bt.root);
 				System.out.println("Diameter of Binary Tree (O(n) Approach) is = " + d.dia);
+				break;
+			case 21:
+				System.out.print("Enter Value to Delete: ");
+				val = sc.nextInt();
+				bt.root = bt.delete(bt.root, val);
 				break;
 			}
 		}
@@ -493,4 +499,46 @@ class BST {
 		return mp;
 	}
 // END 20 - Diameter of Binary Tree (O(n) Approach)
+
+//	START 21 - Delete a Node
+	// function to find the maximum value from the left-subtree
+	public static int maxLeft(Node node) {
+		if (node.right != null)
+			return maxLeft(node.right);
+		else
+			return node.data;
+	}
+
+	public Node delete(Node node, int val) {
+		if (node == null)
+			return null;
+		if (val < node.data) {
+			node.left = delete(node.left, val);
+		} else if (val > node.data) {
+			node.right = delete(node.right, val);
+		}
+		// when the node to be deleted is found
+		else {
+			if (node.left != null && node.right != null) // if the node has a left and right child
+			{
+				int lmax = maxLeft(node.left);
+				node.data = lmax;
+				node.left = delete(node.left, lmax);
+			}
+			// if the node has only a left child
+			else if (node.left != null) {
+				return node.left;
+			}
+			// if the node has only a right child
+			else if (node.right != null) {
+				return node.right;
+			}
+			// if the node has no child i.e., it is a leaf node
+			else {
+				return null;
+			}
+		}
+		return node;
+	}
+// END 21 - Delete a Node
 }
