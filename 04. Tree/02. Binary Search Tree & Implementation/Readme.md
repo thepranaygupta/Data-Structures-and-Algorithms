@@ -32,33 +32,15 @@
 16. ### Print all Paths from Root to Leaf Nodes
 17. ### Search in Binary Search Tree (Iterative Approach)
 18. ### Search in Binary Search Tree (Recursive Approach)
-<!--
-
-### **12. -| Print Preorder Traversal.**
-
-### **13. -| Print Postorder Traversal.**
-
-### **14. -| All paths from root to leaf nodes.**
-
-### **15. -| Search in BST.**
-
-### **16. -| Diameter of BT(nibbi approach).**
-
-### **17. -| Diameter of BT(legend approach).**
-
-### **18. -| isBalanced().**
-
-### **19. -| Delete node in BST.**
-
-### **20. -| Construct BT from Preorder and Inorder.**
-
-### **21. -| Construct BT from Postorder and Inorder.**
-
-### **22.-| Construct BST from Inorder**
-
-### **23.-| Construct BST from Preorder**
-
-### **24.-| Construct BST from Postorder** -->
+19. ### Diameter of Binary Tree (O(n^2) Approach)
+20. ### Diameter of Binary Tree (O(n) Approach)
+21. ### Delete a Node
+22. ### Construct BT from Pre-Order and In-Order
+23. ### Construct BT from Post-Order and In-Order
+24. ### Construct BST from In-Order
+25. ### Construct BST from Pre-Order
+26. ### Construct BST from Post-Order
+27. ### Check if the Binary Tree is Balanced
 
 <hr>
 
@@ -1105,6 +1087,6 @@ case 27:
 
 <hr>
 
-<h1 align="center"><b><a href="./BinarySearchTree.java">SEE MY FULL IMPLEMENTED CODE HERE.</a></b></h1>
+<h1 align="center"><b><a href="./BinarySearchTree.java">SEE MY FULL IMPLEMENTED CODE HERE</a></b></h1>
 
 <h1 align="center"><b>THANK YOU</b></h1>
