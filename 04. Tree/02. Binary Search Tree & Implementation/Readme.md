@@ -832,57 +832,59 @@ case 21:
 
 <hr>
 
-# **20. -| Construct BT from Preorder and Inorder.**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-
-case 20:
-				System.out.println("No. of Nodes in your BT ?");
-				val=sc.nextInt();
-				int preorder[]=new int[val];
-				int inorder[]=new int[val];
-
-				System.out.println("Enter values in preorder sequence");
-				for(int i=0;i<val;i++)
-					preorder[i]=sc.nextInt();
-				System.out.println("Enter values in inorder sequence");
-				for(int i=0;i<val;i++)
-					inorder[i]=sc.nextInt();
-				bt.root=bt.buildTreeFromInorderPreorder(preorder,inorder);
-break;
-
-
-//20.-| Construct BT from Preorder and Inorder STARTS
-		public  Node buildTreeFromInorderPreorder(int preorder[],int inorder[]){
-			int n=preorder.length;
-			System.out.println("Your BT is ready PRESS 4 AND ENTER to view");
-			return preInTree(preorder,0,n-1,inorder,0,n-1);
-		}
-
-		//psi=preorder starting index, pei=preorder ending index.
-		//isi=inorder starting index, iei=inorder ending inex.
-		public  Node preInTree(int pre[],int psi,int pei,int in[],int isi,int iei) {
-			if(isi>iei) return null;
-
-			int preVal=pre[psi];
-			Node n=new Node(preVal);
-			int idx=isi;
-			while(in[idx]!=pre[psi])
-				idx++;
-			int tnel=idx-isi;// total no. of element on left side/right side of root.
-
-			n.left=preInTree(pre, psi+1, psi+tnel, in, isi,idx-1);
-			n.right=preInTree(pre, psi+tnel+1, pei, in, idx+1, iei);
-
-			return n;
-		}
-//20.-| Construct BT from Preorder and Inorder ENDS
-```
+## **22 - Construct BT from Pre-Order and In-Order**
 
 ## **[Video Reference](https://youtu.be/oAbSNJ35qAs)**
 
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 22:
+	System.out.print("Enter Number of Nodes in Binary Tree: ");
+	val = sc.nextInt();
+	preorder = new int[val];
+	inorder = new int[val];
+
+	System.out.println("Enter Values in Pre-Order Sequence:");
+	for (int i = 0; i < val; i++)
+		preorder[i] = sc.nextInt();
+	System.out.println("Enter Values in In-Order Sequence:");
+	for (int i = 0; i < val; i++)
+		inorder[i] = sc.nextInt();
+	bt.root = bt.buildTreeFromInorderPreorder(preorder, inorder);
+	break;
+
+// START 22 - Construct BT from Pre-Order and In-Order
+	public Node buildTreeFromInorderPreorder(int preorder[], int inorder[]) {
+		int n = inorder.length;
+		System.out.println("Your BT is Ready PRESS 4 AND ENTER to View");
+		return preInTree(preorder, 0, n - 1, inorder, 0, n - 1);
+	}
+
+	// psi = preorder starting index
+	// pei = preorder ending index.
+	// isi = inorder starting index
+	// iei = inorder ending inex.
+	public Node preInTree(int pre[], int psi, int pei, int in[], int isi, int iei) {
+		if (isi > iei)
+			return null;
+
+		Node n = new Node(pre[psi]);
+		int idx = isi;
+		while (in[idx] != pre[psi])
+			idx++;
+		int tnel = idx - isi; // total no. of element on left side/right side of root.
+
+		n.left = preInTree(pre, psi + 1, psi + tnel, in, isi, idx - 1);
+		n.right = preInTree(pre, psi + tnel + 1, pei, in, idx + 1, iei);
+
+		return n;
+	}
+// END 22 - Construct BT from Pre-Order and In-Order
+```
+
+<hr>
 <hr>
 
 # **21. -| Construct BT from Postorder and Inorder.**
