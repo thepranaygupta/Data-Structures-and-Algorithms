@@ -43,6 +43,7 @@ public class BinaryTree {
 			System.out.println("24 - Construct BST from In-Order");
 			System.out.println("25 - Construct BST from Pre-Order");
 			System.out.println("26 - Construct BST from Post-Order");
+			System.out.println("27 - Check if the Binary Tree is Balanced");
 			System.out.println("0  - Exit");
 
 			int ch = sc.nextInt();
@@ -225,6 +226,9 @@ public class BinaryTree {
 					postorder[i] = sc.nextInt();
 				bt.root = bt.buildBSTfromPostorder(postorder);
 				break;
+			case 27:
+				bt.height(bt.root);
+				System.out.println(bt.isBal);
 
 			case 0:
 				flag = false;
@@ -327,7 +331,7 @@ class BST {
 			root = rt;
 			return;
 		}
-		
+
 		Queue<Node> q = new LinkedList<Node>();
 		q.add(rt);
 
@@ -340,14 +344,12 @@ class BST {
 				System.out.println("Value inserted at the left.");
 				root = rt;
 				return;
-			} 
-			else if (n.right == null) {
+			} else if (n.right == null) {
 				n.right = nn;
 				System.out.println("Value inserted at the right.");
 				root = rt;
 				return;
-			} 
-			else {
+			} else {
 				q.add(n.left);
 				q.add(n.right);
 			}
@@ -371,6 +373,9 @@ class BST {
 // END 4 - Print 2D
 
 // START 5 - Height of Tree
+// START 27 - Check if the Binary Tree is Balanced
+	static boolean isBal = true; // exclusive for func 27
+
 	public static int height(Node r) {
 		if (r == null)
 			return -1;
@@ -379,9 +384,16 @@ class BST {
 			int lheight = height(r.left);
 			int rheight = height(r.right);
 
+			// exclusive for function 27, ignore this condition for finding the height
+			if (Math.abs(lheight - rheight) > 1) {
+				isBal = false;
+			}
+			//
+
 			return Math.max(lheight, rheight) + 1;
 		}
 	}
+// END 27 - Check if the Binary Tree is Balanced
 // END 5 - Height of Tree
 
 // START 6 - Sum of all Nodes in the Tree
