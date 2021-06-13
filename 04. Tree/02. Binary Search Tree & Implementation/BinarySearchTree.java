@@ -746,7 +746,7 @@ class BST {
 	}
 // END 24 - Construct BST from In-Order
 
-// START 24 - Construct BST from Pre-Order	
+// START 25 - Construct BST from Pre-Order	
 	int idx = 0;
 
 	public Node buildBSTfromPreorder(int preorder[]) {
@@ -768,9 +768,9 @@ class BST {
 
 		return n;
 	}
-// END 24 - Construct BST from Pre-Order	
+// END 25 - Construct BST from Pre-Order	
 
-// START 24 - Construct BST from Post-Order
+// START 26 - Construct BST from Post-Order
 	public Node buildBSTfromPostorder(int postorder[]) {
 		int lr = -1000; // left range
 		int rr = 1000; // right range
@@ -790,5 +790,5 @@ class BST {
 
 		return n;
 	}
-// END 24 - Construct BST from Post-Order		
+// END 26 - Construct BST from Post-Order
 }
