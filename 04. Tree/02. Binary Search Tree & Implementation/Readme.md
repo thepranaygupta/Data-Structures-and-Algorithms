@@ -1068,6 +1068,43 @@ case 26:
 
 <hr>
 
+## **27 - Check if the Binary Tree is Balanced**
+
+## **[Video Reference](https://www.youtube.com/watch?v=lUDgp2D6sf8)**
+
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 27:
+	bt.height(bt.root);
+	System.out.println(bt.isBal);
+
+// START 27 - Check if the Binary Tree is Balanced
+	static boolean isBal = true; // exclusive for func 27
+
+	public static int height(Node r) {
+		if (r == null)
+			return -1;
+
+		else {
+			int lheight = height(r.left);
+			int rheight = height(r.right);
+
+			// exclusive for function 27, ignore this condition for finding the height
+			if (Math.abs(lheight - rheight) > 1) {
+				isBal = false;
+			}
+			//
+
+			return Math.max(lheight, rheight) + 1;
+		}
+	}
+// END 27 - Check if the Binary Tree is Balanced
+```
+
+<hr>
+
 <h1 align="center"><b><a href="./BinarySearchTree.java">SEE MY FULL IMPLEMENTED CODE HERE.</a></b></h1>
 
 <h1 align="center"><b>THANK YOU</b></h1>
