@@ -729,7 +729,7 @@ case 19:
 
 <hr>
 
-## **19 - Diameter of Binary Tree (O(n^2) Approach)**
+## **20 - Diameter of Binary Tree (O(n) Approach)**
 
 ## **[Video Reference](https://youtu.be/S0Bwgtn32uI)**
 
@@ -737,28 +737,37 @@ case 19:
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
 
-case 19:
-	System.out.println("Diameter of Binary Tree (O(n^2) Approach) is = " + bt.diameterOfBT(bt.root));
+case 20:
+	DiaPair d = new DiaPair();
+	d = bt.diameter(bt.root);
+	System.out.println("Diameter of Binary Tree (O(n) Approach) is = " + d.dia);
 	break;
 
-// START 19 - Diameter of Binary Tree (O(n^2) Approach)
-	public static int diameterOfBT(Node r) {
-		if (r == null)
-			return 0;
-
-		// maximum distance between two nodes of LHS (factor 1)
-		int ld = diameterOfBT(r.left);
-
-		// maximum distance between two nodes of RHS (factor 2)
-		int rd = diameterOfBT(r.right);
-
-		// maximum distance between left's deepest & right's deepest nodes (factor 3)
-		int des = height(r.left) + height(r.right) + 2;
-
-		int dia = Math.max(des, Math.max(ld, rd));
-		return dia;
+// START 20 - Diameter of Binary Tree (O(n) Approach)
+	static class DiaPair {
+		int ht;
+		int dia;
 	}
-// END 19 - Diameter of Binary Tree (O(n^2) Approach)
+
+	public static DiaPair diameter(Node node) {
+		if (node == null) {
+			DiaPair bp = new DiaPair();
+			bp.ht = -1;
+			bp.dia = 0;
+			return bp;
+		}
+		DiaPair lp = diameter(node.left);
+		DiaPair rp = diameter(node.right);
+
+		DiaPair mp = new DiaPair();
+		mp.ht = Math.max(lp.ht, rp.ht) + 1;
+
+		int des = lp.ht + rp.ht + 2;
+		mp.dia = Math.max(des, Math.max(lp.dia, rp.dia));
+
+		return mp;
+	}
+// END 20 - Diameter of Binary Tree (O(n) Approach)
 ```
 
 <hr>
