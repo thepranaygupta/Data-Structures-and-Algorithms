@@ -941,7 +941,7 @@ case 23:
 
 ## **24 - Construct BST from In-Order**
 
-## **[Video Reference](https://youtu.be/Lc3RBGtyn7M)**
+## **[Video Reference](https://youtu.be/UAsLKuEMhsQ)**
 
 ```java
 // function calling in main method
@@ -980,90 +980,94 @@ case 24:
 
 <hr>
 
-# **23.-| Construct BST from Preorder**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-
-case 23:
-				System.out.println("No. of Nodes in your BST ?");
-				val=sc.nextInt();
-				preorder=new int[val];
-				System.out.println("Enter values in preorder sequence");
-				for(int i=0;i<val;i++)
-					preorder[i]=sc.nextInt();
-				bt.root=bt.buildBSTfromPreorder(preorder);
-break;
-
-//23.-| Construct BST from Preorder Sequence STARTS.
-		public Node buildBSTfromPreorder(int preorder[]) {
-			int lr=-1000;//left range
-			int rr=1000;// right range
-			System.out.println("Your BST is ready PRESS 4 AND ENTER to view");
-			return buildBSTfromPreorder(preorder, lr, rr);
-		}
-		int idx=0;
-		private Node buildBSTfromPreorder(int[] pre, int lr, int rr) {
-			if(idx>=pre.length || pre[idx]<lr || pre[idx]>rr)
-				return null;
-
-			Node n=new Node(pre[idx++]);
-			n.left=buildBSTfromPreorder(pre, lr, n.data);
-			n.right=buildBSTfromPreorder(pre, n.data, rr);
-
-			return n;
-		}
-//23.-| Construct BST from Preorder Sequence ENDS.
-```
+## **25 - Construct BST from Pre-Order**
 
 ## **[Video Reference](https://youtu.be/Bexswo4pqZQ)**
 
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 25:
+	System.out.print("Enter Number of Nodes in Binary Search Tree: ");
+	val = sc.nextInt();
+	preorder = new int[val];
+	System.out.println("Enter Values in Pre-Order Sequence:");
+	for (int i = 0; i < val; i++)
+		preorder[i] = sc.nextInt();
+	bt.root = bt.buildBSTfromPreorder(preorder);
+	break;
+
+// START 25 - Construct BST from Pre-Order
+	int idx = 0;
+
+	public Node buildBSTfromPreorder(int preorder[]) {
+		int lr = -1000; // left range
+		int rr = 1000; // right range
+		idx = 0;
+		System.out.println("Your BST is ready PRESS 4 AND ENTER to view");
+		return buildBSTfromPreorder(preorder, lr, rr);
+	}
+
+	private Node buildBSTfromPreorder(int[] pre, int lr, int rr) {
+		if (idx >= pre.length || pre[idx] < lr || pre[idx] > rr)
+			return null;
+
+		Node n = new Node(pre[idx++]);
+
+		n.left = buildBSTfromPreorder(pre, lr, n.data);
+		n.right = buildBSTfromPreorder(pre, n.data, rr);
+
+		return n;
+	}
+// END 25 - Construct BST from Pre-Order
+```
+
 <hr>
 
-# **24.-| Construct BST from Postorder**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-
-case 24:
-				System.out.println("No. of Nodes in your BST ?");
-				val=sc.nextInt();
-				postorder=new int[val];
-				System.out.println("Enter values in postorder sequence");
-				for(int i=0;i<val;i++)
-					postorder[i]=sc.nextInt();
-				bt.root=bt.buildBSTfromPostorder(postorder);
-break;
-
-//24.-| Construct BST from Postorder Sequence STARTS.
-
-		public Node buildBSTfromPostorder(int postorder[]) {
-			int lr=-1000;//left range
-			int rr=1000;// right range
-			idx=postorder.length-1;
-			System.out.println("Your BST is ready PRESS 4 AND ENTER to view");
-			return buildBSTfromPostorder(postorder, lr, rr);
-		}
-
-		private Node buildBSTfromPostorder(int[] post, int lr, int rr) {
-			if(idx<0 || post[idx]<lr || post[idx]>rr)
-				return null;
-
-			Node n=new Node(post[idx--]);
-
-			n.right=buildBSTfromPostorder(post, n.data, rr);
-			n.left=buildBSTfromPostorder(post, lr, n.data);
-
-			return n;
-		}
-//24.-| Construct BST from Postorder Sequence ENDS.
-```
+## **26 - Construct BST from Post-Order**
 
 ## **[Video Reference](https://youtu.be/KsGXE7_y2Nw)**
 
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 26:
+	System.out.print("Enter Number of Nodes in Binary Search Tree: ");
+	val = sc.nextInt();
+	postorder = new int[val];
+	System.out.println("Enter Values in Post-Order Sequence:");
+	for (int i = 0; i < val; i++)
+		postorder[i] = sc.nextInt();
+	bt.root = bt.buildBSTfromPostorder(postorder);
+	break;
+
+// START 26 - Construct BST from Post-Order
+	public Node buildBSTfromPostorder(int postorder[]) {
+		int lr = -1000; // left range
+		int rr = 1000; // right range
+		idx = postorder.length - 1;
+		System.out.println("Your BST is Ready PRESS 4 AND ENTER to view");
+		return buildBSTfromPostorder(postorder, lr, rr);
+	}
+
+	private Node buildBSTfromPostorder(int[] post, int lr, int rr) {
+		if (idx < 0 || post[idx] < lr || post[idx] > rr)
+			return null;
+
+		Node n = new Node(post[idx--]);
+
+		n.right = buildBSTfromPostorder(post, n.data, rr);
+		n.left = buildBSTfromPostorder(post, lr, n.data);
+
+		return n;
+	}
+// END 26 - Construct BST from Post-Order
+```
+
 <hr>
+
 <h1 align="center"><b><a href="./BinarySearchTree.java">SEE MY FULL IMPLEMENTED CODE HERE.</a></b></h1>
 
 <h1 align="center"><b>THANK YOU</b></h1>
