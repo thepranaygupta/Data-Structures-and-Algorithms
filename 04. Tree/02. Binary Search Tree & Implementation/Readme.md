@@ -772,57 +772,63 @@ case 20:
 
 <hr>
 
-# **19. -| Delete node in BST.**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-
-case 19:System.out.println("Enter value to delete");
-			val=sc.nextInt();
-			bt.root=bt.delete(bt.root,val);
-break;
-
-//19.-| Delete node in BST STARTS
-		public static Node delete(Node node,int val) {
-			if(node==null) return null;
-			if(val<node.data) {
-				node.left=delete(node.left,val);
-			}
-			else if(val>node.data) {
-				node.right=delete(node.right,val);
-			}
-			else {
-				if(node.left!=null && node.right!=null) {
-					int lmax=maxLeft(node.left);
-					node.data=lmax;
-					node.left=delete(node.left,lmax);
-				}
-				else if(node.left!=null) {
-					return  node.left;
-				}
-				else if(node.right!=null) {
-					return  node.right;
-				}
-				else {
-					return null;
-				}
-			}
-			return node;
-		}
-
-		public static int maxLeft(Node node) {
-			if(node.right!=null) {
-				return maxLeft(node.right);
-			}
-			else {
-				return node.data;
-			}
-		}
-//19.-| Delete node in BST ENDS
-```
+## **21 - Delete a Node**
 
 ## **[Video Reference](https://youtu.be/5_AZcOOc-kM)**
+
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 21:
+	System.out.print("Enter Value to Delete: ");
+	val = sc.nextInt();
+	bt.root = bt.delete(bt.root, val);
+	break;
+
+//	START 21 - Delete a Node
+	// function to find the maximum value from the left-subtree
+	public static int maxLeft(Node node) {
+		if (node.right != null)
+			return maxLeft(node.right);
+		else
+			return node.data;
+	}
+
+	public Node delete(Node node, int val) {
+		if (node == null)
+			return null;
+		if (val < node.data) {
+			node.left = delete(node.left, val);
+		}
+		else if (val > node.data) {
+			node.right = delete(node.right, val);
+		}
+		// when the node to be deleted is found
+		else {
+			if (node.left != null && node.right != null) // if the node has a left and right child
+			{
+				int lmax = maxLeft(node.left);
+				node.data = lmax;
+				node.left = delete(node.left, lmax);
+			}
+			// if the node has only a left child
+			else if (node.left != null) {
+				return node.left;
+			}
+			// if the node has only a right child
+			else if (node.right != null) {
+				return node.right;
+			}
+			// if the node has no child i.e., it is a leaf node
+			else {
+				return null;
+			}
+		}
+		return node;
+	}
+// END 21 - Delete a Node
+```
 
 <hr>
 
