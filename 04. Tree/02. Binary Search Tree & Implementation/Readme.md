@@ -885,58 +885,59 @@ case 22:
 ```
 
 <hr>
-<hr>
 
-# **21. -| Construct BT from Postorder and Inorder.**
-
-```java
-// Main function calling
-BST bt=new BST(); //BST is a class containing all the above functions
-
-
-case 21:
-				System.out.println("No. of Nodes in your BT ?");
-				val=sc.nextInt();
-				int postorder[]=new int[val];
-				inorder=new int[val];
-
-				System.out.println("Enter values in postorder sequence");
-				for(int i=0;i<val;i++)
-					postorder[i]=sc.nextInt();
-				System.out.println("Enter values in inorder sequence");
-				for(int i=0;i<val;i++)
-					inorder[i]=sc.nextInt();
-				bt.root=bt.buildTreeFromInorderPostorder(postorder,inorder);
-break;
-
-
-//21.-| Construct BT from Postorder and Inorder STARTS
-		public  Node buildTreeFromInorderPostorder(int postorder[],int inorder[]){
-			int n=postorder.length;
-			System.out.println("Your BT is ready PRESS 4 AND ENTER to view");
-			return postInTree(postorder,0,n-1,inorder,0,n-1);
-		}
-
-		//psi=postorder starting index, pei=postorder ending index.
-		//isi=inorder starting index, iei=inorder ending inex.
-		public  Node postInTree(int post[],int psi,int pei,int in[],int isi,int iei) {
-			if(isi>iei) return null;
-				Node n=new Node(post[pei]);
-				int idx=isi;
-				while(in[idx]!=post[pei])
-					idx++;
-				int tnel=idx-isi;// total no. of element on left side/right side of root.
-
-			n.left=postInTree(post, psi, psi+tnel-1, in, isi,idx-1);
-			n.right=postInTree(post, psi+tnel, pei-1, in, idx+1, iei);
-
-			return n;
-		}
-//21.-| Construct BT from Postorder and Inorder ENDS
-```
+## **23 - Construct BT from Post-Order and In-Order**
 
 ## **[Video Reference](https://youtu.be/Lc3RBGtyn7M)**
 
+```java
+// function calling in main method
+BST bt=new BST(); // BST is a class that contains all functions
+
+case 23:
+	System.out.print("Enter Number of Nodes in Binary Tree: ");
+	val = sc.nextInt();
+	postorder = new int[val];
+	inorder = new int[val];
+
+	System.out.println("Enter Values in Post-Order Sequence:");
+	for (int i = 0; i < val; i++)
+		postorder[i] = sc.nextInt();
+	System.out.println("Enter Values in In-Order Sequence:");
+	for (int i = 0; i < val; i++)
+		inorder[i] = sc.nextInt();
+	bt.root = bt.buildTreeFromInorderPostorder(postorder, inorder);
+	break;
+
+// START 23 - Construct BT from Post-Order and In-Order
+	public Node buildTreeFromInorderPostorder(int postorder[], int inorder[]) {
+		int n = postorder.length;
+		System.out.println("Your BT is Ready PRESS 4 AND ENTER to View");
+		return postInTree(postorder, 0, n - 1, inorder, 0, n - 1);
+	}
+
+	// psi = postorder starting index
+	// pei = postorder ending index.
+	// isi = inorder starting index
+	// iei = inorder ending inex.
+	public Node postInTree(int post[], int psi, int pei, int in[], int isi, int iei) {
+		if (isi > iei)
+			return null;
+		Node n = new Node(post[pei]);
+		int idx = isi;
+		while (in[idx] != post[pei])
+			idx++;
+		int tnel = idx - isi; // total no of elements on left side/right side of root.
+
+		n.left = postInTree(post, psi, psi + tnel - 1, in, isi, idx - 1);
+		n.right = postInTree(post, psi + tnel, pei - 1, in, idx + 1, iei);
+
+		return n;
+	}
+// END 23 - Construct BT from Post-Order and In-Order
+```
+
+<hr>
 <hr>
 
 # **22.-| Construct BST from Inorder**
