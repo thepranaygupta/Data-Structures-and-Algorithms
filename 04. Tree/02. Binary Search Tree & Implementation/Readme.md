@@ -263,8 +263,8 @@ case 4:
 // function calling in main method
 BST bt=new BST(); // BST is a class that contains all functions
 
-case 4:
-	bt.print2D(bt.root, GLOBALSPACE);
+case 5:
+	System.out.println("Height of the Tree is = " + bt.height(bt.root));
 	break;
 
 // START 5 - Height of Tree
