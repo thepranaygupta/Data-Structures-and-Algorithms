@@ -23,14 +23,14 @@ public class AVLTree {
 			case 1:
 				System.out.print("Enter Value to Insert: ");
 				val = sc.nextInt();
-//				at.root = at.insert(at.root, val);
+				at.root = at.insert(at.root, val);
 				break;
 			case 2:
-//				at.print2D(at.root, 5);
+				at.print2D(at.root, 5);
 				break;
 			case 3:
-//				at.height(at.root);
-//				System.out.println(at.isBal);
+				at.height(at.root);
+				System.out.println(at.isBal);
 				break;
 			case 4:
 				System.out.print("Enter Value to Delete: ");
@@ -103,6 +103,49 @@ class AVL_T {
 // END Left Rotation
 
 // ------ END Some Extra Functions ------
+
+// START 1 - Insert a Node in AVL Tree
+	public Node insert(Node r, int key) {
+		if (r == null) {
+			return new Node(key);
+		}
+
+		// if the value is less than the root node then recur for the left subtree
+		else if (key < r.data) {
+			r.left = insert(r.left, key);
+		}
+
+		// else recur for the right subtree
+		else if (key > r.data) {
+			r.right = insert(r.right, key);
+		}
+
+		// key == root.data
+		else {
+			System.out.println("Value Already Exists!");
+			return r;
+		}
+
+		int bf = getBalancedFac(r);
+		// Left Case
+		if (bf > 1 && key < r.left.data)
+			return rightRotate(r);
+		// Right Case
+		else if (bf < -1 && key > r.right.data)
+			return leftRotate(r);
+		// Left-Right Case
+		else if (bf > 1 && key > r.left.data) {
+			r.left = leftRotate(r.left);
+			return rightRotate(r);
+		}
+		// Right-Left Case
+		else if (bf < -1 && key < r.right.data) {
+			r.right = rightRotate(r.right);
+			return leftRotate(r);
+		}
+		return r;
+	}
+// END 1 - Insert a Node in AVL Tree
 
 // START 2 - Print 2D
 	public void print2D(Node r, int space) {
