@@ -233,6 +233,8 @@ public class BinaryTree {
 			case 0:
 				flag = false;
 				break;
+			default:
+				System.out.println("Invalid Choice.");
 			}
 		}
 	}
