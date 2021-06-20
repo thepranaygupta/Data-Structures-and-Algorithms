@@ -65,7 +65,7 @@ class AVL_T {
 		root = null;
 	}
 
-// ------ START Some Predefined Functions ------
+// ------ START Some Extra Functions ------
 
 // START Get Balance factor of node N 
 	public int getBalancedFac(Node r) {
@@ -80,7 +80,7 @@ class AVL_T {
 	public Node rightRotate(Node r) {
 		Node nr = r.left; // new root
 		Node T2 = nr.right;
-		
+
 		// perform right rotation
 		nr.right = r;
 		r.left = T2;
@@ -93,7 +93,7 @@ class AVL_T {
 	public Node leftRotate(Node r) {
 		Node nr = r.right; // new root
 		Node T2 = nr.left;
-		
+
 		// perform left rotation
 		nr.left = r;
 		r.right = T2;
@@ -102,7 +102,22 @@ class AVL_T {
 	}
 // END Left Rotation
 
-// ------ END Some Predefined Functions ------
+// ------ END Some Extra Functions ------
+
+// START 2 - Print 2D
+	public void print2D(Node r, int space) {
+		if (r == null) // base case
+			return;
+
+		print2D(r.right, space + 5);
+		System.out.println();
+		for (int i = 0; i < space; i++)
+			System.out.print(" ");
+
+		System.out.println(r.data);
+		print2D(r.left, space + 5);
+	}
+// END 2 - Print 2D
 
 // START Height of Tree
 // START 3 - isBalanced?
