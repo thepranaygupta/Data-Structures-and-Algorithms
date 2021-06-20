@@ -2,6 +2,8 @@ package treeDS;
 
 import java.util.Scanner;
 
+import treeDS.BST.Node;
+
 public class AVLTree {
 
 	public static void main(String[] args) {
@@ -62,8 +64,69 @@ class AVL_T {
 	public AVL_T() {
 		root = null;
 	}
-//	public int height(Node r) {}
+
+// ------ START Some Predefined Functions ------
+
+// START Get Balance factor of node N 
+	public int getBalancedFac(Node r) {
+		if (r == null)
+			return -1;
+		else
+			return height(r.left) - height(r.right);
+	}
+// END Get Balance factor of node N 
+
+// START Right Rotation
+	public Node rightRotate(Node r) {
+		Node nr = r.left; // new root
+		Node T2 = nr.right;
+		
+		// perform right rotation
+		nr.right = r;
+		r.left = T2;
+
+		return nr;
+	}
+// END Right Rotation
+
+// START Left Rotation
+	public Node leftRotate(Node r) {
+		Node nr = r.right; // new root
+		Node T2 = nr.left;
+		
+		// perform left rotation
+		nr.left = r;
+		r.right = T2;
+
+		return nr;
+	}
+// END Left Rotation
+
+// ------ END Some Predefined Functions ------
+
+// START Height of Tree
+// START 3 - isBalanced?
+	static boolean isBal = true; // only to check isBalanced?
+
+	public static int height(Node r) {
+		if (r == null)
+			return -1;
+
+		else {
+			int lheight = height(r.left);
+			int rheight = height(r.right);
+
+			// only to check isBalanced?, ignore this condition for finding the height
+			if (Math.abs(lheight - rheight) > 1) {
+				isBal = false;
+			}
+			//
+			return Math.max(lheight, rheight) + 1;
+		}
+	}
+// END 3 - isBalanced?
+// END Height of Tree
+
 //	public Node insert(Node r, int key) {}
-//	public void print2D(Node r,int space) {}
 //	public Node delete(Node r,int val) {}
 }
