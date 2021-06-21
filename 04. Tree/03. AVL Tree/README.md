@@ -19,7 +19,9 @@
 
 ### **[Video Reference](https://youtu.be/_nyt5QYel3Q)**
 
-![]()
+![AVL Tree Rotation](https://user-images.githubusercontent.com/64855541/122770456-1522f400-d2c3-11eb-9d95-7bba74a9afc8.jpg)
+
+[AVL Tree Rotation.pdf](https://github.com/thepranaygupta/Data-Structures-and-Algorithms/files/6686954/AVL.Tree.Rotation.pdf)
 
 <hr>
 
@@ -78,7 +80,7 @@
 
 ## **DELETION IN AVL TREE**
 
-![](https://i.ibb.co/qWZxFqM/AVL-Tree-Deletion.png)
+<img width="960" alt="AVL Tree Deletion" src="https://user-images.githubusercontent.com/64855541/122770526-2966f100-d2c3-11eb-9c8f-b065d4d7b5e8.png">
 
 ### **Step 1: [Practical Implementation of Deletion in AVL Tree](https://youtu.be/3UivJWAFaI4)**
 
