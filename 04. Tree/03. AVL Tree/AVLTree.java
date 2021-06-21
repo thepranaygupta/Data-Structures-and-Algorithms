@@ -65,7 +65,7 @@ class AVL_T {
 		root = null;
 	}
 
-// ------ START Some Extra Functions ------
+// ------ START Some Extra User Defined Functions ------
 
 // START Get Balance factor of node N 
 	public int getBalancedFac(Node r) {
@@ -102,7 +102,7 @@ class AVL_T {
 	}
 // END Left Rotation
 
-// ------ END Some Extra Functions ------
+// ------ END Some Extra User Defined Functions ------
 
 // START 1 - Insert a Node in AVL Tree
 	public Node insert(Node r, int key) {
@@ -185,6 +185,96 @@ class AVL_T {
 // END 3 - isBalanced?
 // END Height of Tree
 
-//	public Node insert(Node r, int key) {}
-//	public Node delete(Node r,int val) {}
+// START 4 Delete a Node in AVL Tree
+	// function to find the maximum value from the left-subtree
+	public static int maxLeft(Node node) {
+		if (node.right != null)
+			return maxLeft(node.right);
+		else
+			return node.data;
+	}
+	
+	public Node delete(Node r, int val) {
+		if (r == null)
+			return null;
+		if (val < r.data) {
+			r.left = delete(r.left, val);
+		} else if (val > r.data) {
+			r.right = delete(r.right, val);
+		} 
+		// when the node to be deleted is found
+		else {
+			if (r.left != null && r.right != null) {
+				int lmax = maxLeft(r.left);
+				r.data = lmax;
+				r.left = delete(r.left, lmax);
+			} 
+			// if the node has only a left child
+			else if (r.left != null) {
+				return r.left;
+			} 
+			// if the node has only a right child
+			else if (r.right != null) {
+				return r.right;
+			} 
+			// if the node has no child i.e., it is a leaf node
+			else {
+				return null;
+			}
+		}
+
+		int bf = getBalancedFac(r);
+		
+		// if bf is 2, it means that the deletion will happen in the right subtree
+		// this will result in L-L-Imbalance or L-R-Imbalance
+		/*
+		  => bf(r.left)=1 means remaining structure in this is:-
+		 		30 bf=2
+		 	   /
+		 	  20   bf=1
+		 	 /
+		 	10     bf=0
+		
+		 => bf(r.left)=0 means remaining structure in this is:-
+		 	   30 bf=2
+		 	  /
+		 	 20   bf=0
+		 	/  \
+		   10  25   bf=0 for both
+	  */
+		if (bf == 2 && getBalancedFac(r.left) >= 0)
+			return rightRotate(r);
+		else if (bf == 2 && getBalancedFac(r.left) == -1) {
+			r.left = leftRotate(r.left);
+			return rightRotate(r);
+		}
+		
+		// if bf is -2, it means that the deletion will happen in the left subtree
+		// this will result in R-R-Imbalance or R-L-Imbalance
+		/*
+		   => bf(r.right)=-1 means remaining structure in this is:-
+		 		10 bf=-2
+		 		  \
+		 		  20 bf=-1
+		 		    \
+		 		    30 bf=0
+		 
+		
+		
+		  => bf(r.right)=0 means remaining structure in this is:-
+		 	   10  bf=-2
+		 		 \
+		 		 20 bf=0
+		 		/  \
+		 	  15    30 bf=0 for both
+	  */
+		else if (bf == -2 && getBalancedFac(r.right) <= 0)
+			return leftRotate(r);
+		else if (bf == -2 && getBalancedFac(r.right) == 1) {
+			r.right = rightRotate(r.right);
+			return leftRotate(r);
+		}
+		return r;
+	}
+// END 4 Delete a Node in AVL Tree
 }
