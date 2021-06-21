@@ -35,7 +35,7 @@ public class AVLTree {
 			case 4:
 				System.out.print("Enter Value to Delete: ");
 				val = sc.nextInt();
-//				at.root = at.delete(at.root, val);
+				at.root = at.delete(at.root, val);
 				break;
 			case 0:
 				flag = false;
