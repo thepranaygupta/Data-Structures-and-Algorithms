@@ -80,7 +80,7 @@
 
 ## **DELETION IN AVL TREE**
 
-<img width="960" alt="AVL Tree Deletion" src="https://user-images.githubusercontent.com/64855541/122770526-2966f100-d2c3-11eb-9c8f-b065d4d7b5e8.png">
+<img width="960" alt="AVL Tree Deletion" src="https://user-images.githubusercontent.com/64855541/122783991-b021cb00-d2cf-11eb-8af2-00c64f83af94.png">
 
 ### **Step 1: [Practical Implementation of Deletion in AVL Tree](https://youtu.be/3UivJWAFaI4)**
 
