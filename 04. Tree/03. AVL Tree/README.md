@@ -99,7 +99,8 @@
 			return null;
 		if (val < r.data) {
 			r.left = delete(r.left, val);
-		} else if (val > r.data) {
+		} 
+		else if (val > r.data) {
 			r.right = delete(r.right, val);
 		}
 		// when the node to be deleted is found
