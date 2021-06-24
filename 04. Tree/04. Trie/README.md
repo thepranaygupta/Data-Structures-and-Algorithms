@@ -38,7 +38,7 @@ public void insert(String wrd) {
 
 ## **[Video Reference](https://youtube.com/playlist?list=PL6Zs6LgrJj3uwRyATdtSua12k9EFQIW50)**
 
-## **[Implementation of Trie using Array.](./Tries_Array.java)**
+## **[Implementation of Trie using Array.](./Trie_Array.java)**
 
 ## **[Implementation of Trie using HashMap.](./Tries_Hash.java)**
 
