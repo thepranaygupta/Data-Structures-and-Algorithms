@@ -20,7 +20,7 @@
 
 <hr>
 
-# **Insertion of Words in a Trie**
+## **Insertion of Words in a Trie**
 
 ```java
 public void insert(String wrd) {
