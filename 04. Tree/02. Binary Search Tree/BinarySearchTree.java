@@ -18,7 +18,7 @@ public class BinaryTree {
 			int val = 0;
 			System.out.println();
 			System.out.println("1  - Insert a Node(Iterative Approach)");
-			System.out.println("2. - Insert a Node(Recursive Approach)");
+			System.out.println("2  - Insert a Node(Recursive Approach)");
 			System.out.println("3  - Insert a Node(Level Order Insertion)");
 			System.out.println("4  - Print 2D");
 			System.out.println("5  - Height of Tree");
