@@ -12,6 +12,7 @@ public class MinHeap {
 		boolean flag = true;
 		int val = 0;
 		while (flag) {
+			System.out.println();
 			System.out.println("Enter Your Choice: ");
 			System.out.println("0. Exit");
 			System.out.println("1 - Insert an Element");
@@ -29,6 +30,10 @@ public class MinHeap {
 			case 1:
 				System.out.print("Enter Value to be Inserted: ");
 				val = sc.nextInt();
+				hp.insert(val);
+				break;
+			case 2:
+				hp.display();
 				break;
 			default:
 				System.out.println("Invalid Choice");
@@ -60,6 +65,32 @@ class Min_Heap {
 	public int right(int i) {
 		return (2 * i) + 2;
 	}
+
+	public void swap(int currI, int swI) { // currentIndex, swapIndex
+		int temp = hArr[currI];
+		hArr[currI] = hArr[swI];
+		hArr[swI] = temp;
+	}
+
+// START 1 - Insert an Element
+	public void insert(int val) {
+		if (hSize == hCap) {
+			System.out.println("Heap Overflow");
+			return;
+		}
+		System.out.println("Value Inserted in Heap");
+		hSize++;
+		int i = hSize - 1;
+		hArr[i] = val;
+
+		// if the new inserted node is less than its parent then swap them
+		while (i != 0 && hArr[i] < hArr[parent(i)]) {
+			swap(i, parent(i));
+			i = parent(i);
+		}
+
+	}
+// END 1 - Insert an Element
 
 	public void display() {
 		for (int i = 0; i < hSize; i++)
