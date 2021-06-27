@@ -13,7 +13,6 @@ public class MinHeap {
 		int val = 0;
 		while (flag) {
 			System.out.println();
-			System.out.println("Enter Your Choice: ");
 			System.out.println("0. Exit");
 			System.out.println("1 - Insert an Element");
 			System.out.println("2 - Display the Heap");
@@ -22,6 +21,7 @@ public class MinHeap {
 			System.out.println("5 - minExtract()");
 			System.out.println("6 - Delete Key");
 			System.out.println("7 - Heap Sort");
+			System.out.print("Enter Your Choice: ");
 			int ch = sc.nextInt();
 			switch (ch) {
 			case 0:
@@ -91,9 +91,12 @@ class Min_Heap {
 
 	}
 // END 1 - Insert an Element
-
+	
+// START 2 - Display the Heap
 	public void display() {
 		for (int i = 0; i < hSize; i++)
 			System.out.print(hArr[i] + " ");
 	}
+// END 2 - Display the Heap
+
 }
