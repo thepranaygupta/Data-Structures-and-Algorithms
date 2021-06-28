@@ -38,7 +38,6 @@ public class MinHeap {
 			default:
 				System.out.println("Invalid Choice");
 			}
-
 		}
 	}
 }
@@ -88,10 +87,9 @@ class Min_Heap {
 			swap(i, parent(i));
 			i = parent(i);
 		}
-
 	}
 // END 1 - Insert an Element
-	
+
 // START 2 - Display the Heap
 	public void display() {
 		for (int i = 0; i < hSize; i++)
