@@ -35,6 +35,9 @@ public class MinHeap {
 			case 2:
 				hp.display();
 				break;
+			case 5:
+				System.out.println(hp.minExtract());
+				break;
 			default:
 				System.out.println("Invalid Choice");
 			}
@@ -96,5 +99,39 @@ class Min_Heap {
 			System.out.print(hArr[i] + " ");
 	}
 // END 2 - Display the Heap
+
+// START 5 - minExtract()
+	public int minExtract() {
+		if (hSize <= 0) {
+			System.out.println("Empty heap");
+			return -99999;
+		}
+		if (hSize == 1) {
+			hSize--;
+			return hArr[0];
+		}
+		int root = hArr[0];
+		hArr[0] = hArr[hSize - 1];
+		hSize--;
+		minHeapify(0);
+		return root;
+	}
+
+	public void minHeapify(int i) {
+		int l = left(i);
+		int r = right(i);
+		int smallest = i;
+
+		if (l < hSize && hArr[l] < hArr[smallest])
+			smallest = l;
+		if (r < hSize && hArr[r] < hArr[smallest])
+			smallest = r;
+
+		if (smallest != i) {
+			swap(i, smallest);
+			minHeapify(smallest);
+		}
+	}
+// END 5 - minExtract()
 
 }
