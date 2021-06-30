@@ -35,8 +35,20 @@ public class MinHeap {
 			case 2:
 				hp.display();
 				break;
+			case 3:
+				System.out.println(
+						"Height of Heap Tree = " + ((int) Math.ceil(Math.log(hp.hSize + 1) / Math.log(2)) - 1));
+				break;
+			case 4:
+				System.out.println("The Size of the Heap is = " + hp.hSize);
+				break;
 			case 5:
 				System.out.println(hp.minExtract());
+				break;
+			case 6:
+				System.out.print("Enter Key to be Deleted: ");
+				val = sc.nextInt();
+				hp.minDeleteKey(val);
 				break;
 			default:
 				System.out.println("Invalid Choice");
@@ -134,4 +146,27 @@ class Min_Heap {
 	}
 // END 5 - minExtract()
 
+// START 6 - Delete Key
+	public void minDeleteKey(int i) {
+		if (i >= hSize) {
+			System.out.println("Enter valid key");
+			return;
+		}
+		decreaseKey(i, Integer.MIN_VALUE);
+		minExtract();
+		System.out.println("Value Deleted");
+	}
+
+	// this () will set the value in deletingIndex with minimum value than will keep
+	// on swapping that deletingIndex value with its parents until it reaches root
+	// then minExtract() will be called to remove the root(which is
+	// Integer.MIN_VALUE) and heapify
+	public void decreaseKey(int i, int minVal) {
+		hArr[i] = minVal;
+		while (i != 0 && hArr[i] < hArr[parent(i)]) {
+			swap(i, parent(i));
+			i = parent(i);
+		}
+	}
+// END 6 - Delete Key
 }
