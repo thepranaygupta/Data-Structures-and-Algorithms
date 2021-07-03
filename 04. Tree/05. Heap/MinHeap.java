@@ -1,5 +1,6 @@
 package treeDS;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinHeap {
@@ -49,6 +50,14 @@ public class MinHeap {
 				System.out.print("Enter Key to be Deleted: ");
 				val = sc.nextInt();
 				hp.minDeleteKey(val);
+				break;
+			case 7:
+				hp.hSize = hp.hCap;
+				System.out.println("Enter Elements of Unsorted Array:");
+				for (int i = 0; i < hp.hCap; i++) {
+					hp.hArr[i] = sc.nextInt();
+				}
+				hp.heapSort(hp.hArr);
 				break;
 			default:
 				System.out.println("Invalid Choice");
@@ -169,4 +178,22 @@ class Min_Heap {
 		}
 	}
 // END 6 - Delete Key
+
+// START 7 - Heap Sort
+	public void heapSort(int unsortedArr[]) {
+		System.out.println("\nUnsorted Array = " + Arrays.toString(unsortedArr));
+
+		// this will convert array into a min-heap array from bottom to top
+		for (int i = (unsortedArr.length / 2) - 1; i >= 0; i--) {
+			minHeapify(i);
+		}
+
+		// actual heap sort starts
+		int sortedArr[] = new int[unsortedArr.length];
+		for (int i = 0; i < sortedArr.length; i++) {
+			sortedArr[i] = minExtract();
+		}
+		System.out.println("Sorted Array = " + Arrays.toString(sortedArr));
+	}
+// END 7 - Heap Sort
 }
