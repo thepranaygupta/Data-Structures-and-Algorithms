@@ -78,6 +78,7 @@ case 1:
 <hr>
 
 # **2 - Display the Heap**
+
 ```java
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
@@ -97,6 +98,7 @@ case 2:
 <hr>
 
 # **3 - Height of the Heap**
+
 ```java
 case 3:
 	System.out.println(
@@ -111,6 +113,7 @@ case 3:
 ## **Returning and Removing root element of Min Heap Tree** and then restructuring into Min Heap Tree this restructuring is called **Heapify.**
 
 ## **[Video Reference](https://youtu.be/AHyXBIxC63g)**
+
 ```java
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
@@ -154,12 +157,13 @@ case 5:
 // END 5 - minExtract()
 ```
 
-
 <hr>
 
 # **6 - Delete Key**
 
 ## This delete the key at particular index.
+
+## **[Video Reference](https://youtu.be/aK5Qj29C5PQ)**
 
 ```java
 //Main calling function
@@ -196,49 +200,44 @@ case 6:
 // END 6 - Delete Key
 ```
 
-## **[Video Reference](https://youtu.be/aK5Qj29C5PQ)**
-
 <hr>
 
-# **7. Heap Sort**
+# **7 - Heap Sort**
+
+## **[Video Reference](https://youtu.be/XrY8z4e5HAk)**
 
 ```java
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
 
-case 7: hp.hSize=hp.hCap;
-			System.out.println("Enter elements in unsorted array");
-			for(int i=0;i<hp.hCap;i++) {
-				hp.hArr[i]=sc.nextInt();
-			}
-			hp.heapSort(hp.hArr);
-break;
+case 7:
+	hp.hSize = hp.hCap;
+	System.out.println("Enter Elements of Unsorted Array:");
+	for (int i = 0; i < hp.hCap; i++) {
+		hp.hArr[i] = sc.nextInt();
+	}
+	hp.heapSort(hp.hArr);
+	break;
 
-
-//heap sort STARTS
+// START 7 - Heap Sort
 	public void heapSort(int unsortedArr[]) {
-		System.out.println("Unsorted Array -"+Arrays.toString(unsortedArr));
+		System.out.println("\nUnsorted Array = " + Arrays.toString(unsortedArr));
 
-		//this will convert array into minheap array from bottom to top
-		for(int i=(unsortedArr.length/2)-1; i>=0;i--) {
+		// this will convert array into a min-heap array from bottom to top
+		for (int i = (unsortedArr.length / 2) - 1; i >= 0; i--) {
 			minHeapify(i);
 		}
 
-		//actual heapsort start
-		int sortedArr[]=new int[unsortedArr.length];
-		for(int i=0;i<sortedArr.length;i++) {
-			sortedArr[i]=minExtract();
+		// actual heap sort starts
+		int sortedArr[] = new int[unsortedArr.length];
+		for (int i = 0; i < sortedArr.length; i++) {
+			sortedArr[i] = minExtract();
 		}
-		System.out.println("Sorted Array -"+Arrays.toString(sortedArr));
+		System.out.println("Sorted Array = " + Arrays.toString(sortedArr));
 	}
-//heap sort ENDS
+// END 7 - Heap Sort
 ```
-
-## **[Video Reference](https://youtu.be/XrY8z4e5HAk)**
 
 <hr>
 <h1 align="center"><b><a href="./MinHeap.java">SEE MY FULL IMPLEMENTED CODE HERE.</a></b></h1>
-<br>
-<br>
-
 <h1 align="center"><b>THANK YOU</b></h1>
