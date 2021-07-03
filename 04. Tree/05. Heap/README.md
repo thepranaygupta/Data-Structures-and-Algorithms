@@ -96,7 +96,7 @@ case 2:
 
 <hr>
 
-# **5. minExtract()**
+# **3 - Height of the Heap**
 ```java
 case 3:
 	System.out.println(
@@ -104,7 +104,7 @@ case 3:
 	break;
 ```
 
-# **5. minExtract()**
+# **5 - minExtract()**
 
 ## **Returning and Removing root element of Min Heap Tree** and then restructuring into Min Heap Tree this restructuring is called **Heapify.**
 
@@ -112,42 +112,43 @@ case 3:
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
 
-case 5: System.out.println(hp.minExtract());
-break;
+case 5:
+	System.out.println(hp.minExtract());
+	break;
 
-
-
-//minExtract STARTS
+// START 5 - minExtract()
 	public int minExtract() {
-		if(hSize<=0) {
+		if (hSize <= 0) {
 			System.out.println("Empty heap");
 			return -99999;
 		}
-		if(hSize==1) {
+		if (hSize == 1) {
 			hSize--;
 			return hArr[0];
 		}
-		int root=hArr[0];
-		hArr[0]=hArr[hSize-1];
+		int root = hArr[0];
+		hArr[0] = hArr[hSize - 1];
 		hSize--;
 		minHeapify(0);
 		return root;
 	}
 
 	public void minHeapify(int i) {
-		int l=left(i);
-		int r=right(i);
-		int smallest=i;
+		int l = left(i);
+		int r = right(i);
+		int smallest = i;
 
-		if(l<hSize && hArr[l]<hArr[smallest]) smallest=l;
-		if(r<hSize && hArr[r]<hArr[smallest]) smallest=r;
+		if (l < hSize && hArr[l] < hArr[smallest])
+			smallest = l;
+		if (r < hSize && hArr[r] < hArr[smallest])
+			smallest = r;
 
-		if(smallest!=i) {
-			swap(i,smallest);
+		if (smallest != i) {
+			swap(i, smallest);
 			minHeapify(smallest);
 		}
 	}
-	//minExtract ENDS
+// END 5 - minExtract()
 ```
 
 ## **[Video Reference](https://youtu.be/AHyXBIxC63g)**
