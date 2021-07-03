@@ -104,10 +104,13 @@ case 3:
 	break;
 ```
 
+<hr>
+
 # **5 - minExtract()**
 
 ## **Returning and Removing root element of Min Heap Tree** and then restructuring into Min Heap Tree this restructuring is called **Heapify.**
 
+## **[Video Reference](https://youtu.be/AHyXBIxC63g)**
 ```java
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
@@ -151,11 +154,10 @@ case 5:
 // END 5 - minExtract()
 ```
 
-## **[Video Reference](https://youtu.be/AHyXBIxC63g)**
 
 <hr>
 
-# **6. minDeleteKey()**
+# **6 - Delete Key**
 
 ## This delete the key at particular index.
 
@@ -163,31 +165,35 @@ case 5:
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
 
-case 6: System.out.println("Enter key to be deleted");
-			valu=sc.nextInt();
-			hp.minDeleteKey(valu);
-break;
+case 6:
+	System.out.print("Enter Key to be Deleted: ");
+	val = sc.nextInt();
+	hp.minDeleteKey(val);
+	break;
 
-
-// minDeleteKey operation STARTS
+// START 6 - Delete Key
 	public void minDeleteKey(int i) {
-		if(i>=hSize) {
-			System.out.println("Enter valid key"); return;
+		if (i >= hSize) {
+			System.out.println("Enter valid key");
+			return;
 		}
-		decreaseKey(i,-9999);
+		decreaseKey(i, Integer.MIN_VALUE);
 		minExtract();
+		System.out.println("Value Deleted");
 	}
 
-	//this () will set the value in deletingIndex with minimum value than will keep on swaping that deletingIndex value with its parents untill it reaches root.
-	public void decreaseKey(int i, int minVal){
-		hArr[i]=minVal;
-		while( i!=0 && hArr[i] < hArr[parent(i)] ) {
+	// this () will set the value in deletingIndex with minimum value than will keep
+	// on swapping that deletingIndex value with its parents until it reaches root
+	// then minExtract() will be called to remove the root(which is
+	// Integer.MIN_VALUE) and heapify
+	public void decreaseKey(int i, int minVal) {
+		hArr[i] = minVal;
+		while (i != 0 && hArr[i] < hArr[parent(i)]) {
 			swap(i, parent(i));
-			i=parent(i);
+			i = parent(i);
 		}
-
 	}
-// minDeleteKey operation ENDS
+// END 6 - Delete Key
 ```
 
 ## **[Video Reference](https://youtu.be/aK5Qj29C5PQ)**
