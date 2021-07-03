@@ -40,40 +40,69 @@
 
 <hr>
 
-# **1. Insertion in MinHeap**
+# **1 - Insert an Element**
+
+## **[Video Reference](https://youtu.be/5l3n3HFgljg)**
 
 ```java
 //Main calling function
 Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
 
-case 1: System.out.println("Enter value");
-			valu=sc.nextInt();
-			hp.minInsert(valu);
-break;
+case 1:
+	System.out.print("Enter Value to be Inserted: ");
+	val = sc.nextInt();
+	hp.insert(val);
+	break;
 
-//minInsert STARTS
-	public void minInsert(int val) {
-		if(hSize==hCap) {
-			System.out.println("Heap overflow");
+
+// START 1 - Insert an Element
+	public void insert(int val) {
+		if (hSize == hCap) {
+			System.out.println("Heap Overflow");
 			return;
 		}
 		System.out.println("Value Inserted in Heap");
 		hSize++;
-		int i=hSize-1;
-		hArr[i]=val;
+		int i = hSize - 1;
+		hArr[i] = val;
 
-		//here checking if currInsertedNode is lesser than parent node -->then SWAP
-		while(i!=0 && hArr[i] < hArr[parent(i)]) {
+		// if the new inserted node is less than its parent then swap them
+		while (i != 0 && hArr[i] < hArr[parent(i)]) {
 			swap(i, parent(i));
-			i=parent(i);
+			i = parent(i);
 		}
 	}
-//minInsert ENDS
+// END 1 - Insert an Element
 ```
 
-## **[Video Reference](https://youtu.be/5l3n3HFgljg)**
+<hr>
+
+# **2 - Display the Heap**
+```java
+//Main calling function
+Min_Heap hp=new Min_Heap(hCap); // object of Min Heap class
+
+case 2:
+	hp.display();
+	break;
+
+// START 2 - Display the Heap
+	public void display() {
+		for (int i = 0; i < hSize; i++)
+			System.out.print(hArr[i] + " ");
+	}
+// END 2 - Display the Heap
+```
 
 <hr>
+
+# **5. minExtract()**
+```java
+case 3:
+	System.out.println(
+	"Height of Heap Tree = " + ((int) Math.ceil(Math.log(hp.hSize + 1) / Math.log(2)) - 1));
+	break;
+```
 
 # **5. minExtract()**
 
