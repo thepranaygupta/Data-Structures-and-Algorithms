@@ -7,16 +7,17 @@
 <hr>
 
 ## HashSet vs TreeSet vs LinkedHashSet:
-### HashSet :
+### [HashSet :](./MyHashSet.java)
 - HashSet Use hashtable to store elements.
 - Elements are not stored in sorted order(unsorted).
 - add,remove,contain method have constant time complexitiy O(1).
 
-### TreeSet :
+### [TreeSet :](./MyTreeSet.java)
 - TreeSet Use RedBlack tree to store elements.
 - Elements are stored in sorted order (sorted).
 - add, remove, and contains methods has time complexity of O(log (n)).
-### LinkedHashSet :
+
+### [LinkedHashSet :](./MyLinkedHashSet.java)
 - LinkedHashSet is between HashSet and TreeSet. It is implemented as a hash table with a slinked list running through it.
 - The time complexity of basic methods is O(1).
 
