@@ -22,3 +22,7 @@
 - The time complexity of basic methods is O(1).
 
 #### HashSet has best-performing implementation of Set compare to LinkedHashSet and TreeSet .
+
+### Problem Link: [GFG - Subarray with 0 sum](https://practice.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1#)
+### Editorial Link: [Apni Kaksha - Anuj Kumar Sharma](https://youtu.be/PSpuM9cimxA)
+### [Code](./SubarrayWith0Sum.java)
