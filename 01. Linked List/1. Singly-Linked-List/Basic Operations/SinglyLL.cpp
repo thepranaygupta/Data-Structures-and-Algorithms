@@ -11,6 +11,46 @@ public:
 };
 Node *start = NULL, *temp, *node, *ptr;
 
+int IsEmpty()
+{
+    if (start == NULL)
+        return 1;
+    else
+        return 0;
+}
+
+int CountNodes()
+{
+    int n = 0;
+    temp = start;
+    while (temp != NULL)
+    {
+        n++;
+        temp = temp->next;
+    }
+    return n;
+}
+
+int SearchNode(int n)
+{
+    int c = 1, flag = 0;
+    temp = start;
+    while (temp != NULL)
+    {
+        if (temp->val == n)
+        {
+            flag = 1;
+            break;
+        }
+        temp = temp->next;
+        c++;
+    }
+    if (flag == 1)
+        return c;
+    else
+        return flag;
+}
+
 void CreateList()
 {
     temp = new Node();
@@ -31,13 +71,18 @@ void CreateList()
 
 void DisplayList()
 {
-    temp = start;
-    while (temp != NULL)
+    if (IsEmpty())
+        cout << "\nNothing to Display!!" << endl;
+    else
     {
-        cout << temp->val << " -> ";
-        temp = temp->next;
+        temp = start;
+        while (temp != NULL)
+        {
+            cout << temp->val << " -> ";
+            temp = temp->next;
+        }
+        cout << endl;
     }
-    cout << endl;
 }
 
 void InsertBeg()
@@ -51,34 +96,56 @@ void InsertBeg()
 
 void InsertEnd()
 {
-    temp = new Node();
-    cout << "Enter the value : ";
-    cin >> temp->val;
-    ptr = start;
-    while (ptr->next != NULL)
+
+    if (IsEmpty())
+        CreateList();
+    else
     {
-        ptr = ptr->next;
+        temp = new Node();
+        cout << "Enter the value : ";
+        cin >> temp->val;
+        ptr = start;
+        while (ptr->next != NULL)
+        {
+            ptr = ptr->next;
+        }
+        ptr->next = temp;
+        temp->next = NULL;
     }
-    ptr->next = temp;
-    temp->next = NULL;
 }
 
 void InsertAfter()
 {
-    int n, c = 1;
+    int n;
     temp = start;
     cout << "Enter position : ";
     cin >> n;
-    while (c != n)
+    if (n == 1)
     {
-        temp = temp->next;
-        c++;
+        if (IsEmpty())
+            CreateList();
+        else
+            InsertBeg();
     }
-    ptr = new Node();
-    cout << "Enter value : ";
-    cin >> ptr->val;
-    ptr->next = temp->next;
-    temp->next = ptr;
+    else
+    {
+        if (n > 0 && n <= CountNodes())
+        {
+            int c = 1;
+            while (c != n)
+            {
+                temp = temp->next;
+                c++;
+            }
+            ptr = new Node();
+            cout << "Enter value : ";
+            cin >> ptr->val;
+            ptr->next = temp->next;
+            temp->next = ptr;
+        }
+        else
+            cout << "\nInvalid Position!!" << endl;
+    }
 }
 
 void InsertBefore()
@@ -86,53 +153,49 @@ void InsertBefore()
     int n;
     cout << "Enter the Element Before You Want to Insert : ";
     cin >> n;
-    temp = start;
-    while (temp->next->val != n)
+    if (SearchNode(n))
     {
-        temp = temp->next;
+        temp = start;
+        while (temp->next->val != n)
+        {
+            temp = temp->next;
+        }
+        ptr = new Node();
+        cout << "Enter value : ";
+        cin >> ptr->val;
+        ptr->next = temp->next;
+        temp->next = ptr;
     }
-    ptr = new Node();
-    cout << "Enter value : ";
-    cin >> ptr->val;
-    ptr->next = temp->next;
-    temp->next = ptr;
+    else
+        cout << "Element not found!!" << endl;
 }
 
-void SearchNode()
-{
-    int n, c = 1, flag = 0;
-    cout << "Enter element to search : ";
-    cin >> n;
-    temp = start;
-    while (temp != NULL)
-    {
-        if (temp->val == n)
-        {
-            flag = 1;
-            break;
-        }
-        temp = temp->next;
-        c++;
-    }
-    if (flag == 1)
-        cout << "Element found at " << c << " position\n";
-    else
-        cout << "Element not found\n";
-}
 void DeleteFirst()
 {
-    temp = start;
-    start = temp->next;
+    if (IsEmpty())
+        cout << "\nNothing to delete!!" << endl;
+    else
+    {
+        temp = start;
+        start = temp->next;
+        delete temp;
+    }
 }
 
 void DeleteLast()
 {
-    temp = start;
-    while(temp->next->next!=NULL)
+    if (IsEmpty())
+        cout << "\nNothing to delete!!" << endl;
+    else
     {
-        temp = temp->next;
+        temp = start;
+        while (temp->next->next != NULL)
+        {
+            temp = temp->next;
+        }
+        delete (temp->next);
+        temp->next = NULL;
     }
-    temp->next = NULL;
 }
 // // // // // // // // // // // // void DeleteLast()
 // {
@@ -151,13 +214,30 @@ void DeletePos()
     int n, c = 1;
     cout << "Enter position : ";
     cin >> n;
-    temp = start;
-    while (c != n - 1)
+    if (n == 1)
     {
-        temp = temp->next;
-        c++;
+        if (IsEmpty())
+            cout << "\nNothing to Delete!!" << endl;
+        else
+            DeleteFirst();
     }
-    temp->next = temp->next->next;
+    else
+    {
+        if (n > 0 && n <= CountNodes())
+        {
+            temp = start;
+            while (c != n - 1)
+            {
+                temp = temp->next;
+                c++;
+            }
+            ptr = temp->next;
+            temp->next = temp->next->next;
+            delete (ptr);
+        }
+        else
+            cout << "Invalid Position!!" << endl;
+    }
 }
 
 void DeleteVal()
@@ -165,33 +245,49 @@ void DeleteVal()
     int n;
     cout << "Enter value to delete : ";
     cin >> n;
-    temp = start;
-    while (temp->next->val != n)
+    if (IsEmpty())
+        cout << "\nNothing to Delete!!" << endl;
+    else
     {
-        temp = temp->next;
+        if (SearchNode(n))
+        {
+            int c = 0;
+            temp = start;
+            while (temp->next->val != n)
+            {
+                temp = temp->next;
+            }
+            delete (temp->next);
+            temp->next = temp->next->next;
+        }
+        else
+            cout << "Element not found!!" << endl;
     }
-    temp->next = temp->next->next;
 }
 
 void UpdateNode()
 {
     temp = start;
-    int val, count = 1,newvalue;
+    int v, count = 1, newvalue;
     cout << "Enter the value : ";
-    cin >> val;
-    while (temp->val != val)
+    cin >> v;
+    if (SearchNode(v))
     {
-        temp = temp->next;
-        count++;
+        while (temp->val != v)
+        {
+            temp = temp->next;
+            count++;
+        }
+        cout << "Enter the new value : ";
+        cin >> newvalue;
+        temp->val = newvalue;
     }
-    cout<<"Enter the new value : ";
-    cin>>newvalue;
-    temp -> val = newvalue;
+    else
+        cout << "Invalid Input!!" << endl;
 }
 
 void ReverseList()
 {
-    
 }
 
 int main()
@@ -199,27 +295,27 @@ int main()
     int ch;
     do
     {
-        cout << "\n...M.E.N.U...\n";
-        cout << "1...Create List.\n";
-        cout << "2...Display List.\n";
-        cout << "3...Insert at beginning.\n";
-        cout << "4...Insert at the end.\n";
-        cout << "5...Insert after specific position.\n";
-        cout << "6...Insert before a given node.\n";
-        cout << "7...Search an element.\n";
-        cout << "8...Delete first element.\n";
-        cout << "9...Delete last element.\n";
-        cout << "10...Delete any position.\n";
-        cout << "11...Delete any value.\n";
-        cout << "12...Update a node.\n";
-        cout << "13...Reverse the List.\n";
-        cout << "0...EXIT.\n";
+        cout << "\n\t-: M E N U :- \n================================" << endl;
+        cout << "1.....Create List." << endl;
+        cout << "2.....Display List." << endl;
+        cout << "3.....Insert at beginning." << endl;
+        cout << "4.....Insert at the end." << endl;
+        cout << "5.....Insert after specific position." << endl;
+        cout << "6.....Insert before a given node." << endl;
+        cout << "7.....Search an element." << endl;
+        cout << "8.....Delete first element." << endl;
+        cout << "9.....Delete last element." << endl;
+        cout << "10.....Delete any position." << endl;
+        cout << "11.....Delete any value." << endl;
+        cout << "12.....Update a node." << endl;
+        cout << "13.....Reverse the List." << endl;
+        cout << "0.....EXIT." << endl;
         cout << "\nEnter your choice : ";
         cin >> ch;
         switch (ch)
         {
         case 0:
-            printf("\nEnd of Program\n");
+            cout << "\nEnd of Program" << endl;
             break;
         case 1:
             CreateList();
@@ -240,7 +336,13 @@ int main()
             InsertBefore();
             break;
         case 7:
-            SearchNode();
+            int n;
+            cout << "Enter element to search : ";
+            cin >> n;
+            if (SearchNode(n))
+                cout << "Element found at " << SearchNode(n) << " position!" << endl;
+            else
+                cout << "Element not found!" << endl;
             break;
         case 8:
             DeleteFirst();
@@ -261,7 +363,7 @@ int main()
             ReverseList();
             break;
         default:
-            cout << "\nInvalid Input!!\n";
+            cout << "\nInvalid Input!!" << endl;
             break;
         }
     } while (ch != 0);
