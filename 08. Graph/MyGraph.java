@@ -33,6 +33,12 @@ public class MyGraph {
 		}
 		g1.printAdjacencyList();
 		g1.printBFS();
+		g1.printDFS();
+
+		if (choice == 1) {
+			System.out.println("Cycle Detected  in Undirected Graph using BFS= " + g1.isCycleBfsUg());
+			System.out.println("Cycle Detected  in Undirected Graph using DFS= " + g1.isCycleDfsUg());
+		}
 
 	}
 
@@ -60,10 +66,10 @@ class Graph1 {
 	public void printAdjacencyList() {
 		System.out.println("Adjacency List:");
 		for (int i = 0; i < graph.length; i++) {
-			System.out.print(i + "-->");
+			System.out.print(i + "--> ");
 			int j = 0;
 			while (j < graph[i].size()) {
-				System.out.print(graph[i].get(j) + " ");
+				System.out.print(graph[i].get(j) + "  ");
 				j++;
 			}
 			System.out.println();
@@ -119,4 +125,71 @@ class Graph1 {
 		}
 	}
 // END DFS
+
+// START Cycle Detection in Undirected Graph using BFS
+	class Pair {
+		int current;
+		int parent;
+
+		public Pair(int curr, int par) {
+			current = curr;
+			parent = par;
+		}
+	}
+
+	private boolean cycleBfsUg(int i, boolean vis[]) {
+		vis[i] = true;
+		Queue<Pair> q = new LinkedList<>();
+		q.add(new Pair(i, -1));
+
+		while (!q.isEmpty()) {
+			int vert = q.peek().current;
+			int par = q.poll().parent;
+
+			for (Integer adj : graph[vert]) {
+				if (!vis[adj]) {
+					vis[adj] = true;
+					q.add(new Pair(adj, vert));
+				} else if (vis[adj] && adj != par)
+					return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isCycleBfsUg() {
+		boolean vis[] = new boolean[graph.length];
+		for (int i = 0; i < graph.length; i++) {
+			if (!vis[i])
+				if (cycleBfsUg(i, vis))
+					return true;
+		}
+		return false;
+	}
+// END Cycle Detection in Undirected Graph using BFS
+
+// START Cycle Detection in Undirected Graph using DFS
+	private boolean cycleDfsUg(int vert, int parent, boolean vis[]) {
+		vis[vert] = true;
+		for (Integer adj : graph[vert]) {
+			if (!vis[adj]) {
+				if (cycleDfsUg(adj, vert, vis))
+					return true;
+			} else if (adj != parent)
+				return true;
+		}
+		return false;
+	}
+	
+	public boolean isCycleDfsUg() {
+		boolean vis[] = new boolean[graph.length];
+		for (int i = 0; i < graph.length; i++) {
+			if (!vis[i]) {
+				if (cycleDfsUg(i, -1, vis))
+					return true;
+			}
+		}
+		return false;
+	}
+// END Cycle Detection in Undirected Graph using DFS
 }
