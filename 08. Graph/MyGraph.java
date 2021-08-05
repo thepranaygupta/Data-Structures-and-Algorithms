@@ -36,12 +36,12 @@ public class MyGraph {
 		g1.printDFS();
 
 		if (choice == 1) {
-			System.out.println("Cycle Detected  in Undirected Graph using BFS= " + g1.isCycleBfsUg());
-			System.out.println("Cycle Detected  in Undirected Graph using DFS= " + g1.isCycleDfsUg());
+			System.out.println("Cycle Detected  in Undirected Graph using BFS = " + g1.isCycleBfsUg());
+			System.out.println("Cycle Detected  in Undirected Graph using DFS = " + g1.isCycleDfsUg());
+			System.out.println("Bipartite Graph Detection in Undirected Graph using BFS = " + g1.isBipartiteBFSug());
+			System.out.println("Bipartite Graph Detection in Undirected Graph using DFS = " + g1.isBipartiteDFSug());
 		}
-
 	}
-
 }
 
 class Graph1 {
@@ -76,9 +76,9 @@ class Graph1 {
 		}
 	}
 
-// START BFS
+// START printBFS
 	public void printBFS() {
-		System.out.println("BFS Traversal: ");
+		System.out.print("\nBFS Traversal: ");
 		boolean vis[] = new boolean[graph.length]; // visited array
 		for (int i = 0; i < graph.length; i++) {
 			if (!vis[i]) {
@@ -98,13 +98,12 @@ class Graph1 {
 				}
 			}
 		}
-		System.out.println();
 	}
-// END DFS
+// END printBFS
 
 // START printDFS
 	public void printDFS() {
-		System.out.println("DFS Traversal:");
+		System.out.print("\nDFS Traversal: ");
 		boolean vis[] = new boolean[graph.length];
 		for (int i = 0; i < graph.length; i++) {
 			if (!vis[i]) {
@@ -124,7 +123,7 @@ class Graph1 {
 			}
 		}
 	}
-// END DFS
+// END printDFS
 
 // START Cycle Detection in Undirected Graph using BFS
 	class Pair {
@@ -156,7 +155,7 @@ class Graph1 {
 		}
 		return false;
 	}
-	
+
 	public boolean isCycleBfsUg() {
 		boolean vis[] = new boolean[graph.length];
 		for (int i = 0; i < graph.length; i++) {
@@ -180,7 +179,7 @@ class Graph1 {
 		}
 		return false;
 	}
-	
+
 	public boolean isCycleDfsUg() {
 		boolean vis[] = new boolean[graph.length];
 		for (int i = 0; i < graph.length; i++) {
@@ -192,4 +191,69 @@ class Graph1 {
 		return false;
 	}
 // END Cycle Detection in Undirected Graph using DFS
+
+// START Bipartite Graph (BFS)
+	private boolean bipartiteBfsUg(int i, int color[]) {
+		Queue<Integer> q = new LinkedList<>();
+		color[i] = 0; // can initialize this as 1 or 0 (your choice)
+		q.add(i);
+
+		while (!q.isEmpty()) {
+			int vert = q.poll();
+
+			for (Integer adj : graph[vert]) {
+				if (color[adj] == -1) { // check if the adjacent node is not colored
+					color[adj] = 1 - color[vert]; // color the adjacent node with the opposite color
+					q.add(adj);
+				}
+				// if the adjacent node is of the same color as the current node then it is not
+				// a Bipartite
+				else if (color[adj] == color[vert])
+					return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean isBipartiteBFSug() {
+		int color[] = new int[graph.length];
+		Arrays.fill(color, -1);
+		for (int i = 0; i < graph.length; i++) {
+			if (color[i] == -1)
+				if (!bipartiteBfsUg(i, color))
+					return false;
+		}
+		return true;
+	}
+// END Bipartite Graph (BFS)
+
+// START Bipartite Graph (DFS)
+	private boolean bipartiteDfsUg(int vert, int color[]) {
+		for (Integer adj : graph[vert]) {
+			if (color[adj] == -1) { // check if the adjacent node is not colored
+				color[adj] = 1 - color[vert]; // color the adjacent node with the opposite color
+				if (!bipartiteDfsUg(adj, color))
+					return false;
+			}
+			// if the adjacent node is of the same color as the current node then it is not
+			// a Bipartite
+			else if (color[adj] == color[vert])
+				return false;
+		}
+		return true;
+	}
+
+	public boolean isBipartiteDFSug() {
+		int color[] = new int[graph.length];
+		Arrays.fill(color, -1);
+		for (int i = 0; i < graph.length; i++) {
+			if (color[i] == -1) {
+				color[i] = 0;
+				if (!bipartiteDfsUg(i, color))
+					return false;
+			}
+		}
+		return true;
+	}
+// END Bipartite Graph (DFS)
 }
