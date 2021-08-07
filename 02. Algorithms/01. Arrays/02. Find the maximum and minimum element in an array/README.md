@@ -31,3 +31,31 @@ class Compute
     }
 }
 ```
+
+- ## Approach 2: Sort the Array, TC = O(nlog(n))
+```java
+//User function Template for Java
+
+/*
+ class pair  
+{  
+    long first, second;  
+    public pair(long first, long second)  
+    {  
+        this.first = first;  
+        this.second = second;  
+    }  
+} */
+
+class Compute 
+{
+    static pair getMinMax(long a[], long n)  
+    {
+        pair mm = new pair(a[0], a[0]);
+        Arrays.sort(a);
+        mm.first = a[0];
+        mm.second = a[a.length - 1];
+        return mm;
+    }
+}
+```
