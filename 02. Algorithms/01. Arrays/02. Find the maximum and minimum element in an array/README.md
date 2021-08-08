@@ -1,7 +1,36 @@
 ### Problem Link: https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1#
 ### Editorial Link: https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
 
-- ## Approach 1: Traverse Linearly, TC = O(n)
+
+- ## Approach 1: Sort the Array, TC = O(nlog(n))
+```java
+//User function Template for Java
+
+/*
+ class pair  
+{  
+    long first, second;  
+    public pair(long first, long second)  
+    {  
+        this.first = first;  
+        this.second = second;  
+    }  
+} */
+
+class Compute 
+{
+    static pair getMinMax(long a[], long n)  
+    {
+        pair mm = new pair(a[0], a[0]);
+        Arrays.sort(a);
+        mm.first = a[0];
+        mm.second = a[a.length - 1];
+        return mm;
+    }
+}
+```
+
+- ## Approach 2: Traverse Linearly, TC = O(n)
 ```java
 //User function Template for Java
 
@@ -33,35 +62,7 @@ class Compute
 }
 ```
 
-- ## Approach 2: Sort the Array, TC = O(nlog(n))
-```java
-//User function Template for Java
-
-/*
- class pair  
-{  
-    long first, second;  
-    public pair(long first, long second)  
-    {  
-        this.first = first;  
-        this.second = second;  
-    }  
-} */
-
-class Compute 
-{
-    static pair getMinMax(long a[], long n)  
-    {
-        pair mm = new pair(a[0], a[0]);
-        Arrays.sort(a);
-        mm.first = a[0];
-        mm.second = a[a.length - 1];
-        return mm;
-    }
-}
-```
-
-- ## Approach 3: Tournament Method (Divide and Conquer), TC = O(n) but less number of comparisons
+- ## Approach 3: Tournament Method (Divide and Conquer), TC = O(n) but lesser number of comparisons
 Divide the array into two parts and compare the maximums and minimums of the two parts to get the maximum and the minimum of the whole array.
 ```java
 //User function Template for Java
