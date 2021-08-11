@@ -7,4 +7,4 @@
 > - Worst Case: O(n²)
 ![image](https://user-images.githubusercontent.com/64855541/128990677-5ad81624-5d39-40e3-b4bc-cb7fa24eb49f.png)
 
-**Although the worst case time complexity of QuickSort is O(n2) which is more than many other sorting algorithms like Merge Sort and Heap Sort, QuickSort is faster in practice.**
+**Although the worst case time complexity of QuickSort is O(n²) which is more than many other sorting algorithms like Merge Sort and Heap Sort, QuickSort is faster in practice. <br> Quick Sort is often the most practical choice for an efficient sorting algorithm in fact sort function given to us by most of the language libraries are implementations of Quick Sort.**
