@@ -11,6 +11,7 @@ public class Merge_Sort {
 
 		int n = arr.length;
 		sort(arr, 0, n - 1);
+		System.out.println("Array after Sorting: " + Arrays.toString(arr));
 	}
 
 	static void sort(int arr[], int l, int r) {
@@ -32,10 +33,11 @@ public class Merge_Sort {
 		int j = mid + 1;
 
 		// create pointer to the temporary array
-		int k = l;
+		int k = 0;
 
+		// iterate through the subarrays until one of them gets exhausted
 		while (i <= mid && j <= r) {
-			if (arr[i] < arr[j]) {
+			if (arr[i] <= arr[j]) {
 				temp[k] = arr[i];
 				i++;
 			} else {
@@ -44,5 +46,29 @@ public class Merge_Sort {
 			}
 			k++;
 		}
+
+		// if the left subarray is exhausted, then copy all the remaining elements from
+		// the right subarray to temp
+		if (i > mid) {
+			while (j <= r) {
+				temp[k] = arr[j];
+				k++;
+				j++;
+			}
+		}
+
+		// if the right subarray is exhausted, then copy all the remaining elements from
+		// the left subarray to temp
+		else if (j > r) {
+			while (i <= mid) {
+				temp[k] = arr[i];
+				k++;
+				i++;
+			}
+		}
+
+		// copy temp to original array
+		for (i = l, k = 0; i <= r; i++, k++)
+			arr[i] = temp[k];
 	}
 }
