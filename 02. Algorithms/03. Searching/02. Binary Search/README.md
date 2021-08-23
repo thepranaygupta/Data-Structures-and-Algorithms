@@ -1,6 +1,7 @@
 ### [Video Reference](https://youtu.be/f6UU7V3szVw)
 
 ### Time Complexity: O(log n), where n is the size of the array
+![time complexity analysis](https://user-images.githubusercontent.com/64855541/130475812-0709a410-b454-468a-9c7d-507630935b37.png)
 
 ```java
 //initial arguments will be: (array, element to be searched)
