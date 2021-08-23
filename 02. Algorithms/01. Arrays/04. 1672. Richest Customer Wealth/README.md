@@ -2,6 +2,7 @@
 
 https://leetcode.com/problems/richest-customer-wealth/
 
+## Approach 1:
 ```java
 class Solution {
     public int maximumWealth(int[][] arr) {
@@ -13,6 +14,25 @@ class Solution {
             }
             if(iwealth > maxWealth)
                 maxWealth = iwealth;
+        }
+        return maxWealth;
+    }
+}
+```
+
+## Approach 2: using for-each loop
+
+```java
+class Solution {
+    public int maximumWealth(int[][] arr) {
+        int maxWealth = Integer.MIN_VALUE;
+        for(int[] person: arr){
+            int wealth = 0;
+            for(int bank: person){
+                wealth += bank;
+            }
+            if(wealth > maxWealth)
+                maxWealth = wealth;
         }
         return maxWealth;
     }
