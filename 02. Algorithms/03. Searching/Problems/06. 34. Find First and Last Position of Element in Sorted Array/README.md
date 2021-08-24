@@ -2,6 +2,9 @@
 
 ## [Video Tutorial](https://youtu.be/W9QJ8HaRvJQ?t=3733)
 
+![image](https://user-images.githubusercontent.com/64855541/130629074-2a8cb570-19d4-414d-97bf-306c6fba183b.png)
+
+
 ```java
 class Solution {
     public int[] searchRange(int[] nums, int target) {
