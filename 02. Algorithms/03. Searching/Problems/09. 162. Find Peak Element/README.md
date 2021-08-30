@@ -2,7 +2,7 @@
 
 ## https://leetcode.com/problems/find-peak-element/
 
-## Same as: [852. Peak Index in a Mountain Array](./08.%20852.%20Peak%20Index%20in%20a%20Mountain%20Array/)
+## Same as: [852. Peak Index in a Mountain Array](../08.%20852.%20Peak%20Index%20in%20a%20Mountain%20Array/)
 
 ``` java
 class Solution {
