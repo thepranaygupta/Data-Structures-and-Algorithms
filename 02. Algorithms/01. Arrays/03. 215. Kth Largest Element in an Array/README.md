@@ -11,3 +11,5 @@ class Solution {
     }
 }
 ```
+
+### Approach 2:
