@@ -34,3 +34,22 @@ class Solution
 ### Approach 3: Dutch National Flag Algorithm, TC = O(N)
 ![Untitled-2021-08-29-1215 (1)](https://user-images.githubusercontent.com/64855541/131707783-d718c0d7-8a77-4aa9-8b0c-c9984d1fa8df.png)
 
+```java
+public void sortColors(int[] arr) {
+    int low = 0, mid = 0, high = arr.length - 1;
+    while(mid <= high) {
+        if(arr[mid] == 0) {
+            swap(arr, low, mid);
+            low++;
+            mid++;
+        }
+        else if(arr[mid] == 1) {
+            mid++;
+        }
+        else if(arr[mid] == 2) {
+            swap(arr, high, mid);
+            high--;
+        }
+    }
+}
+```
