@@ -13,7 +13,9 @@ class Solution {
 ```
 
 ### Approach 2: Using a Priority Queue, TC = O(N + KlogN)
-> [Video Tutorial](https://youtu.be/yAs3tONaf3s)
+> If we want the `largest item` we need a `MinHeap`, since we don't care about the smallest items. <br>
+> If we want the `smallest item` we need a `MaxHeap`, since we don't care about the largest items. <br>
+> **[Video Tutorial](https://youtu.be/hGK_5n81drs)**
 - We will make a MinPQ of size K and initiallise it with 1st k elements.
 - This PQ will store K largest element always, so we will iterate from k to last and add elements a[i] if it is more than pq.peek()
 - and in last we will return pq.peek();
