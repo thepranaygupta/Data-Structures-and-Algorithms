@@ -2,9 +2,9 @@
 ## https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1#
 ## https://leetcode.com/problems/sort-colors/
 
-### Approach 1: Sort the Array, TC: O(N logN)
+### Approach 1: Sort the Array, TC = O(N logN)
 
-### Approach 2: Counting Sort, TC: O(N)
+### Approach 2: Counting Sort, TC = O(N)
 > Count the number of 0’s, 1’s and 2’s. After Counting, put all 0’s first, then 1’s and lastly 2’s in the array. We traverse the array two times.
 ```java
 class Solution
@@ -31,3 +31,6 @@ class Solution
     }
 }
 ```
+### Approach 3: Dutch National Flag Algorithm, TC = O(N)
+![Untitled-2021-08-29-1215 (1)](https://user-images.githubusercontent.com/64855541/131707783-d718c0d7-8a77-4aa9-8b0c-c9984d1fa8df.png)
+
