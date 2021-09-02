@@ -1,4 +1,4 @@
-# Complete [Java + DSA Bootcamp Syllabus](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java)
+# Complete [Java + DSA Bootcamp](https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ) Syllabus
 
 ## NOTE: 
 - All topics will contain problems from LeetCode Easy to Hard, explained in an easy-to-understand manner.
