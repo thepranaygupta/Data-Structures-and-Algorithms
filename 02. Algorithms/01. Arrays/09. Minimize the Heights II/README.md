@@ -1,5 +1,6 @@
 ## Minimize the Heights II
 ## https://practice.geeksforgeeks.org/problems/minimize-the-heights3351/1#
+## Similar Question on [LeetCode](https://leetcode.com/problems/smallest-range-ii/)
 ### [Video Tutorial](https://youtu.be/o9WG7t6EKZo)
 
 ## Complexity:
