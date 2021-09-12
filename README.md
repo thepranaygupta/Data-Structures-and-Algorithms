@@ -8,4 +8,4 @@
 
 **_If you appreciate my work, please 🌟 this repository. It motivates me. :rocket: :rocket:_**
 
-## DSA Sheet: https://bit.ly/pranayDSA
+## DSA Sheet: https://bit.ly/pranayDSAsheet
