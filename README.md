@@ -460,3 +460,7 @@ Data-Structures-and-Algorithms
                     README.md
                     Solution.java
 ```
+
+### If you have come this far here are a few words of wisdom:
+
+https://user-images.githubusercontent.com/64855541/133890198-fed21f87-434b-45e1-b991-c015de1a849a.mp4
