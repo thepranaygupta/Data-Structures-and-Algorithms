@@ -1,3 +1,15 @@
+## 509. Fibonacci Number
+## https://leetcode.com/problems/fibonacci-number/
+```java
+class Solution {
+    public int fib(int n) {
+        if (n < 2)
+		return n;
+	return (fib(n - 1) + fib(n - 2));
+    }
+}
+```
+
 ## Print Fibonacci Number Series upto N
 ```java
 public class Fibonacci {
