@@ -1,5 +1,8 @@
 ## 509. Fibonacci Number
 ## https://leetcode.com/problems/fibonacci-number/
+
+### Time Complexity: O(2^N)
+### Auxiliary Space Complexity: O(N)
 ```java
 class Solution {
     public int fib(int n) {
