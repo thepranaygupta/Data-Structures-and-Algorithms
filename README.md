@@ -456,7 +456,18 @@ Data-Structures-and-Algorithms
         │   README.md
         │
         └───Problems
-            └───01. Sum triangle from array
+            ├───00. Maximum and Minimum Value in an Array
+            │       README.md
+            │       Solution.java
+            │
+            ├───00. Sum triangle from array
+            │       README.md
+            │       Solution.java
+            │
+            ├───01. 509. Fibonacci Number
+            │       README.md
+            │
+            └───02. 344. Reverse String
                     README.md
                     Solution.java
 ```
