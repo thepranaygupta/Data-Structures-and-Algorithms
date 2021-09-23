@@ -1,7 +1,11 @@
 ## 344. Reverse String
 ## https://leetcode.com/problems/reverse-string/
 
-### Using 2 pointer in recursion
+## Using 2 pointer in recursion
+
+- ### Time Complexity: O(N/2)
+- ### Auxiliary Space Complexity: O(N/2)
+
 ```java
 class Solution {
     public void reverseString(char[] s) {
