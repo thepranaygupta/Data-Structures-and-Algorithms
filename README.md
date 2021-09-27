@@ -452,24 +452,33 @@ Data-Structures-and-Algorithms
     │               optimal_approach.java
     │               README.md
     │
-    └───04. Recursion
-        │   README.md
-        │
-        └───Problems
-            ├───00. Maximum and Minimum Value in an Array
-            │       README.md
-            │       Solution.java
-            │
-            ├───00. Sum triangle from array
-            │       README.md
-            │       Solution.java
-            │
-            ├───01. 509. Fibonacci Number
-            │       README.md
-            │
-            └───02. 344. Reverse String
-                    README.md
-                    Solution.java
+    |────04. Recursion
+    |    │   README.md
+    |    │
+    |    └───Problems
+    |        ├───01. Maximum and Minimum Value in an Array
+    |        │       README.md
+    |        │       Solution.java
+    |        │
+    |        ├───02. Sum triangle from array
+    |        │       README.md
+    |        │       Solution.java
+    |        │
+    |        ├───03. 509. Fibonacci Number
+    |        │       README.md
+    |        │
+    |        └───04. 344. Reverse String
+    |                README.md
+    |                Solution.java
+    |
+    └────05. Graphs
+         |
+         └───01. Depth First Search
+             |
+             └───01. README.md
+                     DFS.cpp
+                     output.png
+         
 ```
 
 ### If you have come this far here are a few words of wisdom:
