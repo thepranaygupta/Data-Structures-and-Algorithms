@@ -6,7 +6,6 @@
 
 ## Code Snippet:
 ```cpp
-// } Driver Code Ends
 /* 
 Link list Node 
 struct Node {
