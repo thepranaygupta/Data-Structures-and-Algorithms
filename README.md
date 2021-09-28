@@ -22,9 +22,13 @@ Data-Structures-and-Algorithms
 │   ├───01. Linked List
 │   │   ├───1. Singly-Linked-List
 │   │   │   ├───Basic Operations
-│   │   │   │       README.md
-│   │   │   │       SinglyLL.cpp
-│   │   │   │       SinglyLL.java
+│   │   │   │   |   README.md
+│   │   │   │   |   SinglyLL.cpp
+│   │   │   │   |   SinglyLL.java
+|   |   |   |   └───01. Find Middle Element
+|   |   |   |           README.md
+|   |   |   |           find_middle_element.cpp
+|   |   |   |           output.png
 │   │   │   │
 │   │   │   └───InterviewBit Questions
 │   │   │       ├───01. ReverseLL
