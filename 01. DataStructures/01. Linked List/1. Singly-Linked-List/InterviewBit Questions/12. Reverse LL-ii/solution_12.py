@@ -32,3 +32,4 @@ class Solution:
         next_tail.next = curr
         
         return head
+    
