@@ -1,0 +1,29 @@
+Problem:-
+Given an array containing only 0,1,2.you have to sort the array in O(N) time,single pass and O(1) Space.
+INPUT: given an array ,containing only 0,1,2
+OUTPUT:prinnt the sorted array.
+TIME COMPLEXITY:O(N)
+SPACE COMPLEXITY:O(1)
+
+
+INPUT:-
+
+
+void dnfSort(int arr[],int n){
+int low=0;
+int mid=0;
+int high=n-1;
+while(mid<=high){
+   if arr[mid]==0){
+       swap(arr[low],arr[mid]);
+       low++; mid++;
+}
+else if (arr[low]==1){
+       mid++;
+}
+else {
+     swap(arr[mid],arr[high]);
+     high--;
+   }
+ }
+}
