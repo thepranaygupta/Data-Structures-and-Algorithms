@@ -1,5 +1,6 @@
 class Solution {
 public:
+////Function to Maximum Depth of a binary tree.
     int maxDepth(TreeNode* root) {
         if(root==NULL)
             return 0;
