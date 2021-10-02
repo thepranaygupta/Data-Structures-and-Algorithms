@@ -107,7 +107,7 @@ Data-Structures-and-Algorithms
 │   │   │   │       Resources.md
 │   │   │   │       Stack_LinkList.java
 │   │   │   │
-│   │   │   └───3. Stack using Queue
+│   │   │       
 │   │   │           Resources.md
 │   │   │           Stack_Queue.java
 │   │   │
@@ -124,9 +124,15 @@ Data-Structures-and-Algorithms
 │   │   │   │       README.md
 │   │   │   │
 │   │   │   ├───03. Postfix to Infix
-│   │   │   │       PostfixInfix.java
-│   │   │   │       pseudocode.png
-│   │   │   │       README.md
+│   │   │   │   │   PostfixInfix.java
+│   │   │   │   │   pseudocode.png
+│   │   │   │   │   README.md
+│   │   │   │   │
+│   │   │   │   └───01. Postfix to Infix In C++
+│   │   │   │           README.md
+│   │   │   │           postfix_to_infix.cpp
+│   │   │   │           output.png
+│   │   │   │           output.png
 │   │   │   │
 │   │   │   ├───04. Prefix to Infix
 │   │   │   │       PrefixInfix.java
