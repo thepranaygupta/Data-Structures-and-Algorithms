@@ -475,13 +475,20 @@ Data-Structures-and-Algorithms
     |                README.md
     |                Solution.java
     |
-    └────05. Graphs
-         |
-         └───01. Depth First Search
+    |───05. Graphs
+    |    |
+    |    └───01. Depth First Search
+    |        |
+    |        └───01. README.md
+    |                DFS.cpp
+    |                output.png
+    |
+    └───06. Love Babbar DSA Sheet Solutions
+         └───01. Arrays
              |
-             └───01. README.md
-                     DFS.cpp
-                     output.png
+             |─── README.md
+             |
+             └───01. reverse_the array.cpp
          
 ```
 
