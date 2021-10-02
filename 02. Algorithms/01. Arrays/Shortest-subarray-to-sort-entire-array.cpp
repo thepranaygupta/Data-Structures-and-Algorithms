@@ -1,5 +1,5 @@
 //finding shortest subarray that, when sorted, can sort the entire array 
-//link- (https://www.geeksforgeeks.org/minimum-length-unsorted-subarray-sorting-which-makes-the-complete-array-sorted/)
+
 #include <bits/stdc++.h>
 using namespace std;
 
