@@ -1,23 +1,46 @@
-# An Array Searching Algo
+# Intersection Of Sorted Arrays
 
-## Finding the shortest subarray that can be sorted to sort the entire array
-## https://www.geeksforgeeks.org/minimum-length-unsorted-subarray-sorting-which-makes-the-complete-array-sorted/)
+## https://www.interviewbit.com/problems/intersection-of-sorted-arrays/
 
-Algorithm:
-Let there be an array- 10 12 14 11 16 40 20 39 13 19
+Problem Description
 
-Initially, we tranverse through the array to find the first instance of break in ascending order from left to right (in this case, it is the 2nd index, 14) and in descending order from right to left (6th index, 13). 
+Find the intersection of two sorted arrays. OR in other words, Given 2 sorted arrays, find all the elements which occur in both the arrays.
 
-Then, we traverse this subarray, and find the min and max elements (min = 11, max = 40).
+Example:
 
-For min, the sub-array that lies before its index (10, 12 ,14) is traversed until the 1st number smaller than it is found or till we reach the end of the array, i.e,
-    for(int i = min-1; i>=0; i--)
-       if(a[min]>a[i])
-       {
-          min = i;
-          break;
-       }   
-Then, min is updated to min+1, since sorting will be carried out from the next index.
-Similarly, for max index, the subarray succeeding the max index is searched till an element > a[max] is found or till we reach the end of the array. Then that index is updated to max + 1.
+Input:
+    A: [1 2 3 3 4 5 6]
+    B: [3 3 5]
 
-After following these steps, we will have found the shortest subarray to be sorted. 
+Output: [3 3 5]
+
+Input:
+    A: [1 2 3 3 4 5 6]
+    B: [3 5]
+
+Output: [3 5]
+
+```C++
+vector<int> Solution::intersect(const vector<int> &A, const vector<int> &B) {
+    vector<int> v;
+    int i=0,j=0;
+    
+    while(i<A.size() && j<B.size()){
+        if(A[i]==B[j])
+        {
+            v.push_back(A[i]);
+            i++;
+            j++;
+        }
+        else if(A[i]<B[j])
+        i++;
+        else if(B[j]<A[i])
+        j++;
+
+        
+    }
+    return v;
+}
+
+```
+## Asked in <GOOGLE> & <FACEBOOK>
