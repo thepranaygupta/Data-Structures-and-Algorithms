@@ -10,10 +10,8 @@ Note: In a path, no cell can be visited more than one time.
 ```
 Input 1:
 N = 4
-m[][] = {{1, 0, 0, 0},
-         {1, 1, 0, 1}, 
-         {1, 1, 0, 0},
-         {0, 1, 1, 1}}
+m[][] = {{1, 0, 0, 0}, {1, 1, 0, 1}, {1, 1, 0, 0}, {0, 1, 1, 1}}
+
 Output 1:
 DDRDRR DRDDRR
 ```
