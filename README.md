@@ -7,7 +7,7 @@
 <a href="https://github.com/thepranaygupta/Data-Structures-and-Algorithms/network/members"><img src="https://img.shields.io/github/forks/thepranaygupta/Data-Structures-and-Algorithms" alt="Forks Badge"/></a>
 <a href="https://github.com/thepranaygupta/Data-Structures-and-Algorithms/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/thepranaygupta/Data-Structures-and-Algorithms?color=2b9348"></a>
 
-**_If you appreciate my work, please_** 🌟 **_this repository. It motivates me. :rocket: :rocket:_**
+<b><i>If you appreciate my work, please</i></b> 🌟 <b><i>this repository. It motivates me. 🚀🚀</i></b>
 
 </div>
 
