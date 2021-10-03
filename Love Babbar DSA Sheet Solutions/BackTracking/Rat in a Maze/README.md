@@ -25,8 +25,8 @@ we get `DDRDRR DRDDRR`.
 ```
 Input 2:
 N = 2
-m[][] = {{1, 0},
-         {1, 0}}
+m[][] = { {1, 0}, {1, 0} }
+
 Output 2:
 -1
 ```
