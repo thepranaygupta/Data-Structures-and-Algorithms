@@ -1,4 +1,4 @@
-**A BRIEF EXPLNATION OF KADANE'S ALGORITHM**
+**A BRIEF EXPLANATION OF KADANE'S ALGORITHM**
 
 Given an integer array, find the contiguous subarray (containing at least one number) with the largest sum or in other words the maximum sum contiguous subarray and print its sum. (**USING KADANE'S ALGORITHM**)
 
