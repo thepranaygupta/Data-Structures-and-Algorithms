@@ -53,7 +53,7 @@ Thanks to these **Wonderful People** 👨🏻‍💻 <br>
 	</tr>
 </table>
 
-[![Stargazers over time](https://starchart.cc/thepranaygupta/Data-Structures-and-Algorithms.svg)](https://starchart.cc/Ayush7614/Daily-Coding-DS-ALGO-Practice)
+[![Stargazers over time](https://starchart.cc/thepranaygupta/Data-Structures-and-Algorithms.svg)](https://starchart.cc/thepranaygupta/Data-Structures-and-Algorithms)
 
 ## Connect with me: [![Email Badge](https://img.shields.io/badge/-Email-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:pranaygupta.aec@gmail.com)](mailto:pranaygupta.aec@gmail.com) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thepranaygupta/)](https://www.linkedin.com/in/thepranaygupta/) [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=white)](https://twitter.com/thepranaygupta) [![Telegram](https://img.shields.io/badge/-Telegram-blue?style=flat-square&logo=Telegram&logoColor=white)](https://t.me/pranayguptaa) [![Discord](https://img.shields.io/badge/-Discord-7289DA?style=flat-square&logo=discord&logoColor=white)](https://discordapp.com/users/745686149359599707)
 
