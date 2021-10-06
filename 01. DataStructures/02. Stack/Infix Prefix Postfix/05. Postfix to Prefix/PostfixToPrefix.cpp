@@ -30,6 +30,6 @@ int main()
     string postfix_expression;
     cout << "Enter the Postfix Expression" << endl;
     cin >> postfix_expression;
-    cout << "The Equivalent prefix Expression for " << postfix_expression << " is : " << PostfixToPrefix(postfix_expression) << endl;
+    cout << "The Equivalent Prefix Expression for " << postfix_expression << " is : " << PostfixToPrefix(postfix_expression) << endl;
     return 0;
 }
