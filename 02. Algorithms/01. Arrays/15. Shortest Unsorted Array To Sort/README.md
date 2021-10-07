@@ -11,6 +11,7 @@ Initially, we tranverse through the array to find the first instance of break in
 Then, we traverse this subarray, and find the min and max elements (min = 11, max = 40).
 
 For min, the sub-array that lies before its index (10, 12 ,14) is traversed until the 1st number smaller than it is found or till we reach the end of the array, i.e,
+
     for(int i = min-1; i>=0; i--)
        if(a[min]>a[i])
        {
@@ -18,6 +19,6 @@ For min, the sub-array that lies before its index (10, 12 ,14) is traversed unti
           break;
        }   
 Then, min is updated to min+1, since sorting will be carried out from the next index.
-Similarly, for max index, the subarray succeeding the max index is searched till an element > a[max] is found or till we reach the end of the array. Then that index is updated to max + 1.
+Similarly, for max index, the subarray succeeding the max index is searched till an element > a[max] is found or till we reach the end of the array. Then that index is updated to max - 1.
 
 After following these steps, we will have found the shortest subarray to be sorted. 
