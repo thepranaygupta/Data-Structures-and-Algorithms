@@ -17,6 +17,7 @@ As both the arrays are sorted, the only thing that needs to be done is to put th
 
 ## Code in Java
 
+```java
     public static void mergeArray(int[] arr1, int[] arr2)
     {
 
@@ -73,6 +74,7 @@ As both the arrays are sorted, the only thing that needs to be done is to put th
         int[] arr2 = { 0, 2, 6, 8, 9 };
         mergeArray(arr1, arr2);
     }
+```
 
 ## Time and Space Complexity
 
