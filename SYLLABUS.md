@@ -58,15 +58,19 @@
     - [Comparison of methods](https://youtu.be/zL1DPZ0Ovlo?t=977)
     - [Operations in Strings](https://youtu.be/zL1DPZ0Ovlo?t=1681)
     - [StringBuilder in java](https://youtu.be/zL1DPZ0Ovlo?t=4199)
-- Maths for DSA
-    - Introduction
-    - Complete Bitwise Operators
-    - Prime numbers
-    - HCF / LCM
-    - Sieve of Eratosthenes
-    - Newton's Square Root Method
-    - Number Theory
-    - Euclidean algorithm
+- [Maths for DSA](https://youtu.be/fzip9Aml6og)
+    - [Introduction](https://youtu.be/fzip9Aml6og?t=20)
+    - [Complete Bitwise Operators](https://www.youtube.com/watch?t=95)
+    - [Range of numbers](https://www.youtube.com/watch?t=4169)
+    - [Prime numbers](https://youtu.be/lmSpZ0bjCyQ?t=57)
+    - [Sieve of Eratosthenes](https://youtu.be/lmSpZ0bjCyQ?t=850)
+    - [Newton's Square Root Method](https://youtu.be/lmSpZ0bjCyQ?t=1989)
+    - [Factors](https://youtu.be/lmSpZ0bjCyQ?t=3004)
+    - [Modulo properties](https://youtu.be/lmSpZ0bjCyQ?t=3980)
+    - [Number Theory](https://youtu.be/lmSpZ0bjCyQ?t=4405)
+    - [HCF / LCM](https://youtu.be/lmSpZ0bjCyQ?t=5110)
+    - [Euclidean algorithm](https://youtu.be/lmSpZ0bjCyQ?t=5520)
+    
 - [Recursion](https://youtu.be/M2uO2nMT0Bk)
     - [Introduction](https://youtu.be/M2uO2nMT0Bk)
     - [Flow of recursive programs - stacks](https://youtu.be/M2uO2nMT0Bk?t=2124)
