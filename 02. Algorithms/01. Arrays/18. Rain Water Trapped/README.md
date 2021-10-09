@@ -25,8 +25,8 @@ class Solution {
     if(height==null || height.length<=2)
         return result;
  
-    int left[] = new int[height.length];
-    int right[]= new int[height.length];
+    int[] left = new int[height.length];
+    int[] right= new int[height.length];
  
     //scan from left to right
     int max = height[0];
