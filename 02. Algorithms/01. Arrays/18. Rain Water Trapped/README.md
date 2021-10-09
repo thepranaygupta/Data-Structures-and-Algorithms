@@ -52,7 +52,7 @@ class Solution {
         }
     }
  
-    //calculate totoal
+    //calculate total
     for(int i=0; i<height.length; i++){
         result+= Math.min(left[i],right[i])-height[i];
     }
