@@ -1,45 +1,60 @@
 package com.company;
 
-class Solution{
+import java.util.Scanner;
 
-    // Function to return the maximum water that can be stored
-    public static int maxWater(int[] arr, int n)
-    {
+class Solution {
 
-        // To store the maximum water that can be stored
-        int res = 0;
+    public static int trap(int[] height) {
+        
+        int result = 0;
 
-        // For every element of the array except first and last element
-        for(int i = 1; i < n - 1; i++)
-        {
+        if(height==null || height.length<=2)
+            return result;
 
-            // Find maximum element on its left
-            int left = arr[i];
-            for(int j = 0; j < i; j++)
-            {
-                left = Math.max(left, arr[j]);
+        int[] left = new int[height.length];
+        int[] right = new int[height.length];
+
+        //scan from left to right
+        int max = height[0];
+        left[0] = height[0];
+        for(int i=1; i<height.length; i++){
+            if(height[i]<max){
+                left[i]=max;
+            }else{
+                left[i]=height[i];
+                max = height[i];
             }
-
-            // Find maximum element on its right
-            int right = arr[i];
-            for(int j = i + 1; j < n; j++)
-            {
-                right = Math.max(right, arr[j]);
-            }
-
-            // Update maximum water value
-            res += Math.min(left, right) - arr[i];
         }
-        return res;
+
+        //scan from right to left
+        max = height[height.length-1];
+        right[height.length-1]=height[height.length-1];
+        for(int i=height.length-2; i>=0; i--){
+            if(height[i]<max){
+                right[i]=max;
+            }else{
+                right[i]=height[i];
+                max = height[i];
+            }
+        }
+
+        //calculate total
+        for(int i=0; i<height.length; i++){
+            result+= Math.min(left[i],right[i])-height[i];
+        }
+        return result;
     }
 
-    // Driver code
-    public static void main(String[] args)
-    {
-        int[] arr = { 0, 1, 0, 2, 1, 0,
-                1, 3, 2, 1, 2, 1 };
-        int n = arr.length;
-
-        System.out.print(maxWater(arr,n));
+    
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter Array length: ");
+        int l=scan.nextInt();
+        int[] arr=new int[l];
+        System.out.println("Enter Array:");
+        for(int i=0; i<l; i++)
+            arr[i]= scan.nextInt();
+        
+        System.out.println(trap(arr));
     }
 }
