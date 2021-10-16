@@ -102,16 +102,3 @@ int main()
     
     return 0 ;
 }
-
-
-
-/* OUTPUT-:
-Case1-:
-100 50 20 70 60 80 120 110 190 -3
-
-Original Preorder : 100 50 20 70 60 80 120 110 190
-
-Mirrored Preorder : 100 120 190 110 50 70 80 60 20
-
- 
-*/
