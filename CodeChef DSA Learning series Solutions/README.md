@@ -1,6 +1,6 @@
-D:\all projects and programs\asasasa\hacktoberfest 7\Data-Structures-and-Algorithms\CodeChef DSA Learning series Solutions\Assets\cc1.jpg
-Here I am Uploading All the answers of Codechef DSA learning Series 
-The main Motive of this repository is to provide solution to those who got stuck somewhere while practicing these Problems 
+Here I will Upload all the answers realted to the codechef DSA learning series
 
-D:\all projects and programs\asasasa\hacktoberfest 7\Data-Structures-and-Algorithms\CodeChef DSA Learning series Solutions\Assets\cc2.jpg
+![cc1](https://user-images.githubusercontent.com/55429956/138126753-7e80517d-4f8f-483d-80fb-169a0034ed69.jpg)
 
+These are the Topics realted to this series and I will Upload all the Problems in this.
+![cc2](https://user-images.githubusercontent.com/55429956/138126752-f5698d6a-6aa8-4b8f-92b8-46b075efb565.jpg)
