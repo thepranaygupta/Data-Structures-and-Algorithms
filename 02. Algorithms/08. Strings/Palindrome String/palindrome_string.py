@@ -1,5 +1,6 @@
 # The function to find if the string is a palindrome or not
 def is_palindrome(s):
+    # Check if string is equal to its reverse.
     s = s.lower()
     return s == s[::-1]
 
