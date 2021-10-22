@@ -1,0 +1,52 @@
+#include<stdio.h> 
+void main(){
+    int sparseMatrix[25][25];
+	int i, j, rows, columns;
+	int zero_count = 0;
+	printf("Enter the no:of rows in matrix: ");
+	scanf("%d", &rows);
+	printf("Enter the no:of columns in matrix:  ");
+	scanf("%d", &columns);
+	printf("Enter the matrix elements\n");
+	for(i = 0; i < rows; i++){
+        for(j = 0; j < columns; j++){
+            scanf("%d", &sparseMatrix[i][j]);
+            if(sparseMatrix[i][j] == 0){
+                zero_count = zero_count + 1;
+            }
+        }
+    }
+    if(zero_count>((rows*columns)/2)){
+        printf("\nThe matrix is a Sparse Matrix with %d zeros\n", zero_count);        
+        int size = 0;
+        for(i=0;i<rows;i++){
+            for(j=0;j<columns;j++){
+                if(sparseMatrix[i][j]!=0){
+                    size++;
+                }
+            }
+        }
+        int compactMatrix[3][size];          
+        int k = 0;
+        for(i = 0;i<rows;i++){
+            for(j = 0; j<columns;j++){
+                if(sparseMatrix[i][j]!=0){
+                    compactMatrix[0][k]=i;
+                    compactMatrix[1][k]=j;
+                    compactMatrix[2][k]=sparseMatrix[i][j];
+                    k++;
+                }
+            }
+        }
+        for(i=0;i<3;i++){
+            for(j=0;j<size;j++){
+                printf("%d",compactMatrix[i][j]);
+                printf("\t");
+            }
+            printf("\n");
+        }
+    }      
+    else{
+        printf("\nThe matrix is not a Sparse Matrix\n");
+    }
+}
