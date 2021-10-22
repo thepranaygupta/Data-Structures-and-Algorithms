@@ -5,8 +5,9 @@ def countSort(arr):
     
     range_ = highest_elem - lowest_elem + 1
     
-    # Init a count array initialized to 0
+    # Init a count array initialized to 0 based on the calculated range
     count_arr = [0] * range_
+    # Init a output array initialized to 0 based on the array length
     output_arr = [0] * len(arr)
  
     # Loop and maintain a count of each input of the array
