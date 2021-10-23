@@ -47,8 +47,8 @@ That's it! The complete traversal will get printed out.
 
 ## Output
 
-<img src="../03. Depth First Search/Images/ss1.png">
-<img src="../03. Depth First Search/Images/ss2.png">  
+<img src="../03. Depth First Search/Images/Screenshot 1.png">
+<img src="../03. Depth First Search/Images/Screenshot 2.png">  
 
 
 ## Author
