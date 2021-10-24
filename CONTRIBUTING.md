@@ -14,7 +14,7 @@ git clone --depth 1 https://github.com/<your_name>/Data-Structures-and-Algorithm
 cd Data-Structures-and-Algorithms
 ```
 
-**4.** Add a reference(remote) to the original repository.
+**4.** Add a reference (remote) to the original repository.
 
 ```
 git remote add upstream https://github.com/thepranaygupta/Data-Structures-and-Algorithms
@@ -26,7 +26,7 @@ git remote add upstream https://github.com/thepranaygupta/Data-Structures-and-Al
 git remote -v
 ```
 
-**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
+**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project (updated repository).
 
 ```
 git pull upstream main
@@ -66,4 +66,4 @@ git push -u origin <your_branch_name>
 
 **15.** Voila! You have made a PR to the Data-Structures-and-Algorithms project. Sit back and relax while your PR is reviewed by the maintainers.
 
-In case of any help, please free to contact me [here](https://bio.link/thepranaygupta).
+In case you need any help, please feel free to contact me [here](https://bio.link/thepranaygupta).
