@@ -34,7 +34,7 @@ If you're practising on the coding platforms mentioned above, also if you want t
 - **Solve issues** raised by other people or yourself.
 - **Well-documented** source code with detailed explanations provides a valuable resource for educators and students alike.
 
-### Read [`CONTRIBUTING.md`](https://github.com/thepranaygupta/Data-Structures-and-Algorithms/blob/main/CONTRIBUTING.md) to get started with contributing to this repository.
+### Read [`CONTRIBUTING.md`](https://github.com/thepranaygupta/Data-Structures-and-Algorithms/blob/main/.github/CONTRIBUTING.md) to get started with contributing to this repository.
 
 <hr>
 
