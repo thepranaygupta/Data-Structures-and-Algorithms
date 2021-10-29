@@ -14,7 +14,7 @@ You are given an array of 0s and 1s in random order. Segregate 0s on left side a
 
 
 ## Code in Java
-
+```java
     void segregate(int arr[], int size)
     
     {
@@ -57,7 +57,7 @@ You are given an array of 0s and 1s in random order. Segregate 0s on left side a
             System.out.print(arr[i] + " ");
     }
 }
-`
+```
 ## Complexity Analysis
 
 Time Complexity: O(n), where n is elements of array
