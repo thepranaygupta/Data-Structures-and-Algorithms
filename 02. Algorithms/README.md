@@ -2,7 +2,7 @@
 
 ## **Data Structures :-**
 
- **A Data Structure is a way of storing/organising data in the memory, in such a way that access, management and modification become efficient.**
+ **A Data Structure is a way of storing/organising data in the memory in such a way that accessing, management and modification of data become efficient.**
 
 ## **Algorithms :-**
 
@@ -10,7 +10,7 @@
 
 <hr>
 
-**[This Folder](./) is the continuation of [01. DataStructures](../01.%20DataStructures) to proceed with the Algorithm part, so the approach will be that we will follow the [DSA sheet by LoveBabbar](https://docs.google.com/spreadsheets/d/1xMmQhRGXovrudJM4gix0P18-PJ7TpKNEjp6I26Ckp9E/edit#gid=1655163686) and in the process of solving Questions we will also build up the concept of algorithms in proper sequence and our Data Structures will also get revised because algorithms are something which we apply on Data Structures.**
+**[This Folder](./) is in the continuation of [01. DataStructures](../01.%20DataStructures) to proceed with the Algorithm part, so the approach will be that we will follow the [DSA sheet by LoveBabbar](https://docs.google.com/spreadsheets/d/1xMmQhRGXovrudJM4gix0P18-PJ7TpKNEjp6I26Ckp9E/edit#gid=1655163686) and in the process of solving Questions we will also build up the concept of algorithms in proper sequence and our Data Structures will also get revised because algorithms are something which we apply on Data Structures.**
 
 
 
