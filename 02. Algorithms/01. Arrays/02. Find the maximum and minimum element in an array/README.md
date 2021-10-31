@@ -2,7 +2,7 @@
 ### Editorial Link: https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
 
 
-- ## Approach 1: Sort the Array, TC = O(nlog(n))
+- ## Approach 1: Sort the Array, Time Complexity = O(nlog(n))
 ```java
 //User function Template for Java
 
@@ -62,7 +62,7 @@ class Compute
 }
 ```
 
-- ## Approach 3: Tournament Method (Divide and Conquer), TC = O(n) but lesser number of comparisons
+- ## Approach 3: Tournament Method (Divide and Conquer), Time Complexity = O(n), but lesser number of comparisons
 Divide the array into two parts and compare the maximums and minimums of the two parts to get the maximum and the minimum of the whole array.
 ```java
 //User function Template for Java
@@ -122,7 +122,7 @@ class Compute
 ```
 
 
-- ## Approach 4: Compare in Pairs, TC = O(n)
+- ## Approach 4: Compare in Pairs, Time Complexity = O(n)
 If n is odd then initialize min and max as first element. <br>
 If n is even then initialize min and max as minimum and maximum of the first two elements respectively. <br>
 For the rest of the elements, pick them in pairs and compare their maximum and minimum with the current max and min respectively.
