@@ -6,7 +6,7 @@
 
 ## **Algorithms :-**
 
- **An algorithm is any approach you use to perform operations on data (like searching, sorting, traversing, etc).**
+ **An algorithm is a step by step procedure to solve logical and mathematical problems. It is any approach you use to perform operations on data (like searching, sorting, traversing, etc).**
 
 <hr>
 
