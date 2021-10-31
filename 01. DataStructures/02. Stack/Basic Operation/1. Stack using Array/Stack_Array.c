@@ -54,7 +54,7 @@ int main(){
     while (choice)
     {
         system("CLS");
-        // clrscr();
+        // clrscr(); clear screen
         display();
         printf("\nPRESS - 1 FOR PUSH\nPRESS - 2 FOR POP\nPRESS - 3 FOR DISPLAY\nPRESS - 4 TO PEEK \nPRESS - 5 TO EXIT");
         printf("\nEnter your Choice : ");
@@ -83,7 +83,7 @@ int main(){
             break;
 
         default:
-            printf("\nInvalid Input\n");
+            printf("\nInvalid Input \n");
             break;
         }
     }

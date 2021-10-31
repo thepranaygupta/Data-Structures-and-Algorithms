@@ -141,7 +141,7 @@
     - Reversal of LinkedList
 - Dynamic Programming
     - Introduction
-    - Recursion + Recursion DP + Iteration + Iteration Space Optimized
+    - Recursion + Recursion DP + Iteration + Iteration Space Optimization
     - Complexity Analysis
     - 0/1 Knapsack
     - Subset Questions
@@ -165,7 +165,7 @@
     - Heapsort
     - Two Heaps Method
     - k-way merge
-    - Top k elements
+    - Top k-elements
     - Interval problems
 - HashMap
     - Introduction
@@ -189,12 +189,12 @@
     - Minimum Spanning Trees
     - Kruskal Algorithm
     - Prims Algorithm
-    - Dijkstra’s shortest path algorithm
+    - Dijkstra’s shortest path Algorithm
     - Topological Sort
     - Bellman ford
     - A* pathfinding Algorithm
 
-### Advanced concepts apart from interviews 
+### Advanced concepts apart from placement interviews 
 - Bitwise + DP
 - Extended Euclidean algorithm
 - Modulo Multiplicative Inverse
