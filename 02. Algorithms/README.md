@@ -2,7 +2,7 @@
 
 ## **Data Structures :-**
 
- **A Data Structure is a way of storing/organising data in the memory in such a way that accessing, management and modification of data become efficient.**
+ **A Data Structure is a way of storing/organising data in the memory in such a way that access, management and modification of data become efficient.**
 
 ## **Algorithms :-**
 
