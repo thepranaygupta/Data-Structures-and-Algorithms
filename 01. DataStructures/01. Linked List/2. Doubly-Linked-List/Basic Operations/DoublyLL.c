@@ -4,47 +4,144 @@
 struct Node
 {
     int val;
-    struct Node *prev,*next;
+    struct Node *prev;
+    struct Node *next;
 };
 
 typedef struct Node N;
 N *start = NULL, *tmp, *ptr;
 
-void createList();
-void displayList();
-void insertBeg();
-void insertEnd();
-void countNodes();
-void insertAt();
-void insertBefore();
-void searchNode();
-void deleteFirst();
-void deleteLast();
-void deleteAny();
-void updateNode();
-void reverseList();
+void CreateList()
+{
+    tmp = (N *)malloc(sizeof(N));
+    printf("Enter value : ");
+    scanf("%d", &tmp->val);
+    tmp->next = NULL;
+    if (start == NULL)
+    {
+        ptr = tmp;
+        start = tmp;
+        tmp->prev = NULL;
+    }
+    else
+    {
+        ptr->next = tmp;
+        tmp->prev = ptr;
+        ptr = tmp;
+    }
+}
 
-void main()
+void DisplayList()
+{
+    tmp = start;
+    while (tmp->next != NULL)
+    {
+        printf("%d -> ", tmp->val);
+        tmp = tmp->next;
+    }
+    while (tmp != NULL)
+    {
+        printf("%d <- ", tmp->val);
+        tmp = tmp->prev;
+    }
+}
+
+void InsertBeg()
+{
+    ptr = (N *)malloc(sizeof(N));
+    printf("Enter value : ");
+    scanf("%d",&ptr->val);
+    ptr->prev = NULL;
+    ptr->next = start;
+    tmp = start;
+    tmp->prev = ptr;
+}
+
+void InsertEnd()
+{
+    tmp = start;
+    while(tmp->next!=NULL)
+    {
+        tmp = tmp->next;
+    }
+    ptr = (N *)malloc(sizeof(N));
+    printf("Enter value : ");
+    scanf("%d",&ptr->val);
+    ptr->next = NULL;
+    ptr->prev = tmp;
+    tmp->next = ptr;
+}
+
+void InsertAfter()
+{
+    int n;
+    printf("Enter node after which you want to insert : ");
+    scanf("%d",&n);
+    ptr = start;
+    while(ptr->val!=n)
+    {
+        ptr = ptr->next;
+    }
+    tmp = (N *)malloc(sizeof(N));
+    printf("Enter value : ");
+    scanf("%d",&tmp->val);
+    tmp->next = ptr->next;
+    ptr->next->prev = tmp;
+    ptr->next = tmp;
+    tmp->prev = ptr;
+}
+
+void DeleteFirst()
+{
+    tmp = start;
+    start = tmp->next;
+    tmp->next->prev = NULL;
+    free(tmp);
+}
+
+void DeleteLast()
+{
+    tmp = start;
+    while(tmp->next->next!=NULL)
+    {
+        tmp = tmp->next;
+    }
+    free(tmp->next);
+    tmp->next = NULL;
+}
+
+void DeleteAny()
+{
+    int n;
+    printf("Enter value to delete : ");
+    scanf("%d",&n);
+    tmp = start;
+    while(tmp->next->val!=n)
+    {
+        tmp = tmp->next;
+    }
+    ptr = tmp->next;
+    tmp->next = tmp->next->next;
+    tmp->next->next->prev = tmp;
+    free (ptr);
+}
+
+int main()
 {
     int ch;
     do
     {
-        printf("\n...M.E.N.U...\n");
-        printf("1...Create List.\n");
-        printf("2...Display List.\n");
-        printf("3...Insert at beginning.\n");
-        printf("4...Insert at the end.\n");
-        printf("5...Count nodes.\n");
-        printf("6...Insert at specific position.\n");
-        printf("7...Insert before a given node.\n");
-        printf("8...Search an element.\n");
-        printf("9...Delete first element.\n");
-        printf("10...Delete last element.\n");
-        printf("11...Delete any element.\n");
-        printf("12...Update a node.\n");
-        printf("13...Reverse the List.\n");
-        printf("0...EXIT.\n");
-        printf("\nEnter your choice:");
+        printf("\n\t-: M E N U :- \n================================\n");
+        printf("\n1.....Create List.");
+        printf("\n2.....Display List.");
+        printf("\n3.....Insert at Beginning.");
+        printf("\n4.....Insert at the end.");
+        printf("\n5.....Insert After a node.");
+        printf("\n6.....Delete First node.");
+        printf("\n7.....Delete Last node.");
+        printf("\n8.....Delete Any node.");
+        printf("\n0.....Exit.");
+        printf("\nEnter your choice : ");
         scanf("%d", &ch);
         switch (ch)
         {
@@ -52,254 +149,33 @@ void main()
             printf("\nEnd of Program\n");
             break;
         case 1:
-            createList();
+            CreateList();
             break;
         case 2:
-            displayList();
+            DisplayList();
             break;
         case 3:
-            insertBeg();
+            InsertBeg();
             break;
         case 4:
-            insertEnd();
+            InsertEnd();
             break;
         case 5:
-            countNodes();
+            InsertAfter();
             break;
         case 6:
-            insertAt();
+            DeleteFirst();
             break;
         case 7:
-            insertBefore();
+            DeleteLast();
             break;
         case 8:
-            searchNode();
-            break;
-        case 9:
-            deleteFirst();
-            break;
-        case 10:
-            deleteLast();
-            break;
-        case 11:
-            deleteAny();
-            break;
-        case 12:
-            updateNode();
-            break;
-        case 13:
-            reverseList();
+            DeleteAny();
             break;
         default:
-            printf("\nInvalid Input!!\n");
-            break;
+            printf("\nInvalid Choice!!\n");
         }
+
     } while (ch != 0);
-}
-
-void createList()
-{
-    ptr = (N *)malloc(sizeof(N));
-    printf("\nEnter value:");
-    scanf("%d", &ptr->val);
-    ptr->next = NULL;
-    if (start == NULL)
-    {
-        start = ptr;
-        tmp = ptr;
-    }
-    else
-    {
-        tmp->next = ptr;
-        tmp = ptr;
-    }
-}
-
-void displayList()
-{
-    tmp = start;
-    while (tmp != NULL)
-    {
-        printf("%d->", tmp->val);
-        tmp = tmp->next;
-    }
-    printf("\n");
-}
-
-void insertBeg()
-{
-    ptr = (N *)malloc(sizeof(N));
-    printf("\nEnter value:");
-    scanf("%d", &ptr->val);
-    ptr->next = start;
-    start = ptr;
-}
-
-void insertEnd()
-{
-    ptr = (N *)malloc(sizeof(N));
-    printf("\nEnter value:");
-    scanf("%d", &ptr->val);
-    ptr->next = NULL;
-    tmp = start;
-    while (tmp->next != NULL)
-    {
-        tmp = tmp->next;
-    }
-    tmp->next = ptr;
-}
-
-void countNodes()
-{
-    int c = 0;
-    tmp = start;
-    while (tmp != NULL)
-    {
-        c++;
-        tmp = tmp->next;
-    }
-    printf("\nNumber of Nodes are: %d\n", c);
-}
-
-void insertAt()
-{
-    int n, c = 1;
-    tmp = start;
-    printf("\nAfter which one to insert:");
-    scanf("%d", &n);
-    while (c != n)
-    {
-        tmp = tmp->next;
-        c++;
-    }
-    ptr = (N *)malloc(sizeof(N));
-    printf("\nEnter value:");
-    scanf("%d", &ptr->val);
-    ptr->next = tmp->next;
-    tmp->next = ptr;
-}
-
-void insertBefore()
-{
-    int n;
-    printf("\nEnter value before which you want to insert:");
-    scanf("%d", &n);
-    ptr = (N *)malloc(sizeof(N));
-    tmp = start;
-    while (tmp->next->val != n)
-    {
-        tmp = tmp->next;
-    }
-    printf("\nEnter value to insert:");
-    scanf("%d", &ptr->val);
-    ptr->next = tmp->next;
-    tmp->next = ptr;
-}
-
-void searchNode()
-{
-    int n, flag = 0, count = 0;
-    printf("\nEnter node for searching:");
-    scanf("%d", &n);
-    tmp = start;
-    while (tmp->next != NULL)
-    {
-        count++;
-        if (tmp->val == n)
-        {
-            flag = 1;
-            break;
-        }
-        tmp = tmp->next;
-    }
-    if (flag == 1)
-        printf("\nFound at position %d\n", count);
-    else
-        printf("\nValue doesn't exist\n");
-}
-
-void deleteFirst()
-{
-    tmp = start;
-    start = tmp->next;
-    free(tmp);
-}
-
-void deleteLast()
-{
-    tmp = start;
-    while (tmp->next->next != NULL)
-        tmp = tmp->next;
-    free(tmp->next);
-    tmp->next = NULL;
-}
-
-void deleteAny()
-{
-    int n;
-    printf("\nEnter value which you want to delete:");
-    scanf("%d", &n);
-    tmp = start;
-    if (tmp->val == n)
-        deleteFirst();
-
-    else
-    {
-        int flag = 0;
-        while (tmp->next != NULL)
-        {
-            if (tmp->next->val == n)
-            {
-                flag = 1;
-                break;
-            }
-            tmp = tmp->next;
-        }
-        if (flag == 1)
-            tmp->next = tmp->next->next;
-        else
-            printf("\nValue doesn't exist in the List\n");
-    }
-}
-
-void updateNode()
-{
-    int n, flag = 0;
-    printf("\nEnter value which you want to update:");
-    scanf("%d", &n);
-    tmp = start;
-    while (tmp != NULL)
-    {
-        if (tmp->val == n)
-        {
-            flag = 1;
-            break;
-        }
-        tmp = tmp->next;
-    }
-    if (flag == 1)
-    {
-        int n1;
-        printf("\nEnter value to update with:");
-        scanf("%d", &n1);
-        tmp->val = n1;
-    }
-    else
-        printf("\nInvalid Input\n");
-}
-
-void reverseList()
-{
-    //N *new = (N *)malloc(sizeof(N));
-    N *new;
-    ptr = NULL;
-    tmp = start;
-    while (tmp != NULL)
-    {
-        new = tmp->next;
-        tmp->next = ptr;
-        ptr = tmp;
-        tmp = new;
-    }
-    start = ptr;
+    return 0;
 }
