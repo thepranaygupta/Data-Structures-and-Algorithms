@@ -30,6 +30,6 @@ int main(){
         }
         
     }
-     printf("bafter sorting: \n");
+     printf("After sorting: \n");
     printArray(arr, n);
 }
