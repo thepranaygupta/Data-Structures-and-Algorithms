@@ -3,8 +3,6 @@
 using namespace std;
 
  // } Driver Code Ends
-
-
 class Solution
 {
 	public:
@@ -32,6 +30,48 @@ class Solution
 	    reverse(res.begin(), res.end());
 	    return res;
 	}
+
+    vector<int> bfssort(vector<vector<int>> graph) {
+        vector <int> indegree(graph.size(), 0);
+        queue<int> q;
+        vector<int> solution;
+        
+        for(int i = 0; i < graph.size(); i++) {
+            for(int j = 0; j < graph[i].size(); j++)
+            { 
+            //iterate over all edges
+                indegree[ graph[i][j] ]++;
+            }
+        }
+        
+        //enqueue all nodes with indegree 0
+        for(int i = 0; i < graph.size(); i++) 
+        {
+            if(indegree[i] == 0) {
+                q.push(i);
+            }
+        }
+
+        //remove one node after the other
+        while(q.size() > 0) {
+            int currentNode = q.front();
+            q.pop();
+            solution.push_back(currentNode);
+            for(int j = 0; j < graph[currentNode].size(); j++)
+            { 
+            //remove all edges
+                int newNode = graph[currentNode][j];
+                indegree[newNode]--;
+                if(indegree[newNode] == 0) 
+                { 
+                //target node has now no more incoming edges
+                    q.push(newNode);
+                }
+            }
+        }
+        
+        return solution;
+    }
 };
 
 // { Driver Code Starts.
@@ -56,25 +96,32 @@ int check(int V, vector <int> &res, vector<int> adj[]) {
 }
 
 int main() {
-    int T;
-    cin >> T;
-    while (T--) {
-        int N, E;
-        cin >> E >> N;
-        int u, v;
+    //cin to specify whether dfs or bfs method should run
+    string type;
+    cin >> type;
 
-        vector<int> adj[N];
+    int N, E;
+    cin >> E >> N;
+    int u, v;
 
-        for (int i = 0; i < E; i++) {
-            cin >> u >> v;
-            adj[u].push_back(v);
-        }
-        
-        Solution obj;
-        vector <int> res = obj.topoSort(N, adj);
+    vector<int> adj[N];
 
-        cout << check(N, res, adj) << endl;
+    for (int i = 0; i < E; i++) {
+        cin >> u >> v;
+        adj[u].push_back(v);
     }
+
+    Solution obj;
+
+    if (type=="dfs") {
+        
+        vector <int> res = obj.topoSort(N, adj);
+    }
+    else {
+        vector <int> res = obj.bfssort();
+    }
+    
+    cout << check(N, res, adj) << endl;
     
     return 0;
 }  // } Driver Code Ends
