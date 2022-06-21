@@ -11,7 +11,7 @@
 
 </div>
 
-<img width="1188" alt="DSA banner" src="https://user-images.githubusercontent.com/64855541/135758397-513b4edf-a93f-477e-a78e-a80d7265bcd8.png">
+<img src="https://socialify.git.ci/thepranaygupta/Data-Structures-and-Algorithms/image?description=1&descriptionEditable=An%20Open-Source%20repository%20that%20contains%20all%20the%20Data%20Structures%20and%20Algorithms%20concepts%20and%20their%20implementation%20in%20several%20ways.&font=Raleway&forks=1&language=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Light" alt="Data-Structures-and-Algorithms" width="100%" height="320" align="center" />
 
 This repository contains all the Data Structures and Algorithms concepts and their implementation in several ways, programming questions and Interview questions. The main aim of this repository is to help students who are learning Data Structures and Algorithms or preparing for an interview. This contains questions from popular coding platforms including [LeetCode](https://leetcode.com/), [HackerRank](https://www.hackerrank.com/), [Codechef](https://www.codechef.com/), [GeeksforGeeks](https://practice.geeksforgeeks.org/explore/), and many more.
 
