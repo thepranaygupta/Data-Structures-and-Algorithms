@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/01. ReverseLL" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02. IntersectionOfLL" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/03. Kth Node From Middle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04. Palindrome List GQ" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/05. Merge Two Sorted List GQ" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/06. Remove Duplicates From Sorted List" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/07. Remove Duplicates From Sorted List- II GQ" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/08. Remove nth Node from List end GQ" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/09. Add two no. as List" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/10. Reverse LL in K group GQ" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/11. Rotate LL by K place" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/12. Reverse LL-ii" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

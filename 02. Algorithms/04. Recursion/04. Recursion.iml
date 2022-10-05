@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Problems/00. Maximum and Minimum Value in an Array" isTestSource="false" packagePrefix="recursion" />
+      <sourceFolder url="file://$MODULE_DIR$/Problems/00. Sum triangle from array" isTestSource="false" packagePrefix="recursion" />
+      <sourceFolder url="file://$MODULE_DIR$/Problems/02. 344. Reverse String" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problems/03.Towers of Hanoi" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problems/04. Recursive Insertion Sort" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problems/05.Recursive Bubble Sort" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

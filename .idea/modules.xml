@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/01. Arrays/01. Arrays.iml" filepath="$PROJECT_DIR$/02. Algorithms/01. Arrays/01. Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. DataStructures.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. DataStructures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. Linked List/01. Linked List.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. Linked List/01. Linked List.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/02. Sorting/02. Sorting.iml" filepath="$PROJECT_DIR$/02. Algorithms/02. Sorting/02. Sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/03. Queue/03. Queue.iml" filepath="$PROJECT_DIR$/01. DataStructures/03. Queue/03. Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/03. Searching/03. Searching.iml" filepath="$PROJECT_DIR$/02. Algorithms/03. Searching/03. Searching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/04. Recursion/04. Recursion.iml" filepath="$PROJECT_DIR$/02. Algorithms/04. Recursion/04. Recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/04. Tree/04. Tree.iml" filepath="$PROJECT_DIR$/01. DataStructures/04. Tree/04. Tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/01. Arrays/08. Kadane's Algorithm/08. Kadane's Algorithm.iml" filepath="$PROJECT_DIR$/02. Algorithms/01. Arrays/08. Kadane's Algorithm/08. Kadane's Algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/08. Strings/08. Strings.iml" filepath="$PROJECT_DIR$/02. Algorithms/08. Strings/08. Strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. Linked List/1. Singly-Linked-List/1. Singly-Linked-List.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. Linked List/1. Singly-Linked-List/1. Singly-Linked-List.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. Linked List/2. Doubly-Linked-List/2. Doubly-Linked-List.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. Linked List/2. Doubly-Linked-List/2. Doubly-Linked-List.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Arrays/Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/02. Stack/Basic Operation/Basic Operation.iml" filepath="$PROJECT_DIR$/01. DataStructures/02. Stack/Basic Operation/Basic Operation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Bit Manipulation/Bit Manipulation.iml" filepath="$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Bit Manipulation/Bit Manipulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Data-Structures-and-Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Dynamic Programming/Dynamic Programming.iml" filepath="$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Dynamic Programming/Dynamic Programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Dynamic Programming/Edit Distance/Edit Distance.iml" filepath="$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Dynamic Programming/Edit Distance/Edit Distance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/02. Stack/Infix Prefix Postfix/Infix Prefix Postfix.iml" filepath="$PROJECT_DIR$/01. DataStructures/02. Stack/Infix Prefix Postfix/Infix Prefix Postfix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. Linked List/1. Singly-Linked-List/InterviewBit Questions/InterviewBit Questions.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. Linked List/1. Singly-Linked-List/InterviewBit Questions/InterviewBit Questions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. Linked List/LeetCode Questions/LeetCode Questions.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. Linked List/LeetCode Questions/LeetCode Questions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/02. Stack/LeetCode Questions/LeetCode Questions1.iml" filepath="$PROJECT_DIR$/01. DataStructures/02. Stack/LeetCode Questions/LeetCode Questions1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Love Babbar DSA Sheet Solutions.iml" filepath="$PROJECT_DIR$/Love Babbar DSA Sheet Solutions/Love Babbar DSA Sheet Solutions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/04. Tree/Problems/Problems.iml" filepath="$PROJECT_DIR$/01. DataStructures/04. Tree/Problems/Problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02. Algorithms/03. Searching/Problems/Problems1.iml" filepath="$PROJECT_DIR$/02. Algorithms/03. Searching/Problems/Problems1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01. DataStructures/01. Linked List/2. Doubly-Linked-List/Questions/Questions.iml" filepath="$PROJECT_DIR$/01. DataStructures/01. Linked List/2. Doubly-Linked-List/Questions/Questions.iml" />
+    </modules>
+  </component>
+</project>

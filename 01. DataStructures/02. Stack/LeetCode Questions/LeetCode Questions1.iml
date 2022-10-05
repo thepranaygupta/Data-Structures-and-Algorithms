@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/01. Remove Outermost Parentheses #1021" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02. Remove All Adjacent Duplicates In String #1047" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/03. Build an Array With Stack Operations #1441" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04. Baseball Game #682" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/05. Next Greater Element I #496" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/06. Crawler Log Folder #1598" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/07. Make The String Great #1544" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/08. Backspace String Compare #844" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/09. Valid Parentheses #20" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/10. Design a Stack With Increment Operation #1381" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/11. Minimum Add to Make Parentheses Valid #921" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/12. Score of Parentheses #856" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/13. Daily Temperatures #739" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/14. Validate Stack Sequences #946" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/17. Simplify Path" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

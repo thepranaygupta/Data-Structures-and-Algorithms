@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/01. 1295. Find Numbers with Even Number of Digits" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/02. 1672. Richest Customer Wealth" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/03. Floor in a Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04. Ceil in a Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/05. 744. Find Smallest Letter Greater Than Target" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/06. 34. Find First and Last Position of Element in Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/07. Find position of an element in an infinite sorted array" isTestSource="false" packagePrefix="array.searching.problems" />
+      <sourceFolder url="file://$MODULE_DIR$/08. 852. Peak Index in a Mountain Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/09. 162. Find Peak Element" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/10. 1095. Find in Mountain Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/11. 33. Search in Rotated Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/13. 410. Split Array Largest Sum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/14. 69. Sqrt(x)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/15. 278. First Bad Version" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/16. 167. Two Sum II - Input array is sorted" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/17. Maximum Value at a Given Index in a Bounded Array" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
