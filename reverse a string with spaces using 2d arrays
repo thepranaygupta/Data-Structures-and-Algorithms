@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s1[100][100],s[100];
+    int k=0,j=0,i,n;
+    printf("Enter the string: ");
+    gets(s);                                   // K DENOTES NUMBER OF WORDS
+    for(i=0;s[i]!='\0';i++)                    // J DENOTES WORD LENGTH
+    {
+        if(s[i]==' ')
+        {
+            s1[k][j]='\0';                            //REVERSE A STRING 
+                                                      //AVNI AGARWAL
+                                                      //INVA LAWRAGA
+            k++;
+            j=0;
+        }
+        else
+        {
+            s1[k][j]=s[i];
+            j++;
+        }
+    }
+    s1[k][j]='\0';
+
+   for(i=0;i<=k;i++)                   
+    {
+      n=strlen(s1[i])-1;
+      
+      for(j=0;j<strlen(s1[i])/2;j++)
+      {
+        char temp=s1[i][j];
+        s1[i][j]=s1[i][n];
+        s1[i][n]=temp;
+        n--;
+      }
+    }
+    for(i=0;i<=k;i++)
+    {
+        printf("%s ",s1[i]);
+    }
+
+
+}
