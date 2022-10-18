@@ -1,9 +1,5 @@
-## CHECKSUM
+## Checksum calculation is used to ensure the integrity of data.
 
-check calculation is used to ensure the integrity of data.
-The 16bit one's complement checksum is used in tcp/ip network
-protocol to measure the integrity of the sent packets.
+[16bit One's Complement](/02.%20Algorithms/09.%20Checksum%20Calc/ones_complement_checksum16bit.cpp) : The 16bit one's complement checksum is used in tcp/ip network protocol to measure the integrity of the sent packets. This file contains the function **checksum(pointer to data bytes, length of data)** which calculates the 16bit one's complement of the data referenced to it by the pointer.
 
-The ones_complement_checksum16bit.cpp file contains the function
-**checksum(pointer to data bytes, length of data)** which calculates the 
-16bit one's complement of the data referenced to it by the pointer.
+[Hamming Code](/02.%20Algorithms/09.%20Checksum%20Calc/hamming_code.cpp) : Hamming code is a set of error-correction codes that can be used to detect and correct the errors that can occur when the data is moved or stored from the sender to the receiver. This file contains the function **generate(reference to data bits, boolean for parity)** which calculates the hamming code of the data referenced to it, and it also contains the functions **correctError(reference to hamming code, boolean for parity)** and **extract(reference to hamming code, boolean for parity)** to correct the error and extract data respectively.
