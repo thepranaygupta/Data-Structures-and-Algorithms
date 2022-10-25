@@ -1,5 +1,3 @@
-// C++ program for insertion and deletion in Circular Queue
-
 #include <bits/stdc++.h>
 using namespace std;
 
