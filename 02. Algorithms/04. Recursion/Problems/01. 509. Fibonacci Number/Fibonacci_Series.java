@@ -9,7 +9,7 @@ public class Fibonacci_Series {
         if(n==0||n==1){
             return n;
         }
-        return fib(n-1) + fib(n-2);
+        return fibRecursive(n-1) + fibRecursive(n-2);
     }
 
     public static void main(String[] args) {
