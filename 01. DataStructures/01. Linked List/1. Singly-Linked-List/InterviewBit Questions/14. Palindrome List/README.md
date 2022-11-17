@@ -1,34 +1,15 @@
-### Sort Binary Linked List
+### To check if a list is palindrome or not
 
-### https://www.interviewbit.com/problems/sort-binary-linked-list/
+#### Problem link: https://www.interviewbit.com/problems/palindrome-list/
 
-Problem Description
+#### Tutorial link: https://youtu.be/yOzXms1J6Nk
 
-Given a Linked List A consisting of N nodes.
+Problem algorithm:
 
-The Linked List is binary i.e data values in the linked list nodes consist of only 0's and 1's.
+A simple solution is to use a vector of list nodes. This mainly involves three steps.
 
-You need to sort the linked list and return the new linked list.
+Traverse the given list from head to tail and push every visited node to vector.
 
-NOTE:
+Traverse the list again. For every visited node, pop a node from the vector and compare data of popped node with the currently visited node.
 
-Try to do it in constant space.
-
-
-```c++
-ListNode* Solution::solve(ListNode* A) {
-  if(A==NULL||A->next==NULL){
-        return A;
-    }
-    ListNode* count = A;
-    ListNode* curr = A;
-    while(curr!=NULL){
-        if(curr->val!=1){
-            swap(curr->val , count->val);
-            count = count->next;
-        }
-        curr = curr->next;
-    }
-    return A;
-}
-```
+If all nodes matched, then return 1, else 0.
