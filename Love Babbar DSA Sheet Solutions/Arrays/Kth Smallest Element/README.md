@@ -87,4 +87,19 @@ class Solution {
         return minPq.remove();
     }
 }
-```
+```<hr>
+// In c++ to find kth element find sort(arr,arr+r+1);
+          
+	class solution
+	{
+        public:
+	
+      int kthSmallestElement( int arr[] ,int n ,int k)
+	  {
+	     // arr[] - array , n -size of array , k = index of kth element
+	  
+          sort(arr,arr+n);
+          for(int i=0;i<n;i++)
+          return arr[k-1];
+	  }
+	};
