@@ -1,5 +1,5 @@
 ### Problem Link: https://www.geeksforgeeks.org/majority-element/
-
+### LeetCode Problem Link: https://leetcode.com/problems/majority-element/
 - ## Approach 1:
 
 ```java
