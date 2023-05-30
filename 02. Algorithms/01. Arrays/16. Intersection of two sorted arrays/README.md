@@ -2,6 +2,9 @@
 
 ## https://www.interviewbit.com/problems/intersection-of-sorted-arrays/
 
+# Leetcode link
+## https://leetcode.com/problems/intersection-of-two-arrays/
+
 Problem Description
 
 Find the intersection of two sorted arrays. OR in other words, Given 2 sorted arrays, find all the elements which occur in both the arrays.
