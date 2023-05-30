@@ -1,6 +1,8 @@
 ## 18.Count occurances of anagrams
 ## https://practice.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1
 
+## Similar problem on LeetCode
+## https://leetcode.com/problems/find-all-anagrams-in-a-string/
 Count Occurences of Anagrams 
 
 Given a word pat and a text txt. Return the count of the occurences of anagrams of the word in the text.
