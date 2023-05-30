@@ -1,6 +1,9 @@
 ## 13. pascal's triangle
 ## https://www.interviewbit.com/problems/pascal-triangle/
 
+## LeetCode Link
+## https://leetcode.com/problems/pascals-triangle/
+
 Given numRows, generate the first numRows of Pascal's triangle.
 Pascal's triangle : To generate A[C] in row R, sum up A'[C] and A'[C-1] from previous row R - 1.
 
