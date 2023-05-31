@@ -1,6 +1,9 @@
 ## 14. Rain Water Trapped
 ## https://www.interviewbit.com/problems/rain-water-trapped
 
+## same problem on leetcode
+## https://leetcode.com/problems/trapping-rain-water/
+
 Given an integer array A of non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
 
