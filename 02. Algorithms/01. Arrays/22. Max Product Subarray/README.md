@@ -1,6 +1,9 @@
 ## 22. Max Product Subarray
 ## https://www.interviewbit.com/problems/max-product-subarray
 
+## Same problem on leetcode
+## https://leetcode.com/problems/maximum-product-subarray/
+
 Find the contiguous subarray within an array (containing at least one number) which has the largest product.
 
 Return an integer corresponding to the maximum product possible.
