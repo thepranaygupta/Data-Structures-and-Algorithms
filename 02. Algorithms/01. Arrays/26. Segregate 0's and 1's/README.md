@@ -12,6 +12,8 @@ You are given an array of 0s and 1s in random order. Segregate 0s on left side a
 
 ![Array - 53_ Segregate 0s   1s in given Array](https://user-images.githubusercontent.com/73117995/136591484-807c7ad5-d2f0-45a6-8a35-596519f30e33.png)
 
+## same problem on leetcode
+## https://leetcode.com/problems/move-zeroes/
 
 ## Code in Java
 ```java
