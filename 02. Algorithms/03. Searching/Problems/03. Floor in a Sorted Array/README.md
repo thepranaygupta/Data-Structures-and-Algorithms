@@ -3,6 +3,10 @@
 ### [Video Tutorial](https://youtu.be/W9QJ8HaRvJQ?t=1981)
 ### [Editorial](https://www.geeksforgeeks.org/floor-in-a-sorted-array/)
 
+## Same problem on LeetCode
+## https://leetcode.com/problems/search-insert-position/
+
+
 ```java
 class Solution{
     
