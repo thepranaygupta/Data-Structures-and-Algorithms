@@ -44,3 +44,31 @@ int main()
 	else printf("Target element %d is found at the index location %d.\n",target,pos);
 	return 0;
 }
+
+
+/* Sample input
+Enter n: 5
+Enter elements of array in ascending order.
+Enter element 20: 1
+Enter element 1: 2
+Enter element 2: 3
+Enter element 3: 4
+Enter element 4: 5
+Enter the target element to search: 545
+Array: 1 2 3 4 5 
+Target element 545 is not found in the array.
+
+
+Enter n: 5
+Enter elements of array in ascending order.
+Enter element 20: 1
+Enter element 1: 2
+Enter element 2: 3
+Enter element 3: 4
+Enter element 4: 5
+Enter the target element to search: 2
+Array: 1 2 3 4 5 
+Target element 2 is found at the index location 1.
+
+*/
+
